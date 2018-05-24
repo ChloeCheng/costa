@@ -1,6 +1,9 @@
 App({
-  
-  onLaunch: function () {
+    currentView: null,
+    globalData: {
+      language: 'chinese'
+    },
+    onLaunch: function () {
 
-  }
+    }
 })

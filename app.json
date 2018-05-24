@@ -13,9 +13,9 @@
     "request": 10000
   },
   "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#fe2b60",
-    "backgroundColor": "#f9f9f9",
+    "color": "#DAA5B1",
+    "selectedColor": "#FBF5F7",
+    "backgroundColor": "#9E0028",
     "list": [
       {
         "pagePath": "pages/index/index",
