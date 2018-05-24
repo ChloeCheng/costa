@@ -1,1 +1,6 @@
 /* pages/points/index.wxss */
+.center-title{
+  font-size: 16;
+  color: red;
+  text-align: center;
+}

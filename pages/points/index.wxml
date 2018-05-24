@@ -1,2 +1,8 @@
-<!--pages/points/index.wxml-->
-<text>pages/points/index.wxml</text>
+<view class="center-title section">
+  <text>{{currentData.points.title}}</text>
+</view>
+
+<view class="center-title section">
+  <text>{{currentData.points.title}}</text>
+  <text>{{currentData.points.flag}}</text>
+</view>

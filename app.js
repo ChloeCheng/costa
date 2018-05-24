@@ -1,7 +1,7 @@
 App({
   global:{
     currentLanguage:'zh',
-    en:{
+    zh:{
       points:{
         flag: '积分',
         title:'积分中心',
@@ -16,7 +16,7 @@ App({
         subTitle:'积分记录',
       },
     },
-    zh:{
+    en:{
 
     }
   },
