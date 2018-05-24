@@ -1,6 +1,1 @@
-<view class="intro">
-
-
-</view>
-
-<banner></banner>
+<banner list="{{bannerList}}"></banner>

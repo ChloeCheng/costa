@@ -7,7 +7,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black",
-    "navigationBarTitleText": "COSTA 会员卡"
+    "navigationBarTitleText": "COSTA会员卡"
   },
   "networkTimeout": {
     "request": 10000
