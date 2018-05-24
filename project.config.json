@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "touristappid",
-	"projectname": "costa_mini",
+	"projectname": "mycosta",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,8 +28,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "points",
+					"pathName": "pages/points/index"
+				}
+			]
 		}
 	}
 }

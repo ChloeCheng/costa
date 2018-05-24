@@ -1,13 +1,13 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/points/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black",
-    "navigationBarTitleText": "COSTA会员卡"
+    "navigationBarTitleText": "COSTA会员卡",
+    "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
     "request": 10000
