@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "COSTA",
+    "usingComponents": {
+      "banner": "../../components/banner/banner"
+    },
+    "enablePullDownRefresh": true
+  }

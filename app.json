@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText": "COSTA 会员卡"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#fe2b60",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "微信支付",
+        "iconPath": "assets/pay.png",
+        "selectedIconPath": "assets/pay-active.png"
+      }
+    ]
+  }
+}
