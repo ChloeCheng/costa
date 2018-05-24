@@ -33,7 +33,8 @@
 				{
 					"id": -1,
 					"name": "points",
-					"pathName": "pages/points/index"
+					"pathName": "pages/points/index",
+					"query": ""
 				}
 			]
 		}
