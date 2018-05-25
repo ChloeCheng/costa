@@ -6,7 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentData: app.global[app.global['currentLanguage']]
+    currentData: app.global[app.global['currentLanguage']],
+    images:{
+      logo:'../../assets/point/vip-logo.png',
+      bg: '../../assets/point/bg.png',
+    },
+    cacheData:{
+      points:{
+        current:1,
+        upgrade:550,
+        expired:50,
+        next:800,
+      }
+    },
   },
 
   /**

@@ -1,8 +1,23 @@
-<view class="center-title section">
+<view class="center-title">
   <text>{{currentData.points.title}}</text>
 </view>
 
-<view class="center-title section">
-  <text>{{currentData.points.title}}</text>
-  <text>{{currentData.points.flag}}</text>
+<view class="container-point">
+  <view class="point-logo">
+    <image src="{{images.logo}}" class="point-logo-image"/>
+    <text class="name">{{currentData.points.vipName}}</text>
+  </view>
+  <view class="radiu-block-bg">
+    <image src="{{images.bg}}" mode='aspectFill' class="point-logo-image"/>
+    <text class="num">{{cacheData.points.upgrade}}</text>
+    <text class="title">{{currentData.points.flag}}</text>
+  </view>
+  <view class="point-logo" style="visibility:hidden">
+    <image src="{{images.logo}}" class="point-logo-image"/>
+    <text class="name">{{currentData.points.vipName}}</text>
+  </view>
+</view>
+<view  class="center-blcok-8">
+  <text class="line" 
+  style="width:{{cacheData.points.upgrade/cacheData.points.next*100}}%"></text>
 </view>

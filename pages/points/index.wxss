@@ -1,6 +1,70 @@
 /* pages/points/index.wxss */
+
 .center-title{
   font-size: 16;
   color: red;
   text-align: center;
+}
+
+.radiu-block-bg{
+  position:relative;
+  height: 300rpx;
+  width: 250rpx;
+  text-align: center;
+}
+.radiu-block-bg .point-logo-image{
+  position:absolute;
+  left:0;
+  top:0;
+  width:250rpx;
+  height: 300rpx;
+}
+
+.radiu-block-bg .num{
+  display: block;
+  font-size: 100rpx;
+  line-height: 250rpx;
+}
+.radiu-block-bg .title{
+  display:block;
+  font-size: 30rpx;
+  position: relative;
+  color: red;
+  top:-70rpx;
+}
+
+.center-blcok-8{
+  width:80%;
+  margin:15rpx auto 0 auto;
+  line-height:0rpx;
+  background:gray;
+  border-radius: 10rpx;
+}
+.line{
+  display: block;
+  height: 10rpx;
+  background: red;
+  border-radius: 10rpx;
+}
+.point-logo{
+  display: flex;
+  flex-direction:column;
+  width:100rpx;
+}
+.point-logo .point-logo-image{
+  width:100rpx;
+  height:100rpx;
+}
+.point-logo .name{
+  font-size:20rpx;
+  margin-top:10rpx;
+  color:red;
+}
+
+.container-point{
+  display:flex;
+  width:80%;
+  margin:20rpx auto;
+  justify-content:space-between;
+  align-items:flex-end;
 }
