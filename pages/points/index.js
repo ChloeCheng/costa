@@ -10,12 +10,17 @@ Page({
     images:{
       logo:'../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',
+      current: '../../assets/point/current.png',
+      upgrade: '../../assets/point/upgrade.png',
+      expire: '../../assets/point/expire.png',
+      dui: '../../assets/point/dui.png',
+      'new': '../../assets/point/new.png',
     },
     cacheData:{
       points:{
         current:1,
         upgrade:550,
-        expired:50,
+        expire:50,
         next:800,
       }
     },
