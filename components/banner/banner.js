@@ -29,8 +29,13 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        handleBannerItemTap: function(){
-            
+        handleBannerItemTap: function(e){
+           let url = e.currentTarget.dataset.bannerItem.url;
+           if(url){
+             wx.navigateTo({
+                url: url
+              })
+           } 
         }
     }
 })
