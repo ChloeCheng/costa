@@ -4,11 +4,11 @@
 
 <view class="container-point">
   <view class="point-logo">
-    <image src="{{images.logo}}" class="point-logo-image"/>
+    <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image"/>
     <text class="name">{{currentData.points.vipName}}</text>
   </view>
   <view class="radiu-block-bg">
-    <image src="{{images.bg}}" mode='aspectFill' class="point-logo-image"/>
+    <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image"/>
     <text class="num">{{cacheData.points.upgrade}}</text>
     <text class="title">{{currentData.points.flag}}</text>
   </view>
@@ -24,7 +24,7 @@
 
 <view class="container-label">
   <view class="point-label">
-    <image src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.current}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.current}}</text>
@@ -33,7 +33,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.upgrade}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.upgrade}}</text>
@@ -42,7 +42,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.expire}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.expire}}</text>
@@ -51,11 +51,11 @@
 
 <view class="center-block-9">
   <view class="btn-label">
-    <image src="{{images.dui}}" class="label-logo"/>
+    <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab1}}</text>
   </view>
   <view class="btn-label">
-    <image src="{{images.new}}" class="label-logo"/>
+    <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab2}}</text>
   </view>
 </view>
