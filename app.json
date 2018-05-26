@@ -7,7 +7,8 @@
     "pages/activity/summer/index",
     "pages/activity/redeem/index",
     "pages/activity/promotion/index",
-    "pages/share/index"
+    "pages/share/index",
+    "pages/userInfo/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
