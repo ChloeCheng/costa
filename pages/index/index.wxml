@@ -1,6 +1,7 @@
 <banner list="{{bannerList}}"></banner>
+<bar active="true"></bar>
 <view class="language-change" bindtap="changeLanguage">
-  <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}"></image>
+  <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>
 </view>
 <view class="user-info">
   <view class="user-info-content">
@@ -12,7 +13,7 @@
         <view class="col-1">
           <text class="col-1-title">{{userInfo.nickName}}</text>
           <view class="col-1-opeater">
-             <image src="../../assets/edit.png"></image>
+             <image src="../../assets/edit.png" mode='aspectFit'></image>
               <text class="col-1-edit">编辑资料</text>
           </view>
         </view>
@@ -24,47 +25,47 @@
        
       </view>
       <view  class="code-url" bindtap="codeOperater">
-        <image src="../../assets/code.png"  class=""></image>
+        <image src="../../assets/code.png"  class="" mode='aspectFit'></image>
       </view>
   </view>
   <view class="icon-list">
     <view class="icon-list-col-1">
-      <view class="icon-list-col-block">
-         <image src="../../assets/point.png"></image>
+      <view class="icon-list-col-block" bindtap="gotoPoint">
+         <image src="../../assets/point.png" mode='aspectFit'></image>
          <view class="new-point"></view>
          <text>我的积分</text>
       </view>
       <view class="icon-list-col-block">
-         <image src="../../assets/card.png"></image>
+         <image src="../../assets/card.png" mode='aspectFit'></image>
          <view class="new-point"></view>
          <text>我的礼券</text>
       </view>
       <view class="icon-list-col-block">
-         <image src="../../assets/activity.png"></image>
+         <image src="../../assets/activity.png" mode='aspectFit'></image>
          <view class="new-point"></view>
          <text>最新活动</text>
       </view>
     </view>
     <view class="icon-list-col-2">
       <view class="icon-list-col-block">
-         <image src="../../assets/vip.png"></image>
+         <image src="../../assets/vip.png" mode='aspectFit'></image>
          <text>会员权益</text>
       </view>
-      <view class="icon-list-col-block">
-         <image src="../../assets/store.png"></image>
+      <view class="icon-list-col-block" bindtap="gotoStore">
+         <image src="../../assets/store.png" mode='aspectFit'></image>
          <text>门店查询</text>
       </view>
       <view class="icon-list-col-block" bindtap="showPhone">
-         <image src="../../assets/service.png"></image>
+         <image src="../../assets/service.png" mode='aspectFit'></image>
          <text>联系客服</text>
       </view>
     </view>
     <view class="code-view"  wx-if="{{showCode}}">
       <view class="code-pick-up" bindtap="codeOperater">
-        <image src="../../assets/pick_up.png"></image>
+        <image src="../../assets/pick_up.png" mode='aspectFit'></image>
         <text>收起</text>
       </view>
-      <image src="../../assets/code.png"></image>
+      <image src="../../assets/code.png" mode='aspectFit'></image>
       <text>使用时，出示此码</text>
     </view>
   </view>
@@ -87,7 +88,7 @@
       <view class="dialog-btns">
           <button class="u-login-wx" bindtap="showPhone">关闭</button>
           <button class="u-login-wx" bindtap="callPhone">
-            <image src="../../assets/tel.png"></image>
+            <image src="../../assets/tel.png" mode='aspectFit'></image>
           </button>
 
       </view>

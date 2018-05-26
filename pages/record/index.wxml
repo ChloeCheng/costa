@@ -1,3 +1,4 @@
+<bar active="true"></bar>
 <view class="center-title">
   <text>{{currentData.points.title}}</text>
 </view>
