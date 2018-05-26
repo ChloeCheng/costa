@@ -1,8 +1,61 @@
-<view class="center-title section">
+<view class="center-title">
   <text>{{currentData.points.title}}</text>
 </view>
 
-<view class="center-title section">
-  <text>{{currentData.points.title}}</text>
-  <text>{{currentData.points.flag}}</text>
+<view class="container-point">
+  <view class="point-logo">
+    <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image"/>
+    <text class="name">{{currentData.points.vipName}}</text>
+  </view>
+  <view class="radiu-block-bg">
+    <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image"/>
+    <text class="num">{{cacheData.points.upgrade}}</text>
+    <text class="title">{{currentData.points.flag}}</text>
+  </view>
+  <view class="point-logo" style="visibility:hidden">
+    <image src="{{images.logo}}" class="point-logo-image"/>
+    <text class="name">{{currentData.points.vipName}}</text>
+  </view>
+</view>
+<view  class="center-blcok-8">
+  <text class="line" 
+  style="width:{{cacheData.points.upgrade/cacheData.points.next*100}}%"></text>
+</view>
+
+<view class="container-label">
+  <view class="point-label">
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <text class="score">{{cacheData.points.current}}</text>        
+    <text class="flag">{{currentData.points.flag}}</text>    
+    <text class="text">{{currentData.points.current}}</text>
+  </view>
+  <view class="point-label">
+    <text class="line-h" />
+  </view>
+  <view class="point-label">
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <text class="score">{{cacheData.points.upgrade}}</text>        
+    <text class="flag">{{currentData.points.flag}}</text>    
+    <text class="text">{{currentData.points.upgrade}}</text>
+  </view>
+  <view class="point-label">
+    <text class="line-h" />
+  </view>
+  <view class="point-label">
+    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <text class="score">{{cacheData.points.expire}}</text>        
+    <text class="flag">{{currentData.points.flag}}</text>    
+    <text class="text">{{currentData.points.expire}}</text>
+  </view>
+</view>
+
+<view class="center-block-9">
+  <view class="btn-label">
+    <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
+    <text class="text">{{currentData.points.tab1}}</text>
+  </view>
+  <view class="btn-label">
+    <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
+    <text class="text">{{currentData.points.tab2}}</text>
+  </view>
 </view>

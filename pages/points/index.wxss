@@ -1,6 +1,129 @@
 /* pages/points/index.wxss */
+
 .center-title{
   font-size: 16;
   color: red;
   text-align: center;
+}
+
+.radiu-block-bg{
+  position:relative;
+  height: 300rpx;
+  width: 250rpx;
+  text-align: center;
+}
+.radiu-block-bg .point-logo-image{
+  position:absolute;
+  left:0;
+  top:0;
+  width:250rpx;
+  height: 300rpx;
+}
+
+.radiu-block-bg .num{
+  display: block;
+  font-size: 100rpx;
+  line-height: 250rpx;
+}
+.radiu-block-bg .title{
+  display:block;
+  font-size: 30rpx;
+  position: relative;
+  color: red;
+  top:-70rpx;
+}
+
+.center-blcok-8{
+  width:80%;
+  margin:0 auto;
+  line-height:0rpx;
+  background:gray;
+  border-radius: 10rpx;
+}
+.line{
+  display: block;
+  height: 10rpx;
+  background: red;
+  border-radius: 10rpx;
+}
+.line-h{
+  display: inline-block;
+  width: 2rpx;
+  background: grey;
+  height: 100%;
+}
+.point-logo{
+  display: flex;
+  flex-direction:column;
+  width:100rpx;
+}
+.point-logo .point-logo-image{
+  width:100rpx;
+  height:100rpx;
+}
+.point-logo .name{
+  font-size:20rpx;
+  margin-top:10rpx;
+  color:red;
+}
+
+.container-point{
+  display:flex;
+  width:80%;
+  margin:30rpx auto 20rpx auto;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+
+.container-label{
+  width: 80%;
+  margin: 50rpx auto 20rpx auto;
+  display: flex;
+  justify-content:space-between;
+}
+.container-label .point-label{
+  flex-direction:column;
+  display:flex;
+  align-items:center;
+}
+.container-label .point-label-logo{
+  width:80rpx;
+  height:100rpx;
+}
+.container-label .score{
+  color:red;
+  font-size: 40rpx;
+}
+.container-label .flag{
+  font-size: 20rpx;
+  color: gray;
+}
+.container-label .text{
+  font-size: 26rpx;
+  color: gray;
+}
+.center-block-9{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content:space-between;
+}
+
+.center-block-9 .btn-label{
+  height:100rpx;
+  width: 48%;
+  border: 2px red solid;
+  border-radius: 10rpx;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+.center-block-9 .label-logo{
+  width:70rpx;
+  height:80rpx;
+}
+.center-block-9 .btn-label .text{
+  font-size: 30rpx;
+  color: red;
+  margin-left: 10rpx;
 }
