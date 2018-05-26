@@ -1,4 +1,94 @@
 <banner list="{{bannerList}}"></banner>
-<view>
-   
+<view class="language-change" bindtap="changeLanguage">
+  <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}"></image>
+</view>
+<view class="user-info">
+  <view class="user-info-content">
+      <view  class="avatar-url">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      
+      <view class="user-info-detail">
+        <view class="col-1">
+          <text class="col-1-title">{{userInfo.nickName}}</text>
+          <view class="col-1-opeater">
+             <image src="../../assets/edit.png"></image>
+              <text class="col-1-edit">编辑资料</text>
+          </view>
+        </view>
+        <text class="col-2">红卡会员</text>
+        <view class="col-3">
+           <text class="col-3-point"><text>5</text>积分</text>
+           <text class="small-text">距离银卡需700积分</text>
+        </view>
+       
+      </view>
+      <view  class="code-url" bindtap="codeOperater">
+        <image src="../../assets/code.png"  class=""></image>
+      </view>
+  </view>
+  <view class="icon-list">
+    <view class="icon-list-col-1">
+      <view class="icon-list-col-block">
+         <image src="../../assets/point.png"></image>
+         <view class="new-point"></view>
+         <text>我的积分</text>
+      </view>
+      <view class="icon-list-col-block">
+         <image src="../../assets/card.png"></image>
+         <view class="new-point"></view>
+         <text>我的礼券</text>
+      </view>
+      <view class="icon-list-col-block">
+         <image src="../../assets/activity.png"></image>
+         <view class="new-point"></view>
+         <text>最新活动</text>
+      </view>
+    </view>
+    <view class="icon-list-col-2">
+      <view class="icon-list-col-block">
+         <image src="../../assets/vip.png"></image>
+         <text>会员权益</text>
+      </view>
+      <view class="icon-list-col-block">
+         <image src="../../assets/store.png"></image>
+         <text>门店查询</text>
+      </view>
+      <view class="icon-list-col-block" bindtap="showPhone">
+         <image src="../../assets/service.png"></image>
+         <text>联系客服</text>
+      </view>
+    </view>
+    <view class="code-view"  wx-if="{{showCode}}">
+      <view class="code-pick-up" bindtap="codeOperater">
+        <image src="../../assets/pick_up.png"></image>
+        <text>收起</text>
+      </view>
+      <image src="../../assets/code.png"></image>
+      <text>使用时，出示此码</text>
+    </view>
+  </view>
+</view>
+
+<view class="authorize-cover" wx-if="{{!authorizeUserInfo}}"></view>
+<view class="authorize-dialog" wx-if="{{!authorizeUserInfo}}">
+      <text>检测到您未打开微信用户信息授权，开启后即可进行操作</text>
+      <button class="u-login-wx" type="primary" open-type="getUserInfo" bindgetuserinfo="getuserinfo" hover-class="none">去开启</button>
+</view>
+
+<view class="dialog-cover" wx-if="{{showPhone}}"></view>
+<view class="dialog" wx-if="{{showPhone}}">
+      <text class="dialog-title">联系客服</text>
+      <view class="dialog-content">
+        <text class="">服务热线：<text class="bold">400-060-1971</text></text>
+        <text class="">服务时间：周一至周日 <text class="bold">9:00-21:00</text></text>
+      </view>
+     
+      <view class="dialog-btns">
+          <button class="u-login-wx" bindtap="showPhone">关闭</button>
+          <button class="u-login-wx" bindtap="callPhone">
+            <image src="../../assets/tel.png"></image>
+          </button>
+
+      </view>
 </view>
