@@ -9,7 +9,8 @@
     "pages/activity/promotion/index",
     "pages/share/index",
     "pages/userInfo/index",
-    "pages/card/index"  
+    "pages/card/index",
+    "pages/test/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
