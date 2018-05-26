@@ -61,11 +61,10 @@ Page({
     }
   },
   changeLanguage(){
-    app.global.currentLanguage = (this.data.currentLanguage === 'zh' ? 'en' : 'zh');
+    app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
     this.setData({
       'currentLanguage': app.global.currentLanguage
     });
-    
   },
   codeOperater(){
     let code = this.data.showCode;
@@ -91,6 +90,22 @@ Page({
         url: url,
       })
     }   
+  },
+  gotoPoint() {
+    let url = '/pages/point/index';
+    if (url) {
+      wx.navigateTo({
+        url: url,
+      })
+    }
+  },
+  gotoPromotion() {
+    let url = '/pages/activity/promotion/index';
+    if (url) {
+      wx.navigateTo({
+        url: url,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

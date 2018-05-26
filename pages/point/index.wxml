@@ -1,3 +1,4 @@
+<bar active="true"></bar>
 <view class="center-title">
   <text>{{currentData.points.title}}</text>
 </view>
@@ -33,7 +34,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.upgrade}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.upgrade}}</text>
@@ -42,7 +43,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.expire}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.expire}}</text>
@@ -50,12 +51,40 @@
 </view>
 
 <view class="center-block-9">
-  <view class="btn-label">
+  <view class="btn-label" bindtap='goRedeem'>
     <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab1}}</text>
   </view>
-  <view class="btn-label">
+  <view class="btn-label" bindtap="gotoPromotion">
     <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab2}}</text>
+  </view>
+</view>
+
+<view class="center-block-9 share-block">
+  <view class="ipt-label">
+   <input placeholder="{{currentData.points.placeholder}}"/>
+  </view>
+  <view class="btn-label-red btn-label" bindtap="gotoShare">
+    <image mode='aspectFit' src="{{images.share}}" class="label-logo"/>
+    <text class="btn-txt">{{currentData.points.btnTxt}}</text>
+  </view>
+</view>
+
+<view class="line-block"  bind:tap='goRecord'>
+  <view class="line-image-left">
+     <image mode='aspectFit' src="{{images.logo}}" />
+  </view>
+  <view class="line-left">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-center">
+    <text class="txt">{{currentData.points.subTitle}}</text>
+  </view>
+   <view class="line-right">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-image-right">
+     <image mode='aspectFit' src="{{images.logo}}" />
   </view>
 </view>

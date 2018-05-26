@@ -1,0 +1,38 @@
+<bar active="true"></bar>
+<view class="center-title">
+  <text>{{currentData.points.title}}</text>
+</view>
+
+<view class="line-block">
+  <view class="line-left">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-center">
+    <text class="txt">{{currentData.points.subTitle}}</text>
+  </view>
+   <view class="line-right">
+    <text class="line-v"></text>
+  </view>
+</view>
+
+<view class="point-list" >
+  <view class="point-item" wx:key="unique" wx:for="{{cacheData.list}}">
+    <view class="point-item-logo">
+      <image mode='aspectFit' src="{{images.costa}}" />
+    </view>
+    <view class="point-item-content">
+      <text class="name">{{item.name}}</text>
+      <text class="time">{{item.time}}</text>
+    </view>
+    <view class="point-item-right">
+      <view class="point-item-score">
+        <text class="score">{{item.value}}</text>
+        <text class="flag">{{currentData.points.flag}}</text>
+      </view>
+      <view class="point-item-icon">
+        <image mode='aspectFit' wx:if="{{item.value>0}}" src="{{images.up}}" />
+        <image mode='aspectFit' wx:if="{{item.value<0}}" src="{{images.down}}" />
+      </view>
+    </view>
+  </view>
+</view>

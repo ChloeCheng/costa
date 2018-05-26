@@ -1,0 +1,26 @@
+<!--pages/share/index.wxml-->
+<bar active="true"></bar>
+<view class='share-container' style="background-image:url('../../assets/share-bg.png')">
+
+<view class='content'>
+  <text class="share-tips" wx:if="{{shareType == 3}}">{{currentData.share.tips}}</text>
+  <text class="share-tips" wx:if="{{shareType == 4}}">{{currentData.share.tipsNone}}</text>
+  <view wx:if="{{shareType != 4}}">
+    <image mode='aspectFit' src='../../assets/share-icon.png' />
+  </view>
+   <view  wx:if="{{shareType == 4}}">
+    <image mode='aspectFit' src='../../assets/share-none.png' />
+  </view>
+  <text class="title">{{currentData.share.title}}</text>
+  <text class="txt">{{currentData.share.txt}}</text>
+  <block wx:if="{{shareType == 1}}">
+    <button type="default" open-type="share" hover-class="none"> {{currentData.share.btnTxt}} </button>
+  </block>
+    <block wx:if="{{shareType == 2}}">
+    <button type="default" hover-class="none"> {{currentData.share.btnTxtApt}} </button>
+  </block>
+  <block wx:if="{{shareType != 1&&shareType != 2}}">
+    <button type="default" hover-class="none"> {{currentData.share.btnTxtBack}}           </button>
+  </block>
+</view>
+</view>

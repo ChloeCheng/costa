@@ -1,10 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/points/index",
+    "pages/point/index",
+    "pages/record/index",
     "pages/store/index",
     "pages/activity/summer/index",
-    "pages/card/index"
+    "pages/activity/redeem/index",
+    "pages/activity/promotion/index",
+    "pages/share/index",
+    "pages/card/index"  
   ],
   "window": {
     "backgroundTextStyle": "light",
