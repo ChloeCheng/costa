@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -46,6 +46,18 @@
 					"id": -1,
 					"name": "redeem",
 					"pathName": "pages/activity/redeem/index",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "summer",
+					"pathName": "pages/activity/summer/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "promotion",
+					"pathName": "pages/activity/promotion/index",
 					"query": ""
 				}
 			]

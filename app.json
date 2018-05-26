@@ -5,7 +5,8 @@
     "pages/record/index",
     "pages/store/index",
     "pages/activity/summer/index",
-    "pages/activity/redeem/index"
+    "pages/activity/redeem/index",
+    "pages/activity/promotion/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

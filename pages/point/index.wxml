@@ -55,7 +55,7 @@
     <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab1}}</text>
   </view>
-  <view class="btn-label">
+  <view class="btn-label" bindtap="gotoPromotion">
     <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab2}}</text>
   </view>

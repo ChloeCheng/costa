@@ -33,10 +33,21 @@ Page({
       url: '/pages/record/index'
     })
   },
+  gotoPromotion() {
+    let url = '/pages/activity/promotion/index';
+    if (url) {
+      wx.navigateTo({
+        url: url,
+      })
+    }
+  },
   goRedeem: function (e) {
     wx.navigateTo({
       url: '/pages/activity/redeem/index'
     })
+  },
+  changeLanguage() {
+    app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
   },
   methods:{
     
@@ -46,7 +57,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    this.setData({ currentData: app.global[app.global['currentLanguage']]})
   },
 
   /**

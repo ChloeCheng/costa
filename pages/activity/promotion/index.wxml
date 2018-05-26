@@ -1,0 +1,18 @@
+<!--pages/activity/promotion/index.wxml-->
+<view class="center-title">
+  <text>最新活动</text>
+</view>
+<view class='block-radiu'>
+  <banner list="{{bannerList}}"></banner>
+</view>
+<bar active="true"></bar>
+
+<view class="promotion-info">
+  <view>
+   <image mode='aspectFit' src='../../../assets/activity/logo-red.png' mode='aspectFill'/>
+   </view>
+    <view class="info-block">
+      <text class="tips">夏季福利资讯</text>
+      <text class="txt">夏季第一波好礼诚意上线，喝夏日新品享积分精美好礼，快到COSTA门店参与吧～</text>
+    </view>
+</view>

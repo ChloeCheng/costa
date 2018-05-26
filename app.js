@@ -22,7 +22,24 @@ App({
       }
     },
     en:{
-
+      redeem: {
+        title: 'Redeem Points',
+        tips: 'More Options for Rewards Redmeption',
+        txt: 'Coming soon'
+      },
+      points: {
+        flag: 'Points',
+        title: 'Point Center',
+        vipName: 'Red Member',
+        current: 'Current Point',
+        upgrade: 'Points required to upgrade',
+        expire: 'Expiring at then end of this month',
+        tab1: 'Redeem Points',
+        tab2: 'Promotions',
+        placeholder: 'Enter the points given',
+        btnTxt: 'Share with',
+        subTitle: 'Points History',
+      },
     }
   },
   onLaunch: function () {

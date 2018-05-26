@@ -40,7 +40,7 @@
          <view class="new-point"></view>
          <text>我的礼券</text>
       </view>
-      <view class="icon-list-col-block">
+      <view class="icon-list-col-block" bindtap="gotoPromotion">
          <image src="../../assets/activity.png" mode='aspectFit'></image>
          <view class="new-point"></view>
          <text>最新活动</text>
