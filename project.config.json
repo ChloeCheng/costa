@@ -39,6 +39,12 @@
 					"name": "points",
 					"pathName": "pages/points/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "record",
+					"pathName": "pages/record/index",
+					"query": ""
 				}
 			]
 		}

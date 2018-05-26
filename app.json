@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/points/index",
-    "pages/activity/summer/index"
+    "pages/activity/summer/index",
+    "pages/record/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

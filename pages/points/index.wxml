@@ -33,7 +33,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.upgrade}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.upgrade}}</text>
@@ -42,7 +42,7 @@
     <text class="line-h" />
   </view>
   <view class="point-label">
-    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
+    <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.expire}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
     <text class="text">{{currentData.points.expire}}</text>
@@ -57,5 +57,68 @@
   <view class="btn-label">
     <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab2}}</text>
+  </view>
+</view>
+
+<view class="center-block-9 share-block">
+  <view class="ipt-label">
+   <input placeholder="{{currentData.points.placeholder}}"/>
+  </view>
+  <view class="btn-label-red btn-label">
+    <image mode='aspectFit' src="{{images.share}}" class="label-logo"/>
+    <text class="btn-txt">{{currentData.points.btnTxt}}</text>
+  </view>
+</view>
+
+<view class="line-block">
+  <view class="line-left">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-center">
+    <text class="txt">{{currentData.points.subTitle}}</text>
+  </view>
+   <view class="line-right">
+    <text class="line-v"></text>
+  </view>
+</view>
+
+
+<view class="line-block">
+  <view class="line-image-left">
+     <image mode='aspectFit' src="{{images.logo}}" />
+  </view>
+  <view class="line-left">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-center">
+    <text class="txt">{{currentData.points.subTitle}}</text>
+  </view>
+   <view class="line-right">
+    <text class="line-v"></text>
+  </view>
+  <view class="line-image-right">
+     <image mode='aspectFit' src="{{images.logo}}" />
+  </view>
+</view>
+
+
+<view class="point-list" >
+  <view class="point-item" wx:for="{{cacheData.list}}">
+    <view class="point-item-logo">
+      <image mode='aspectFit' src="{{images.logo}}" />
+    </view>
+    <view class="point-item-content">
+      <text class="name">{{item.name}}</text>
+      <text class="time">{{item.time}}</text>
+    </view>
+    <view class="point-item-right">
+      <view class="point-item-score">
+        <text class="score">{{item.value}}</text>
+        <text class="flag">{{currentData.points.flag}}</text>
+      </view>
+      <view class="point-item-icon">
+        <image mode='aspectFit' src="{{images.up}}" />
+      </view>
+    </view>
   </view>
 </view>
