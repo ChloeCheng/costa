@@ -19,6 +19,15 @@ App({
         title: '积分兑换',
         tips:'更多积分兑换礼品',
         txt:'敬请期待'
+      },
+      share:{
+        title:'送给大家',
+        txt: '感觉自己壕壕搭',
+        btnTxt:'分享给大家',
+        btnTxtBack: '返回我的积分',
+        btnTxtApt: '确认领取积分',
+        tips:'你已成功抢到此积分',
+        tipsNone: '已被他人领取',
       }
     },
     en:{
@@ -40,6 +49,13 @@ App({
         btnTxt: 'Share with',
         subTitle: 'Points History',
       },
+      share: {
+        title: '送给大家',
+        txt: '感觉自己壕壕哒',
+        btnTxt: 'Share with friends',
+        btnTxtBack: 'back',
+        btnTxtApt: 'Confirm',
+      }
     }
   },
   onLaunch: function () {

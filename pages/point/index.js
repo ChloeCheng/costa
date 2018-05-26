@@ -33,6 +33,11 @@ Page({
       url: '/pages/record/index'
     })
   },
+  gotoShare: function (e) {
+    wx.navigateTo({
+      url: '/pages/share/index'
+    })
+  },
   gotoPromotion() {
     let url = '/pages/activity/promotion/index';
     if (url) {

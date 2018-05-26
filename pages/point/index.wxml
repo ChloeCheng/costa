@@ -65,7 +65,7 @@
   <view class="ipt-label">
    <input placeholder="{{currentData.points.placeholder}}"/>
   </view>
-  <view class="btn-label-red btn-label">
+  <view class="btn-label-red btn-label" bindtap="gotoShare">
     <image mode='aspectFit' src="{{images.share}}" class="label-logo"/>
     <text class="btn-txt">{{currentData.points.btnTxt}}</text>
   </view>
