@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0;
     z-index: 10;
-    height:96rpx;
+    height:106rpx;
     display: flex;
      width:100%;
      background: #9E0028;
@@ -15,9 +15,9 @@
 }
 
 .tabbar image {
-    margin-top:6rpx;
-    width:40rpx;
-    height:40rpx;
+    margin-top:12rpx;
+    width:42rpx;
+    height:42rpx;
 }
 
 .tabbar text{

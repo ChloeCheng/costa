@@ -1,5 +1,4 @@
 {
-    "navigationBarTitleText": "COSTA",
     "usingComponents": {
       "bar": "../../components/bar/bar"
     }

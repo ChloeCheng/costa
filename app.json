@@ -3,12 +3,13 @@
     "pages/index/index",
     "pages/points/index",
     "pages/store/index",
-    "pages/activity/summer/index"
+    "pages/activity/summer/index",
+    "pages/card/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "COSTA会员卡",
+    "navigationBarTitleText": "COSTA",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {

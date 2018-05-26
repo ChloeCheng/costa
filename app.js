@@ -15,12 +15,18 @@ App({
         btnTxt:'分享给好友',
         subTitle:'积分记录',
       },
+      home:{
+        edit: '编辑资料',
+        cardlevel1: '红卡会员',
+        cardlevel2: '银卡会员',
+        cardlevel3: '金卡会员',
+      }
     },
     en:{
 
     }
   },
   onLaunch: function () {
-    
+
   }
 })

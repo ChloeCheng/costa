@@ -1,0 +1,53 @@
+<bar></bar>
+<view class="card-body">
+   <text class="card-title">我的礼券</text>
+   <view class="card-active">
+      <view  class="card-active-head">
+         <view class="card-icon">
+            <image src="../../assets/card/card_active.png" mode='aspectFit'></image>
+         </view>
+         <text class="card-num">我的礼券<text>0</text>张</text>
+         <view class="card-op" bindtap="activeSpreadTap">
+             <image src="{{activeSpread?'../../assets/card/card_active_up.png':'../../assets/card/card_active_down.png'}}" mode='aspectFit'></image>
+             <text>{{activeSpread?'收起':'展开'}}</text>
+         </view>
+      </view>
+      <view class="card-active-list"  wx-if="{{activeSpread}}">
+        <view class="card-active-list-item">
+            <view class="card-icon">
+                <image src="../../assets/card/type_4.png" mode='aspectFit'></image>
+            </view>
+            <view class="card-center">
+              <text class="card-active-status">新人礼包</text>
+              <text>消费即获双倍积分</text>
+            </view>
+            <text class="card-list-time">有效期 2018-05-26</text>
+        </view>
+      </view>
+   </view>
+
+   <view class="card-disable">
+      <view  class="card-disable-head">
+         <view class="card-icon">
+            <image src="../../assets/card/card_overtime.png" mode='aspectFit'></image>
+         </view>
+         <text class="card-num">我的礼券<text>0</text>张</text>
+         <view class="card-op"  bindtap="disableSpreadTap">
+             <image src="{{disableSpread?'../../assets/card/card_disable_up.png':'../../assets/card/card_disable_down.png'}}" mode='aspectFit'></image>
+             <text>{{disableSpread?'收起':'展开'}}</text>
+         </view>
+      </view>
+      <view class="card-active-list" wx-if="{{disableSpread}}">
+        <view class="card-active-list-item">
+            <view class="card-icon">
+                <image src="../../assets/card/type_4.png" mode='aspectFit'></image>
+            </view>
+            <view class="card-center">
+              <text>新人礼包</text>
+              <text>消费即获双倍积分</text>
+            </view>
+            <text class="card-list-time">有效期 2018-05-26</text>
+        </view>
+      </view>
+   </view>
+</view>
