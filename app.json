@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/points/index",
+    "pages/store/index",
     "pages/activity/summer/index"
   ],
   "window": {
@@ -12,24 +13,5 @@
   },
   "networkTimeout": {
     "request": 10000
-  },
-  "tabBar": {
-    "color": "#DAA5B1",
-    "selectedColor": "#FBF5F7",
-    "backgroundColor": "#9E0028",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "主页",
-        "iconPath": "assets/home.png",
-        "selectedIconPath": "assets/home-active.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "微信支付",
-        "iconPath": "assets/pay.png",
-        "selectedIconPath": "assets/pay-active.png"
-      }
-    ]
   }
 }

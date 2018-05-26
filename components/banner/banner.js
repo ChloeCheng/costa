@@ -22,7 +22,6 @@ Component({
     },
 
     ready(){
-
     },
 
     /**
