@@ -123,7 +123,7 @@ button[class="u-login-wx"]::after {
 }
 
 .user-info{
-  padding: 70rpx 80rpx 30rpx 80rpx;
+  padding: 70rpx 80rpx 120rpx 80rpx;
 }
 .user-info-content{
   display: flex;
@@ -147,21 +147,25 @@ button[class="u-login-wx"]::after {
   margin-left: 32rpx;
 }
 .col-1-title{
-  font-size:46rpx;
+  font-size:32rpx;
   font-weight: bold;
   color:#333333;
   flex:1;
+  max-width: 300rpx;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .col-1{
    display: flex;
 }
 .col-1-opeater{
-  width:280rpx;
   text-align: right;
   margin-right:20rpx;
 }
 .col-1-edit{
-  font-size:28rpx;
+  font-size:24rpx;
   color: #B8B4B4;
 }
 .col-1 image{
@@ -172,12 +176,12 @@ button[class="u-login-wx"]::after {
   margin-right:12rpx;
 }
 .col-2 {
-  font-size: 48rpx;
+  font-size: 32rpx;
   color:#9E0027;
   font-weight: bold;
 }
 .col-3-point{
-  font-size: 36rpx;
+  font-size: 28rpx;
   color:#9E0027;
 }
 .col-3-point text{
@@ -268,6 +272,8 @@ button[class="u-login-wx"]::after {
 .code-view > image{
   width:280rpx;
   height:280rpx;
+  margin-top:16rpx;
+  margin-left: 8rpx;
 }
 .code-view {
 }

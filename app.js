@@ -1,8 +1,14 @@
 App({
-  global: {
-    currentLanguage: 'zh',
-    zh: {
-      points: {
+  global:{
+    currentLanguage:'zh',
+    zh:{
+      home:{
+        edit: '编辑资料',
+        cardlevel1: '红卡会员',
+        cardlevel2: '银卡会员',
+        cardlevel3: '金卡会员',
+      },
+      points:{
         flag: '积分',
         title: '积分中心',
         vipName: '红卡会员',

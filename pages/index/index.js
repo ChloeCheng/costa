@@ -14,7 +14,8 @@ Page({
     userInfo: null,
     currentLanguage: app.global.currentLanguage || 'zh',
     showCode: false,
-    showPhone: false
+    showPhone: false,
+    currentData: app.global[app.global['currentLanguage']]
   },
 
   onLoad: function () {
@@ -52,7 +53,6 @@ Page({
       }); 
       wx.getUserInfo({
         success: function(res) {
-          console.dir(res.userInfo)
           _this.setData({
             'userInfo': res.userInfo
           });
@@ -83,13 +83,21 @@ Page({
       'showPhone': !code
     });
   },
-  gotoStore(){
-    let url = '/pages/store/index';
+  gotoPage: function(e){
+    let url = e.currentTarget.dataset.detail;
     if(url){
       wx.navigateTo({
         url: url,
       })
     }   
+  },
+  gotoEdit() {
+    let url = '/pages/userInfo/index';
+    if(url) {
+      wx.navigateTo({
+        url: url,
+      })
+    }
   },
   gotoPoint() {
     let url = '/pages/point/index';

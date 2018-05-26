@@ -8,12 +8,13 @@
     "pages/activity/redeem/index",
     "pages/activity/promotion/index",
     "pages/share/index",
-    "pages/userInfo/index"
+    "pages/userInfo/index",
+    "pages/card/index"  
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "COSTA会员卡",
+    "navigationBarTitleText": "COSTA",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
