@@ -18,6 +18,7 @@ Page({
       'share': '../../assets/point/share.png',
       'up': '../../assets/point/up.png',
       'down': '../../assets/point/down.png',
+      costa: '../../assets/costa.png',
     },
     cacheData: {
       list: [{
@@ -27,7 +28,7 @@ Page({
       }, {
         name: '001',
         time: '2019-08-18',
-        value: 10,
+        value: -10,
       }]
     },
   },

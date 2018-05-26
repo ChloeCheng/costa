@@ -25,17 +25,16 @@ Page({
         upgrade:550,
         expire:50,
         next:800,
-      },
-      list:[{
-        name:'002',
-        time:'2018-08-01',
-        value:1,
-      }, {
-        name: '001',
-        time: '2019-08-18',
-        value: 10,
-      }]
+      }
     },
+  },
+  goRecord: function (e) {
+    wx.navigateTo({
+      url: '/pages/record/index'
+    })
+  },
+  methods:{
+    
   },
 
   /**

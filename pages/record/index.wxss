@@ -2,21 +2,20 @@
 /* pages/points/index.wxss */
 
 .center-title{
-  font-size: 16;
-  color: red;
+  font-size: 36rpx;
+  color: #a5002a;
   text-align: center;
 }
 
-
 .line-v{
   height: 2rpx;
-  background-color: gray;
+  background-color: #b5b5b5;
   width:100%;
   display:block;
 }
 .line-block{
+  margin: 40rpx auto;
   width: 90%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +42,7 @@
   margin-right:20rpx;
 }
 
+
 .point-list{
   width: 90%;
   margin: 0 auto;
@@ -59,7 +59,7 @@
   justify-content: center;
   align-items: center;
   padding: 20rpx 10rpx;
-  border:2px gray solid;
+  border:2px #b5b5b5 solid;
   border-radius:20rpx;
   margin:20rpx 0;
 }
@@ -75,11 +75,10 @@
 }
 .point-item-content .name{
   font-size: 30rpx;
-  color: gray;
 }
 .point-item-content .time{
   font-size: 26rpx;
-  color: gray;
+  color: #535c64;
 }
 .point-item .point-item-right{
   display:flex;
@@ -90,10 +89,10 @@
   flex-direction: column;
 }
 .point-item-score .score{
-  color:red;
+  color:#a5002a;
   font-size: 50rpx;
 }
 .point-item-score .flag{
-  color:gray;
   font-size: 30rpx;
+  color: #535c64;
 }
