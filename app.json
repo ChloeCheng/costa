@@ -4,7 +4,8 @@
     "pages/point/index",
     "pages/record/index",
     "pages/store/index",
-    "pages/activity/summer/index"
+    "pages/activity/summer/index",
+    "pages/activity/redeem/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

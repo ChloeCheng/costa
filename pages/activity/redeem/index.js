@@ -1,4 +1,4 @@
-// pages/points/index.js
+// pages/activity/redeem/index.js
 const app = getApp()
 Page({
 
@@ -7,8 +7,8 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']],
-    images:{
-      logo:'../../assets/point/vip-logo.png',
+    images: {
+      logo: '../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',
       current: '../../assets/point/current.png',
       upgrade: '../../assets/point/upgrade.png',
@@ -19,42 +19,20 @@ Page({
       'up': '../../assets/point/up.png',
       'down': '../../assets/point/down.png',
     },
-    cacheData:{
-      points:{
-        current:1,
-        upgrade:550,
-        expire:50,
-        next:800,
-      }
-    },
-  },
-  goRecord: function (e) {
-    wx.navigateTo({
-      url: '/pages/record/index'
-    })
-  },
-  goRedeem: function (e) {
-    wx.navigateTo({
-      url: '/pages/activity/redeem/index'
-    })
-  },
-  methods:{
-    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+  
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
-    console.log(this.data.currentData)
+  
   },
 
   /**

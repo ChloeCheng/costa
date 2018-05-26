@@ -51,7 +51,7 @@
 </view>
 
 <view class="center-block-9">
-  <view class="btn-label">
+  <view class="btn-label" bindtap='goRedeem'>
     <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
     <text class="text">{{currentData.points.tab1}}</text>
   </view>

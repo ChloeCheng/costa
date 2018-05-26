@@ -15,6 +15,11 @@ App({
         btnTxt:'积分转赠好友',
         subTitle:'积分记录',
       },
+      redeem:{
+        title: '积分兑换',
+        tips:'更多积分兑换礼品',
+        txt:'敬请期待'
+      }
     },
     en:{
 
