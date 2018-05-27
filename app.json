@@ -11,6 +11,7 @@
     "pages/userInfo/index",
     "pages/card/index",
     "pages/test/index",
+    "pages/member/index",
     "pages/login/index",
     "pages/agreement/index"
   ],

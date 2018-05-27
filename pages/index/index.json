@@ -1,7 +1,6 @@
 {
-    "usingComponents": {
-      "banner": "../../components/banner/banner",
-      "bar": "../../components/bar/bar"
-    },
-    "enablePullDownRefresh": true
+  "usingComponents": {
+    "banner": "../../components/banner/banner",
+    "bar": "../../components/bar/bar"
   }
+}

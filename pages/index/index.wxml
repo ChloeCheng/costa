@@ -46,7 +46,7 @@
       </view>
     </view>
     <view class="icon-list-col-2">
-      <view class="icon-list-col-block">
+      <view class="icon-list-col-block" bindtap="gotoPage" data-detail='/pages/member/index'>
          <image src="../../assets/vip.png" mode='aspectFit'></image>
          <text>{{currentData.member}}</text>
       </view>
