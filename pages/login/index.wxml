@@ -1,5 +1,5 @@
 <!--pages/share/index.wxml-->
-<view class='bg-container' style="background-image:url('../../assets/login/login-bg.png')">
+<view class='bg-container' style="background-image:url('../../assets/share-bg.png')">
   <view class="language-change" bindtap="changeLanguage">
     <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>
   </view>
