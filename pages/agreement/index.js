@@ -1,18 +1,27 @@
 // pages/agreement/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    currentData: app.global[app.global['currentLanguage']].agreement,
+    'currentLanguage': app.global.currentLanguage,
+  },
+  changeLanguage() {
+    app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
+    this.setData({
+      'currentLanguage': app.global.currentLanguage,
+      currentData: app.global[app.global['currentLanguage']].agreement,
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+  //debugger
   },
 
   /**
