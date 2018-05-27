@@ -24,11 +24,11 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
+		"game": {
 			"list": []
 		},
-		"game": {
+		"plugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -83,9 +83,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "userInfo",
-					"pathName": "pages/test/index",
+					"pathName": "pages/index/index",
 					"query": ""
 				},
 				{

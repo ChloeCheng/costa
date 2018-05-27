@@ -1,7 +1,9 @@
 <!--pages/share/index.wxml-->
 <bar active="true"></bar>
-<view class='share-container' style="background-image:url('../../assets/share-bg.png')">
-
+<view class='share-container'>
+<view  class='bg-image' >
+  <image src='../../assets/share-bg.png' mode='widthFix'></image> 
+</view>
 <view class='content'>
   <text class="share-tips" wx:if="{{shareType == 3}}">{{currentData.share.tips}}</text>
   <text class="share-tips" wx:if="{{shareType == 4}}">{{currentData.share.tipsNone}}</text>
@@ -18,13 +20,13 @@
   <text class="txt"  wx:if="{{shareType == 4}}">{{currentData.share.titleNone}}</text>
   
   <block wx:if="{{shareType == 1}}">
-    <button type="default" open-type="share" hover-class="none"> {{currentData.share.btnTxt}} </button>
+    <button type="default" open-type="share" hover-class="none" bindtap='goback'> {{currentData.share.btnTxt}}     </button>
   </block>
     <block wx:if="{{shareType == 2}}">
-    <button type="default" hover-class="none"> {{currentData.share.btnTxtApt}} </button>
+    <button type="default" hover-class="none" bindtap='goback'> {{currentData.share.btnTxtApt}} </button>
   </block>
   <block wx:if="{{shareType != 1&&shareType != 2}}">
-    <button type="default" hover-class="none"> {{currentData.share.btnTxtBack}}                   </button>
+    <button type="default" hover-class="none" bindtap='goback'> {{currentData.share.btnTxtBack}}                   </button>
   </block>
 </view>
 </view>
