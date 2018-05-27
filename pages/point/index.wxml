@@ -73,7 +73,7 @@
 
 <view class="line-block"  bind:tap='goRecord'>
   <view class="line-image-left">
-     <image mode='aspectFit' src="{{images.logo}}" />
+     <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
   </view>
   <view class="line-left">
     <text class="line-v"></text>
@@ -85,6 +85,6 @@
     <text class="line-v"></text>
   </view>
   <view class="line-image-right">
-     <image mode='aspectFit' src="{{images.logo}}" />
+     <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
   </view>
 </view>

@@ -90,8 +90,8 @@
 				},
 				{
 					"id": -1,
-					"name": "member",
-					"pathName": "pages/member/index",
+					"name": "login",
+					"pathName": "pages/login/index",
 					"query": ""
 				},
 				{
