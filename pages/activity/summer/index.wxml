@@ -1,8 +1,33 @@
-<view class="center-title section">
-  <text>{{currentData.points.title}}</text>
-</view>
-
-<view class="center-title section">
-  <text>{{currentData.points.title}}</text>
-  <text>{{currentData.points.flag}}</text>
+<view class="" style="background:url(../../../assets/summer/summer_bg.png) repeat 0 0">
+  <text class="title">会员畅享一夏</text>
+  <view class="summer-line">
+      <image class="line" src="../../../assets/summer/line.png" mode='aspectFit'></image>
+      <image class="bean"  src="../../../assets/summer/bean.png" mode='aspectFit'></image>
+  </view>
+  <view>
+     <text>5月4日 - 7月5日</text>
+     <text>会员正价消费指定酷乐冰或冷萃系列新品，即可参加积杯活动</text>
+  </view>
+   <view>
+     <text>5月4日 - 7月5日</text>
+     <text>会员正价消费指定酷乐冰或冷萃系列新品，即可参加积杯活动</text>
+  </view>
+  <view>
+      <image class="line" src="../../../assets/summer/introduce.png" mode='aspectFit'></image>
+  </view>
+  <button class="btn">点看详情</button>
+  <view>
+      <text>
+         *礼品数量有限，先到先得，送完为止，礼品以实物为准
+      </text>
+      <text>
+         *以上活动，仅限会员正价消费指定酷乐冰或冷萃系列新品
+      </text>
+      <text>
+         *交通枢纽店、杭州阿里巴巴店、万达影视城店、SPP店、Compass店除外
+      </text>
+      <text>
+          *好友分享券：每张分享券可成功邀请1名微信好友入会，次日邀请者即可获得买一赠一券一张
+      </text>
+  </view>
 </view>
