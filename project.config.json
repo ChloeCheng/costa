@@ -87,6 +87,12 @@
 					"name": "userInfo",
 					"pathName": "pages/test/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "member",
+					"pathName": "pages/member/index",
+					"query": ""
 				}
 			]
 		}
