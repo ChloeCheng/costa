@@ -3,10 +3,25 @@ App({
     currentLanguage:'zh',
     zh:{
       home:{
+        home: '主页',
+        myPay: '微信支付',
         edit: '编辑资料',
         cardlevel1: '红卡会员',
         cardlevel2: '银卡会员',
         cardlevel3: '金卡会员',
+        myPoint:'我的积分',
+        myCard:'我的卡券',
+        activity:'最新活动',
+        member:'会员权益',
+        store:'门店查询',
+        points:'积分',
+        contactUs:'联系客服',
+        serviceTel:'服务热线：',
+        serviceTime:'服务时间：',
+        serviceTimeDetail:'周一至周日',
+        close: '关闭',
+        pickUp:'收起',
+        codeDesc:'使用时，出示此码'
       },
       points:{
         flag: '积分',
@@ -50,6 +65,27 @@ App({
       },
     },
     en: {
+      home:{
+        home: 'Home',
+        myPay: 'My Wallet',
+        edit: 'Profile Updates',
+        cardlevel1: 'Red Member',
+        cardlevel2: '银卡会员',
+        cardlevel3: '金卡会员',
+        myPoint:'My Points',
+        myCard:'My Coupons',
+        activity:'Promotions',
+        member:'Member Rewards',
+        store:'Store Location',
+        points:'points',
+        contactUs:'Contact us',
+        serviceTel:'Service HotLine：',
+        serviceTime:'Service Time：',
+        serviceTimeDetail:'Mon-Sun ',
+        close: 'Closed',
+        pickUp:'pack up',
+        codeDesc:'Please present QR code'
+      },
       redeem: {
         title: 'Redeem Points',
         tips: 'More Options for Rewards Redmeption',

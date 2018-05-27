@@ -123,7 +123,7 @@ button[class="u-login-wx"]::after {
 }
 
 .user-info{
-  padding: 70rpx 80rpx 120rpx 80rpx;
+  padding: 70rpx 60rpx 120rpx 60rpx;
 }
 .user-info-content{
   display: flex;
@@ -225,7 +225,7 @@ button[class="u-login-wx"]::after {
   flex:1;
   position: relative;
   border-right: 1rpx solid #dbdbdb;
-  padding: 30rpx 20rpx 20rpx;
+  padding: 30rpx 0rpx 20rpx;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -254,7 +254,7 @@ button[class="u-login-wx"]::after {
 .icon-list-col-block text{
   display: block;
   color:#333;
-  font-size: 28rpx;
+  font-size: 24rpx;
   margin-top: 20rpx;
 }
 
