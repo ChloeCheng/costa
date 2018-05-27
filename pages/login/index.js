@@ -13,11 +13,13 @@ Page({
     code:'',
     tel:'',
     checked:false,
+    secondFlag:-1,
   },
   changeLanguage() {
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
     this.setData({
       'currentLanguage': app.global.currentLanguage,
+      currentData: app.global[app.global['currentLanguage']].login,
     });
   },
   switchCheck(){
@@ -41,7 +43,24 @@ Page({
       date: e.detail.value
     })
   },
-
+  sendSMS(){
+    if (this.data.secondFlag != -1){
+      return
+    }
+    var SECOND_COUNT = 60;
+    this.setData({
+      secondFlag: SECOND_COUNT
+    })
+    var timeSecond = setInterval(()=>{
+      if (this.data.secondFlag == -1){
+        clearInterval(timeSecond)
+        return
+      }
+      this.setData({
+        secondFlag: (this.data.secondFlag - 1)
+      })
+    },1000)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

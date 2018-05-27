@@ -33,7 +33,9 @@
       <view class="input-ct">
         <input placeholder='{{currentData.code}}' placeholder-class="placeholder-input" bindinput="bindCodeInput"></input>
         <view>
-          <button class="btn-sms">{{currentData.sms}}</button>
+          <button class="btn-sms" bindtap='sendSMS'>
+          {{secondFlag == -1?currentData.sms:(secondFlag + currentData.tips)}}
+          </button>
         </view>
       </view>
     </view>

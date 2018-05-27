@@ -91,11 +91,12 @@
   min-width:140rpx;
 }
 .btn-sms{
-  font-size:28rpx;
+  font-size:26rpx;
   height:80rpx;
   line-height:80rpx;
   color:#222;
-  background: rgba(255, 255, 255, 0.5)
+  background: rgba(255, 255, 255, 0.5);
+  width:240rpx;
 }
 
 .agreement{

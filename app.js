@@ -140,16 +140,16 @@ App({
         btnTxt: 'Save Updates',
       },
       login:{
-        title:'欢迎加入',
-        tel:'输入手机号码',
-        code:'输入短信验证码',
-        sms:'点击发送验证码',
-        tips:'秒后重新发送',
-        btnTxt:'提交',
-        btnAgreement1:'我已阅读并同意',
-        btnAgreement2: '服务条款',
-        agreementTitle:'会员服务条款',
-        agreementBtnTxt:"同意并继续注册"
+        title:'欢迎加入1',
+        tel:'输入手机号码1',
+        code:'输入短信验证码1',
+        sms:'发送验证码1',
+        tips:'s后重发1',
+        btnTxt:'提交1',
+        btnAgreement1:'我已阅读并同意1',
+        btnAgreement2: '服务条款1',
+        agreementTitle:'会员服务条款1',
+        agreementBtnTxt:"同意并继续注册1"
       }
     }
   },
