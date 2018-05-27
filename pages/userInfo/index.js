@@ -9,7 +9,7 @@ Page({
     currentData: app.global[app.global['currentLanguage']].userInfo,
     userName:"",
     date:"2017-01-02",
-    sex:"男",
+    sex: app.global[app.global['currentLanguage']].userInfo.sex[0],
     city:'北京-北京',
     company:'',
     position:'',
@@ -74,6 +74,12 @@ Page({
     this.setData({
       items: items
     })
+    this.setData({ 
+      currentData: app.global[app.global['currentLanguage']].userInfo,
+      sex: app.global[app.global['currentLanguage']].userInfo.sex[0], 
+      city: '北京-北京',
+      date: "2017-01-02"})
+      console.log('laodn')
   },
 
   /**

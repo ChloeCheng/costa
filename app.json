@@ -10,8 +10,10 @@
     "pages/share/index",
     "pages/userInfo/index",
     "pages/card/index",
+    "pages/test/index",
     "pages/member/index",
-    "pages/test/index"
+    "pages/login/index",
+    "pages/agreement/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
