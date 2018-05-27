@@ -15,7 +15,8 @@ Page({
     currentLanguage: app.global.currentLanguage || 'zh',
     showCode: false,
     showPhone: false,
-    currentData: app.global[app.global['currentLanguage']]
+    currentData: app.global[app.global['currentLanguage']].home,
+    currentBarDate: app.global[app.global['currentLanguage']]
   },
 
   onLoad: function () {
@@ -63,7 +64,9 @@ Page({
   changeLanguage(){
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
     this.setData({
-      'currentLanguage': app.global.currentLanguage
+      'currentLanguage': app.global.currentLanguage,
+      'currentData': app.global[app.global['currentLanguage']].home,
+      'currentBarDate': app.global[app.global['currentLanguage']]
     });
   },
   codeOperater(){

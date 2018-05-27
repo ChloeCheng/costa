@@ -7,6 +7,10 @@ Component({
         active: {
             type: Boolean,
             value: false
+        },
+        currentDate: {
+            type: Object,
+            value: {home:{home:'主页','myPay':'微信支付'}}
         }
     },
 
@@ -14,7 +18,6 @@ Component({
      * 组件的初始数据
      */
     data: {
-    
     },
 
     ready(){
@@ -27,16 +30,9 @@ Component({
     methods: {
         skipHome: function(){
            let url = '/pages/index/index';
-           console.log(url)
            if(url){
              wx.navigateTo({
                 url: url,
-                success: function(res){
-                  console.log(res)
-                },
-                fail: function(res){
-                    console.log(res)
-                }
               })
            }    
         },
