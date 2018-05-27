@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 12,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -83,9 +83,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "userInfo",
-					"pathName": "pages/test/index",
+					"pathName": "pages/index/index",
 					"query": ""
 				},
 				{
@@ -109,7 +109,8 @@
 				{
 					"id": -1,
 					"name": "agreement",
-					"pathName": "pages/agreement/index"
+					"pathName": "pages/agreement/index",
+					"query": ""
 				}
 			]
 		}
