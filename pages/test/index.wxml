@@ -7,3 +7,6 @@
     </view>
   </picker>
 </view>
+
+<button type="primary" bindtap="handleClick">按钮</button>
+<zan-dialog id="zan-dialog-test"></zan-dialog>
