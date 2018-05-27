@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    currentData: app.global[app.global['currentLanguage']]
   },
 
   /**
@@ -22,6 +22,7 @@ Page({
    */
   onReady: function () {
    
+    console.log(this.data.currentData)
   },
 
   /**

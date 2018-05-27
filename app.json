@@ -5,6 +5,7 @@
     "pages/record/index",
     "pages/store/index",
     "pages/activity/summer/index",
+    "pages/activity/detail/index",
     "pages/activity/redeem/index",
     "pages/activity/promotion/index",
     "pages/share/index",

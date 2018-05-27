@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -99,6 +99,11 @@
 					"name": "member",
 					"pathName": "pages/member/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "summer",
+					"pathName": "pages/activity/summer/index"
 				}
 			]
 		}
