@@ -43,12 +43,14 @@ App({
       },
       share: {
         title: '送给大家',
+        titleNone: '慢一步啦',
         txt: '感觉自己壕壕哒',
+        txtNone: '积分已被拿走',
         btnTxt: '分享给大家',
         btnTxtBack: '返回我的积分',
         btnTxtApt: '确认领取积分',
         tips: '你已成功抢到此积分',
-        tipsNone: '已被他人领取',
+        tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
       },
       userInfo: {
         title: '个人信息修改',
@@ -63,6 +65,18 @@ App({
         items: ['美式', '拿铁', '卡布奇诺', '摩卡', '醇艺白', '意式浓缩', '可塔朵', '茶饮', '巧克力'],
         btnTxt: '确认修改',
       },
+      login: {
+        title: '欢迎加入',
+        tel: '输入手机号码',
+        code: '输入短信验证码',
+        sms: '发送验证码',
+        tips: '秒后重发',
+        btnTxt: '提交',
+        btnAgreement1: '我已阅读并同意',
+        btnAgreement2: '服务条款',
+        agreementTitle: '会员服务条款',
+        agreementBtnTxt: "同意并继续注册"
+      }
     },
     en: {
       home:{
@@ -112,18 +126,30 @@ App({
         btnTxtApt: 'Confirm',
       },
       userInfo: {
-        title: '个人信息修改',
-        requireType: '必填项',
-        selectType: '选填项',
-        selectsType: '选填项,可多选',
-        sex: ['男', '女'],
-        company: '所在公司',
-        position: '职位',
-        subTitle: '产品偏好',
-        tips: '告诉我们你的产品偏好，可获得20积分',
+        title: 'Profile Updates',
+        requireType: 'Required',
+        selectType: 'Optional',
+        selectsType: 'can select more then one',
+        sex: ['male', 'femal'],
+        company: 'My Company',
+        position: 'My Position',
+        subTitle: 'My Favorite',
+        tips: 'Tell us you favorite veverage and get extra 20 points',
         items: 
-        ['美式', '拿铁', '卡布奇诺', '摩卡', '醇艺白', '意式浓缩', '可塔朵', '茶饮', '巧克力'],
-        btnTxt: '确认修改',
+        ['Americano', 'Latte', 'Cappuccino', 'Mocha', 'Flat White', 'Espresso', 'Cortadp', 'Tea', 'Cholcolate'],
+        btnTxt: 'Save Updates',
+      },
+      login:{
+        title:'欢迎加入',
+        tel:'输入手机号码',
+        code:'输入短信验证码',
+        sms:'点击发送验证码',
+        tips:'秒后重新发送',
+        btnTxt:'提交',
+        btnAgreement1:'我已阅读并同意',
+        btnAgreement2: '服务条款',
+        agreementTitle:'会员服务条款',
+        agreementBtnTxt:"同意并继续注册"
       }
     }
   },

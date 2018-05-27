@@ -11,8 +11,12 @@
    <view  wx:if="{{shareType == 4}}">
     <image mode='aspectFit' src='../../assets/share-none.png' />
   </view>
-  <text class="title">{{currentData.share.title}}</text>
-  <text class="txt">{{currentData.share.txt}}</text>
+  <text class="title"  wx:if="{{shareType != 4}}">{{currentData.share.title}}</text>
+  <text class="title"  wx:if="{{shareType == 4}}">{{currentData.share.titleNone}}</text>
+  
+  <text class="txt"  wx:if="{{shareType != 4}}">{{currentData.share.txt}}</text>
+  <text class="txt"  wx:if="{{shareType == 4}}">{{currentData.share.titleNone}}</text>
+  
   <block wx:if="{{shareType == 1}}">
     <button type="default" open-type="share" hover-class="none"> {{currentData.share.btnTxt}} </button>
   </block>
@@ -20,7 +24,7 @@
     <button type="default" hover-class="none"> {{currentData.share.btnTxtApt}} </button>
   </block>
   <block wx:if="{{shareType != 1&&shareType != 2}}">
-    <button type="default" hover-class="none"> {{currentData.share.btnTxtBack}}           </button>
+    <button type="default" hover-class="none"> {{currentData.share.btnTxtBack}}                   </button>
   </block>
 </view>
 </view>

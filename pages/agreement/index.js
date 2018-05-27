@@ -1,15 +1,13 @@
-// pages/share/index.js
-const app = getApp()
-
+// pages/agreement/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentData: app.global[app.global['currentLanguage']],
-    shareType:4,//1,分享， 2，领积分， 3，领成， 4，领完了
+  
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

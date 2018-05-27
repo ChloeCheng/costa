@@ -18,7 +18,6 @@ Page({
     currentData: app.global[app.global['currentLanguage']].home,
     currentBarDate: app.global[app.global['currentLanguage']]
   },
-
   onLoad: function () {
     let _this = this;
     wx.getSetting({

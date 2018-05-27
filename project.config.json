@@ -24,15 +24,15 @@
 			"current": -1,
 			"list": []
 		},
+		"game": {
+			"list": []
+		},
 		"plugin": {
 			"current": -1,
 			"list": []
 		},
-		"game": {
-			"list": []
-		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -87,6 +87,11 @@
 					"name": "userInfo",
 					"pathName": "pages/test/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index"
 				}
 			]
 		}
