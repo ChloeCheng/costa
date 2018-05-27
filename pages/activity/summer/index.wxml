@@ -1,33 +1,38 @@
-<view class="" style="background:url(../../../assets/summer/summer_bg.png) repeat 0 0">
+<view class="body">
+  <view  class='bg-image' >
+    <image class="bg" src="../../../assets/summer/summer_bg.png"></image>
+  </view>
   <text class="title">会员畅享一夏</text>
   <view class="summer-line">
       <image class="line" src="../../../assets/summer/line.png" mode='aspectFit'></image>
       <image class="bean"  src="../../../assets/summer/bean.png" mode='aspectFit'></image>
   </view>
-  <view>
-     <text>5月4日 - 7月5日</text>
+   <view class="desc">
+     <text class="big">5月4日 - 7月5日</text>
      <text>会员正价消费指定酷乐冰或冷萃系列新品，即可参加积杯活动</text>
   </view>
-   <view>
-     <text>5月4日 - 7月5日</text>
-     <text>会员正价消费指定酷乐冰或冷萃系列新品，即可参加积杯活动</text>
+  <view class="icons">
+     <image class="icon-bg" src="../../../assets/summer/icon_bg.png"></image>
+     <view class="bean-type">
+        <image class="type-1 big" src="../../../assets/summer/type_1.png" mode='aspectFit'></image>
+        <image class="type-2" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
+        <image class="type-3 big" src="../../../assets/summer/type_3.png" mode='aspectFit'></image>
+        <image class="type-4" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
+        <image class="type-5" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
+        <image class="type-6 big" src="../../../assets/summer/type_4.png" mode='aspectFit'></image>
+        <image class="type-7" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
+        <image class="type-8" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
+        <image class="type-9 big" src="../../../assets/summer/type_5.png" mode='aspectFit'></image>        
+      </view>
   </view>
-  <view>
+  <view class="intr">
       <image class="line" src="../../../assets/summer/introduce.png" mode='aspectFit'></image>
   </view>
   <button class="btn">点看详情</button>
-  <view>
-      <text>
-         *礼品数量有限，先到先得，送完为止，礼品以实物为准
-      </text>
-      <text>
-         *以上活动，仅限会员正价消费指定酷乐冰或冷萃系列新品
-      </text>
-      <text>
-         *交通枢纽店、杭州阿里巴巴店、万达影视城店、SPP店、Compass店除外
-      </text>
-      <text>
-          *好友分享券：每张分享券可成功邀请1名微信好友入会，次日邀请者即可获得买一赠一券一张
-      </text>
+  <view class="text-desc">
+      <text>*礼品数量有限，先到先得，送完为止，礼品以实物为准</text>
+      <text>*以上活动，仅限会员正价消费指定酷乐冰或冷萃系列新品</text>
+      <text>*交通枢纽店、杭州阿里巴巴店、万达影视城店、SPP店、Compass店除外</text>
+      <text>*好友分享券：每张分享券可成功邀请1名微信好友入会，次日邀请者即可获得买一赠一券一张 </text>
   </view>
 </view>
