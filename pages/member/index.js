@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentData: app.global[app.global['currentLanguage']].member
+    currentData: app.global[app.global['currentLanguage']].member,
+    currentLanguage: app.global['currentLanguage']
   },
 
   /**
@@ -21,7 +22,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+    this.setData({
+      'currentLanguage': app.global['currentLanguage'],
+      'currentData': app.global[app.global['currentLanguage']].member
+    })
   },
 
   /**

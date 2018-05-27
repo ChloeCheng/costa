@@ -2,7 +2,7 @@
 
 <view class="body">
    <text class="title">{{currentData.title}}</text>
-   <image src="../../assets/member/member_point.png" mode='aspectFit'></image>
+   <image src="{{currentLanguage==='zh'? '../../assets/member/member_point.png': '../../assets/member/member_point_en.png'}}" mode='aspectFit'></image>
    <view class="text-content">
      <text>{{currentData.content_1}}</text>
      <text>{{currentData.content_2}}</text>
@@ -16,7 +16,7 @@
      <text>{{currentData.content_6}}</text>
    </view>  
    <view class="card-3 card">
-      <image src="../../assets/member/gold_bg.png" mode='aspectFit' class="card-bg"></image>
+      <image src="../../assets/member/gold_logo.png" mode='aspectFit' class="card-bg"></image>
       <image src="../../assets/member/member_card_3.png" mode='aspectFit' class="card-icon"></image>
       <view class="card-list">
         <view class="card-list-col-1">
@@ -86,7 +86,7 @@
       </view>
    </view>
    <view class="card-2 card">
-      <image src="../../assets/member/silver_bg.png" mode='aspectFit' class="card-bg"></image>
+      <image src="../../assets/member/silver_logo.png" mode='aspectFit' class="card-bg"></image>
       <image src="../../assets/member/member_card_2.png" mode='aspectFit' class="card-icon"></image>
       <view class="card-list">
         <view class="card-list-col-1">
@@ -156,7 +156,7 @@
       </view>
    </view>
    <view class="card-1 card">
-      <image src="../../assets/member/red_bg.png" mode='aspectFit' class="card-bg"></image>
+      <image src="../../assets/member/red_logo.png" mode='aspectFit' class="card-bg"></image>
       <image src="../../assets/member/member_card_1.png" mode='aspectFit' class="card-icon"></image>
       <view class="card-list">
         <view class="card-list-col-1">

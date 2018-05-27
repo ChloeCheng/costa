@@ -36,25 +36,24 @@
   margin-bottom:60rpx;
 }
 .card-bg{
-  width:100%;
   position: absolute;
   right:0;
-  top:0;
-  left:0rpx;
-  bottom:0;
+  top:-4rpx;
   z-index:-1;
-  height:480rpx;
+  width:450rpx;
+  height:115rpx;
+
 }
 .card-icon{
   width:140rpx;
   height:140rpx;
   position: absolute;
-  top:0rpx;
+  top:-6rpx;
   left:50rpx;
   z-index:2;
 }
 .card-list{
-  padding-top:186rpx;
+  padding-top:160rpx;
 }
 .card-list-col-1{
   display: flex;
@@ -97,6 +96,19 @@
   color:#AE0004;
 }
 
-.card-1 .card-bg{
-  height:380rpx;
+.card-3 {
+  border: 1px solid #DFC45F;
+  border-radius:10rpx;
+  padding-bottom:20rpx;
+}
+
+.card-2{
+  border: 1px solid #9A9A9A;
+  border-radius:10rpx;
+  padding-bottom:20rpx;
+}
+
+.card-1 {
+  border: 1px solid #AE0004;
+  border-radius:10rpx;
 }
