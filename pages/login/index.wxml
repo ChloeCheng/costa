@@ -1,7 +1,7 @@
 <!--pages/share/index.wxml-->
-<view class='bg-container' >
-  <view  class='bg-image' >
-    <image src='../../assets/share-bg.png' mode='widthFix'></image> 
+<view class='bg-container'>
+  <view class='bg-image'>
+    <image src='../../assets/share-bg.png' mode='widthFix'></image>
   </view>
   <view class="language-change" bindtap="changeLanguage">
     <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>
@@ -37,7 +37,7 @@
         <input placeholder='{{currentData.code}}' placeholder-class="placeholder-input" bindinput="bindCodeInput"></input>
         <view>
           <button class="btn-sms" bindtap='sendSMS'>
-          {{secondFlag == -1?currentData.sms:(secondFlag + currentData.tips)}}
+            {{secondFlag == -1?currentData.sms:(secondFlag + currentData.tips)}}
           </button>
         </view>
       </view>
@@ -63,23 +63,35 @@
       </view>
     </view>
 
-    <view  class='button-confirm'>
-      <button type="default" size="{{defaultSize}}" hover-class="none">
+    <view class='button-confirm'>
+      <button type="default" size="{{defaultSize}}" hover-class="none" bindtap='gotoLogin'>
         {{currentData.btnTxt}}
       </button>
     </view>
 
-    <view  class='agreement'>
+    <view class='button-confirm'>
+      <button type="default" size="{{defaultSize}}" hover-class="none" bindtap='openSetting'>
+        关闭授权
+      </button>
+    </view>
+
+    <view class='agreement'>
       <view class="check-icon" bindtap='switchCheck'>
         <image wx:if="{{checked}}" mode='aspectFit' src='../../assets/uncheck.png' />
         <image wx:if="{{!checked}}" mode='aspectFit' src='../../assets/checked.png' />
       </view>
-      <text >{{currentData.btnAgreement1}}</text>
+      <text>{{currentData.btnAgreement1}}</text>
       <text class='red-txt'>{{currentData.btnAgreement2}}</text>
     </view>
 
   </view>
 
-
-
 </view>
+
+<view class="authorize-cover" wx-if="{{!authorizeUserInfo}}"></view>
+<view class="authorize-dialog" wx-if="{{!authorizeUserInfo}}">
+  <text>检测到您未打开微信用户信息授权，开启后即可进行操作</text>
+  <button class="u-login-wx" type="primary" open-type="getUserInfo" bindgetuserinfo="getuserinfo" hover-class="none">去开启</button>
+</view>
+
+<zan-dialog id="zan-dialog-test"></zan-dialog>

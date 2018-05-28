@@ -1,12 +1,16 @@
 // pages/login/index.js
 const app = getApp()
 const date = require('../../modules/dateFormat.js');
+const login = require('../../modules/login.js');
+const Dialog = require('../../components/vendor/dist/dialog/dialog');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    authorizeUserInfo: true,
     currentData: app.global[app.global['currentLanguage']].login,
     'currentLanguage': app.global.currentLanguage,
     date: date.dateFormat(new Date(),'yyyy-MM-dd'),
@@ -68,13 +72,75 @@ Page({
     this.setData({
       currentData: app.global[app.global['currentLanguage']].login,
     })
+    var _this = this
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.dir(res.userInfo)
+              _this.setData({
+                'userInfo': res.userInfo
+              });
+            }
+          })
+        } else {
+          _this.setData({
+            'authorizeUserInfo': false
+          });
+        }
+      },
+      fail: function (err) {
+        console.log('checkAuth fail!!!!')
+      }
+    })
+  },
+  getuserinfo: function (e) {
+    let _this = this;
+    let detail = e.detail;
+
+    if (detail.errMsg == 'getUserInfo:ok') {
+      this.setData({
+        'authorizeUserInfo': true
+      });
+      wx.getUserInfo({
+        success: function (res) {
+          _this.setData({
+            'userInfo': res.userInfo
+          });
+          //login.login()
+        }
+      })
+    }
+  },
+  gotoLogin(){
+    if(this.data.tel == ""){
+      Dialog({
+        title: '',
+        message: '请输入手机号码',
+        selector: '#zan-dialog-test'
+      })
+    }
+    else if (this.data.code == "") {
+      Dialog({
+        title: '',
+        message: '请输入短信验证码',
+        selector: '#zan-dialog-test'
+      })
+    }else{
+      login.login({
+        tel: this.data.tel,
+        code: this.data.code,
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    //login.checkAuth()
   },
 
   /**
@@ -82,6 +148,15 @@ Page({
    */
   onShow: function () {
   
+  },
+  openSetting() {
+    wx.openSetting({
+      success: function (res) {
+        if (res && res.authSetting && res.authSetting['scope.userInfo']) {
+
+        }
+      }
+    });
   },
 
   /**
