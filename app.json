@@ -14,7 +14,8 @@
     "pages/test/index",
     "pages/member/index",
     "pages/login/index",
-    "pages/agreement/index"
+    "pages/agreement/index",
+    "pages/pay/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
