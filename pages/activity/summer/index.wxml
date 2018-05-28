@@ -28,7 +28,7 @@
   <view class="intr">
       <image class="line" src="../../../assets/summer/introduce.png" mode='aspectFit'></image>
   </view>
-  <button class="btn">点看详情</button>
+  <button class="btn" bindtap="gotoDetail">点看详情</button>
   <view class="text-desc">
       <text>*礼品数量有限，先到先得，送完为止，礼品以实物为准</text>
       <text>*以上活动，仅限会员正价消费指定酷乐冰或冷萃系列新品</text>
