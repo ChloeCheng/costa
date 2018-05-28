@@ -1,6 +1,7 @@
 const app = getApp()
 const storage = require('./storage.js')
 const ajax = require('./ajax.js')
+const getUrl = require('./getPageUrl.js')
 
 
 //最终供外面调用的方法
@@ -22,15 +23,6 @@ exports.login  = function(option) {
   });
 }
 
-/*获取当前页带参数的url*/
-function getCallbackUrl() {
-  var pages = getCurrentPages()    //获取加载的页面
-  var currentPage = pages[pages.length - 1]    //获取当前页面的对象
-  var options = currentPage.options  || {}  //如果要获取url中所带的参数可以查看options
-  return decodeURIComponent(options.callbackUrl) || '/pages/index/index'
-}
-
-
 function thirdLogin(code, encryptedData, iv, option) {
   var url = "eeee/xxx/login/ttttt";
   var params = new Object();
@@ -43,7 +35,7 @@ function thirdLogin(code, encryptedData, iv, option) {
     console.log('登录成功')
     wx.setStorageSync('session_id', '32232')
     //跳转callbackurl
-    var url = getCallbackUrl()
+    var url = getUrl.getCallbackUrl()
     wx.redirectTo({
       url: url,
     })
