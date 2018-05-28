@@ -4,7 +4,7 @@
 </view>
 <view class="user-info">
   <view class="user-info-content">
-      <view  class="avatar-url">
+      <view  class="avatar-url"  bindtap='gotoEdit'>
         <image src="{{userInfo.avatarUrl}}"></image>
       </view>
       
