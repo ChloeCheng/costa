@@ -37,7 +37,7 @@ Component({
            }    
         },
         skipPay: function(){
-            let url = '/pages/index/index';
+            let url = '/pages/pay/index';
             if(url){
               wx.navigateTo({
                  url: url
