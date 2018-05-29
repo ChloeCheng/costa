@@ -1,18 +1,17 @@
 
 
 const getUrl = require('./getPageUrl.js')
+const cookieKeys = ['session_id']
 
 /**
  * 获取指定的cookie，并拼装成字符串
  * 用于发送请求时，添加到header
  * @method getCookies
  */
-const cookieKeys = ['session_id']
-
 function getCookies() {
   var cookieStr = '';
   cookieKeys.map(function (key) {
-    var value = wx.getStorageSync(key) ;
+    var value = wx.getStorageSync(key);
     cookieStr += key + '=' + value + ';';
   });
   return cookieStr;
@@ -26,7 +25,7 @@ function getCookies() {
 function setRequestHeader() {
   var header = {}
   header['content-type'] = header['content-type'] || 'application/json';
-  header['Cookie'] = getCookies() ;
+  header['Cookie'] = getCookies();
   return header;
 }
 
@@ -35,23 +34,23 @@ function setRequestHeader() {
  * @method setRequestHeader
  * @param {object} currentHeader 当前请求头
  */
-exports.request =  function(url,param, success, failed, complete) {
+exports.request = function (url, param, success, failed, complete) {
   wx.request({
     url: url,
     data: param,
-    method: param.method || 'GET', 
+    method: param.method || 'GET',
     header: setRequestHeader(), // 设置请求的 header
     dataType: 'application/x-www-form-urlencoded',
     success: function (res) {
       if (res.statusCode == 200) {
         success(JSON.parse(res.data))
       } else {
-        // 未登录
-        if(res.statusCode === 400){
-          var pages = getCurrentPages() 
-          var currentPage = pages[pages.length - 1]
-          wx.navigateTo('/pages/login/index?callbackUrl=' + encodeURIComponent(getUrl.getCurrentPageUrlWithArgs()))
-        }
+        // 未注册
+        // if (res.statusCode === 400) {
+        //   var pages = getCurrentPages()
+        //   var currentPage = pages[pages.length - 1]
+        //   wx.navigateTo('/pages/login/index?callbackUrl=' + encodeURIComponent(getUrl.getCurrentPageUrlWithArgs()))
+        // }
         fail && fail(JSON.parse(res.data));
       }
     },

@@ -170,14 +170,14 @@ Page({
     }
   },
   initPage(){
-    auth.checkAuth({
-        callback: ({auth}={})=>{
-            if(auth){
-                console.log('dddd')
-            } else {
-                console.log('1111')
-            }
-        }
-    });
+    // auth.checkAuth({
+    //     callback: ({auth}={})=>{
+    //         if(auth){
+    //             console.log('dddd')
+    //         } else {
+    //             console.log('1111')
+    //         }
+    //     }
+    // });
   }
 })
