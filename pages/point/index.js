@@ -1,13 +1,16 @@
 // pages/points/index.js
 const app = getApp()
 const ajax = require('./modules.js')
+var moveFlage = true
+var startPosition = 0
+var movePosition = 0
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentData: app.global[app.global['currentLanguage']],
+    currentData: app.global[app.global['currentLanguage']].points,
     images: {
       logo: '../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',
@@ -20,15 +23,15 @@ Page({
       'up': '../../assets/point/up.png',
       'down': '../../assets/point/down.png',
     },
-    cacheData: {
-      points: {
-        current: 0,
-        expire: 0,
-        next_level: 0,
-        next_level_progress: 0,
-        total: 0,
-      }
+    points: {
+      current: 0,
+      expire: 0,
+      next_level: 0,
+      next_level_progress: 0,
+      total: 0,
     },
+    list: [],
+    animateScroll: '',
   },
   goRecord: function (e) {
     wx.navigateTo({
@@ -59,14 +62,48 @@ Page({
   methods: {
 
   },
+  touchstart(e) {
+    console.log('start:' + e.touches[0].clientY)
+    startPosition = e.touches[0].clientY
+  },
+  touchmove(e) {
+    if (moveFlage) {
+      var currentY = e.touches[0].clientY
+      //下滑
+      if (currentY - startPosition > 10) {
+        console.log(e.touches[0].clientY)
+        moveFlage = false
+        this.setData({
+          animateScroll: 'animateScrollBottom',
+        })
+        setTimeout(function () {
+          moveFlage = true
+        }, 1000)
+      }
+      // 上滑
+      else if (startPosition - currentY > 10) {
+        console.log(e.touches[0].clientY)
+        moveFlage = false
+        this.setData({
+          animateScroll: 'animateScrollTop',
+        })
+        setTimeout(function () {
+          moveFlage = true
+        }, 1000)
+      }
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ currentData: app.global[app.global['currentLanguage']] })
+    this.setData({ currentData: app.global[app.global['currentLanguage']].points })
     ajax.getPoint((data) => {
-      this.setData({ cacheData: { points: data } })
+      this.setData({  points: data  })
+    })
+    ajax.getRecord((data) => {
+      this.setData({  list: data })
     })
   },
 

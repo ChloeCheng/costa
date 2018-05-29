@@ -88,7 +88,7 @@ App({
         tab1: '积分兑换',
         tab2: '最新活动',
         placeholder: '输入您的转赠积分',
-        btnTxt: '积分转赠好友',
+        btnTxt: '分享给好友',
         subTitle: '积分记录',
       },
       redeem: {
