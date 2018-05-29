@@ -242,7 +242,7 @@
 
 .animateScrollTop {
   transform: translateY(-100vh);
-  animation: halfToTop 1s ease-in-out;
+  animation: halfToTop 1s ease;
 }
 
 @keyframes halfToTop {
@@ -257,7 +257,7 @@
 
 .animateScrollBottom {
   transform: translateY(0);
-  animation: halfToBottom 1s ease-in-out;
+  animation: halfToBottom 1s ease;
 }
 
 @keyframes halfToBottom {
