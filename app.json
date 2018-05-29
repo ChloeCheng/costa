@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/point/index",
-    "pages/record/index",
     "pages/store/index",
     "pages/activity/summer/index",
     "pages/activity/detail/index",

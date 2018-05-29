@@ -1,90 +1,136 @@
 <bar active="true"></bar>
-<view class="center-title">
-  <text>{{currentData.points.title}}</text>
-</view>
+<view class='top-cover' bind:touchstart="touchstart" bind:touchmove='touchmove'>
+  <view class="{{'cover ' + animateScroll}}">
 
-<view class="container-point">
-  <view class="point-logo">
-    <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image"/>
-    <text class="name">{{currentData.points.vipName}}</text>
-  </view>
-  <view class="radiu-block-bg">
-    <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image"/>
-    <text class="num">{{cacheData.points.current}}</text>
-    <text class="title">{{currentData.points.flag}}</text>
-  </view>
-  <view class="point-logo" style="visibility:hidden">
-    <image src="{{images.logo}}" class="point-logo-image"/>
-    <text class="name">{{currentData.points.vipName}}</text>
-  </view>
-</view>
-<view  class="center-blcok-8">
-  <text class="line" 
-  style="width:{{cacheData.points.current/cacheData.points.next_level*100}}%"></text>
-</view>
+    <view class="center-title">
+      <text>{{currentData.title}}</text>
+    </view>
 
-<view class="container-label">
-  <view class="point-label width-30">
-    <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
-    <text class="score">{{cacheData.points.current}}</text>        
-    <text class="flag">{{currentData.points.flag}}</text>    
-    <text class="text">{{currentData.points.current}}</text>
-  </view>
-  <view class="point-label">
-    <text class="line-h" />
-  </view>
-  <view class="point-label width-30">
-    <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo"/>
-    <text class="score">{{cacheData.points.next_level}}</text>        
-    <text class="flag">{{currentData.points.flag}}</text>    
-    <text class="text">{{currentData.points.upgrade}}</text>
-  </view>
-  <view class="point-label">
-    <text class="line-h" />
-  </view>
-  <view class="point-label width-30">
-    <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo"/>
-    <text class="score">{{cacheData.points.expire}}</text>        
-    <text class="flag">{{currentData.points.flag}}</text>    
-    <text class="text">{{currentData.points.expire}}</text>
-  </view>
-</view>
+    <view class="container-point">
+      <view class="point-logo">
+        <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image" />
+        <text class="name">{{currentData.vipName}}</text>
+      </view>
+      <view class="radiu-block-bg">
+        <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image" />
+        <text class="num">{{points.current}}</text>
+        <text class="title">{{currentData.flag}}</text>
+      </view>
+      <view class="point-logo" style="visibility:hidden">
+        <image src="{{images.logo}}" class="point-logo-image" />
+        <text class="name">{{currentData.vipName}}</text>
+      </view>
+    </view>
+    <view class="center-blcok-8">
+      <text class="line" style="width:{{points.current/points.next_level*100}}%"></text>
+    </view>
 
-<view class="center-block-9">
-  <view class="btn-label" bindtap='goRedeem'>
-    <image mode='aspectFit' src="{{images.dui}}" class="label-logo"/>
-    <text class="text">{{currentData.points.tab1}}</text>
-  </view>
-  <view class="btn-label" bindtap="gotoPromotion">
-    <image mode='aspectFit' src="{{images.new}}" class="label-logo"/>
-    <text class="text">{{currentData.points.tab2}}</text>
-  </view>
-</view>
+    <view class="container-label">
+      <view class="point-label width-30">
+        <image mode='aspectFit' src="{{images.current}}" class="point-label-logo" />
+        <text class="score">{{points.current}}</text>
+        <text class="flag">{{currentData.flag}}</text>
+        <text class="text">{{currentData.current}}</text>
+      </view>
+      <view class="point-label">
+        <text class="line-h" />
+      </view>
+      <view class="point-label width-30">
+        <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo" />
+        <text class="score">{{points.next_level}}</text>
+        <text class="flag">{{currentData.flag}}</text>
+        <text class="text">{{currentData.upgrade}}</text>
+      </view>
+      <view class="point-label">
+        <text class="line-h" />
+      </view>
+      <view class="point-label width-30">
+        <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo" />
+        <text class="score">{{points.expire}}</text>
+        <text class="flag">{{currentData.flag}}</text>
+        <text class="text">{{currentData.expire}}</text>
+      </view>
+    </view>
 
-<view class="center-block-9 share-block">
-  <view class="ipt-label">
-   <input placeholder="{{currentData.points.placeholder}}"/>
-  </view>
-  <view class="btn-label-red btn-label" bindtap="gotoShare">
-    <image mode='aspectFit' src="{{images.share}}" class="label-logo"/>
-    <text class="btn-txt">{{currentData.points.btnTxt}}</text>
-  </view>
-</view>
+    <view class="center-block-9">
+      <view class="btn-label" bindtap='goRedeem'>
+        <image mode='aspectFit' src="{{images.dui}}" class="label-logo" />
+        <text class="text">{{currentData.tab1}}</text>
+      </view>
+      <view class="btn-label" bindtap="gotoPromotion">
+        <image mode='aspectFit' src="{{images.new}}" class="label-logo" />
+        <text class="text">{{currentData.tab2}}</text>
+      </view>
+    </view>
 
-<view class="line-block"  bind:tap='goRecord'>
-  <view class="line-image-left">
-     <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
+    <view class="center-block-9 share-block">
+      <view class="ipt-label">
+        <input placeholder="{{currentData.placeholder}}" />
+      </view>
+      <view class="btn-label-red btn-label" bindtap="gotoShare">
+        <image mode='aspectFit' src="{{images.share}}" class="label-logo" />
+        <text class="btn-txt">{{currentData.btnTxt}}</text>
+      </view>
+    </view>
+
+    <view class="line-block page-line">
+      <view class="line-image-left">
+        <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
+      </view>
+      <view class="line-left">
+        <text class="line-v"></text>
+      </view>
+      <view class="line-center">
+        <text class="txt">{{currentData.subTitle}}</text>
+      </view>
+      <view class="line-right">
+        <text class="line-v"></text>
+      </view>
+      <view class="line-image-right">
+        <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
+      </view>
+    </view>
+
   </view>
-  <view class="line-left">
-    <text class="line-v"></text>
+  <view class="{{'cover ' + animateScroll}}">
+    <view class="center-title">
+      <text>{{currentData.title}}</text>
+    </view>
+
+    <view class="line-block">
+      <view class="line-left">
+        <text class="line-v"></text>
+      </view>
+      <view class="line-center">
+        <text class="txt">{{currentData.subTitle}}</text>
+      </view>
+      <view class="line-right">
+        <text class="line-v"></text>
+      </view>
+    </view>
+
+    <view class="point-list">
+      <view class="point-item" wx:key="unique" wx:for="{{list}}">
+        <view class="point-item-logo">
+          <image mode='aspectFit' src="{{images.costa}}" />
+        </view>
+        <view class="point-item-content">
+          <text class="name">{{item.desc}}</text>
+          <text class="time">{{item.date}}</text>
+        </view>
+        <view class="point-item-right">
+          <view class="point-item-score">
+            <text class="score">{{item.point}}</text>
+            <text class="flag">{{currentData.flag}}</text>
+          </view>
+          <view class="point-item-icon">
+            <image mode='aspectFit' wx:if="{{item.point>0}}" src="{{images.up}}" />
+            <image mode='aspectFit' wx:if="{{item.point<0}}" src="{{images.down}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+
   </view>
-  <view class="line-center">
-    <text class="txt">{{currentData.points.subTitle}}</text>
-  </view>
-   <view class="line-right">
-    <text class="line-v"></text>
-  </view>
-  <view class="line-image-right">
-     <image mode='aspectFit' src="../../assets/card/card_active_down.png" />
-  </view>
+
 </view>
