@@ -66,6 +66,7 @@
   font-size:20rpx;
   margin-top:10rpx;
   color: #a5002a;
+  text-align:center;
 }
 
 .container-point{
@@ -86,6 +87,10 @@
   flex-direction:column;
   display:flex;
   align-items:center;
+  justify-content:space-between;
+}
+.width-30{
+  width: 30%;
 }
 .container-label .point-label-logo{
   width:80rpx;
@@ -100,8 +105,9 @@
   color: #c0c2c5;
 }
 .container-label .text{
-  font-size: 26rpx;
+  font-size: 20rpx;
   color: #535c64;
+  text-align: center;
 }
 .center-block-9{
   margin: 0 auto;

@@ -24,7 +24,7 @@
 </view>
 
 <view class="container-label">
-  <view class="point-label">
+  <view class="point-label width-30">
     <image mode='aspectFit' src="{{images.current}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.current}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
@@ -33,7 +33,7 @@
   <view class="point-label">
     <text class="line-h" />
   </view>
-  <view class="point-label">
+  <view class="point-label width-30">
     <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.next_level}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
@@ -42,7 +42,7 @@
   <view class="point-label">
     <text class="line-h" />
   </view>
-  <view class="point-label">
+  <view class="point-label width-30">
     <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo"/>
     <text class="score">{{cacheData.points.expire}}</text>        
     <text class="flag">{{currentData.points.flag}}</text>    
