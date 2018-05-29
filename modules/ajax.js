@@ -35,6 +35,9 @@ function setRequestHeader() {
  * @param {object} currentHeader 当前请求头
  */
 exports.request = function (url, param = {}, success, failed, complete) {
+  wx.showLoading({
+    title: 'loading'
+  })
   param.language = wx.getStorageSync('language') || 0
   wx.request({
     url: url,
@@ -52,14 +55,26 @@ exports.request = function (url, param = {}, success, failed, complete) {
         //   var currentPage = pages[pages.length - 1]
         //   wx.navigateTo('/pages/login/index?callbackUrl=' + encodeURIComponent(getUrl.getCurrentPageUrlWithArgs()))
         // }
-        fail && fail(JSON.parse(res.data));
+        failed && failed(JSON.parse(res.data));
+        wx.showModal({
+          showCancel:false,
+          content: JSON.parse(res.data).msg ||'网络请求异常，请重试',
+        })
       }
     },
     fail: function (err) {
       failed && failed(err);
+      wx.showToast({
+        title: '网络请求异常，请重试',
+        icon: 'none',
+        duration: 2000
+      })
     },
     complete: function (res) {
       complete && complete(res);
+      wx.hideLoading({
+        title: 'loading'
+      })
     }
   });
 }

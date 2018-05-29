@@ -64,10 +64,9 @@ Page({
   },
   submit: function () {
     if (this.data.name === "") {
-      Dialog({
+      wx.showModal({
         title: '',
-        message: '请输入用户名',
-        selector: '#zan-dialog-test'
+        content: '请输入用户名',
       })
     }else{
       let favourities = this.getfavourites().join(',')
