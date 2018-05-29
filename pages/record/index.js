@@ -33,9 +33,6 @@ Page({
     ajax.getRecord((data) => {
       this.setData({ cacheData: { list: data } })
     })
-    ajax.getAddress((data) => {
-      this.setData({ cacheData: { list: data } })
-    })
   },
 
   /**

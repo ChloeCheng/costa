@@ -50,6 +50,7 @@ Page({
     var multiIndex = this.data.multiIndex
     if(e.detail.column == 0){
       multiIndex[0] = e.detail.value
+      multiIndex[1] = 0
       this.setData({
         multiIndex: multiIndex
       })
