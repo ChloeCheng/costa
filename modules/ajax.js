@@ -34,7 +34,8 @@ function setRequestHeader() {
  * @method setRequestHeader
  * @param {object} currentHeader 当前请求头
  */
-exports.request = function (url, param, success, failed, complete) {
+exports.request = function (url, param = {}, success, failed, complete) {
+  param.language = wx.getStorageSync('language') || 0
   wx.request({
     url: url,
     data: param,

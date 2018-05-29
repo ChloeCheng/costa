@@ -11,6 +11,7 @@ exports.checkLogin = function () {
     wx.checkSession({
       success: function () {
         //session_key 未过期，并且在本生命周期一直有效
+        goRegister()
       },
       fail: function () {
         login()
@@ -18,6 +19,15 @@ exports.checkLogin = function () {
     });
   } else {
     login()
+  }
+}
+
+function goRegister(){
+  var is_registered = wx.getStorageSync('is_registered')
+  if (is_registered == 'false') {
+    // 未注册
+    var callbackUrl = encodeURIComponent(getUrl.getCurrentPageUrlWithArgs())
+    wx.navigateTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
   }
 }
 
@@ -63,11 +73,12 @@ function thirdLogin(code, encryptedData, iv, option) {
       if (json.code == 200) {
         console.log('登录成功')
         wx.setStorageSync('session_id', (new Date()).toString())
+        wx.setStorageSync('is_registered', 'true')
       } else if (json.code == 400) {
+        wx.setStorageSync('session_id', (new Date()).toString())
         // 未注册
-        var callbackUrl = encodeURIComponent(getUrl.getCurrentPageUrlWithArgs())
-
-        wx.navigateTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
+        wx.setStorageSync('is_registered', 'false')
+        goRegister()
       }
       console.log('my  login successd........');
     },

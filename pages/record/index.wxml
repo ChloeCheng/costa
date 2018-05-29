@@ -21,17 +21,17 @@
       <image mode='aspectFit' src="{{images.costa}}" />
     </view>
     <view class="point-item-content">
-      <text class="name">{{item.name}}</text>
-      <text class="time">{{item.time}}</text>
+      <text class="name">{{item.desc}}</text>
+      <text class="time">{{item.date}}</text>
     </view>
     <view class="point-item-right">
       <view class="point-item-score">
-        <text class="score">{{item.value}}</text>
+        <text class="score">{{item.point}}</text>
         <text class="flag">{{currentData.points.flag}}</text>
       </view>
       <view class="point-item-icon">
-        <image mode='aspectFit' wx:if="{{item.value>0}}" src="{{images.up}}" />
-        <image mode='aspectFit' wx:if="{{item.value<0}}" src="{{images.down}}" />
+        <image mode='aspectFit' wx:if="{{item.point>0}}" src="{{images.up}}" />
+        <image mode='aspectFit' wx:if="{{item.point<0}}" src="{{images.down}}" />
       </view>
     </view>
   </view>

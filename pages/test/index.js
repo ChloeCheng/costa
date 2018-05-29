@@ -3,38 +3,6 @@ const Dialog = require('../../components/vendor/dist/dialog/dialog');
 Page({
   data: {
     multiArray: [['无脊柱动物', '脊柱动物'], ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物']],
-    objectMultiArray: [
-      [
-        {
-          id: 0,
-          name: '无脊柱动物'
-        },
-        {
-          id: 1,
-          name: '脊柱动物'
-        }
-      ], [
-        {
-          id: 0,
-          name: '扁性动物'
-        },
-        {
-          id: 1,
-          name: '线形动物'
-        },
-        {
-          id: 2,
-          name: '环节动物'
-        },
-        {
-          id: 3,
-          name: '软体动物'
-        },
-        {
-          id: 3,
-          name: '节肢动物'
-        }
-      ]],
     multiIndex: [0, 0],
   },
   handleClick() {
@@ -53,6 +21,7 @@ Page({
     })
   },
   bindMultiPickerColumnChange: function (e) {
+    return
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var data = {
       multiArray: this.data.multiArray,

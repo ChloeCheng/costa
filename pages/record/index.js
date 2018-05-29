@@ -1,5 +1,6 @@
 // pages/points/index.js
 const app = getApp()
+const ajax = require('./modules.js')
 Page({
 
   /**
@@ -21,15 +22,7 @@ Page({
       costa: '../../assets/costa.png',
     },
     cacheData: {
-      list: [{
-        name: '002',
-        time: '2018-08-01',
-        value: 1,
-      }, {
-        name: '001',
-        time: '2019-08-18',
-        value: -10,
-      }]
+      list: []
     },
   },
 
@@ -37,7 +30,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    ajax.getRecord((data) => {
+      this.setData({ cacheData: { list: data } })
+    })
+    ajax.getAddress((data) => {
+      this.setData({ cacheData: { list: data } })
+    })
   },
 
   /**

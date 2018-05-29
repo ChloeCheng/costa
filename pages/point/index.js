@@ -1,5 +1,6 @@
 // pages/points/index.js
 const app = getApp()
+const ajax = require('./modules.js')
 Page({
 
   /**
@@ -7,8 +8,8 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']],
-    images:{
-      logo:'../../assets/point/vip-logo.png',
+    images: {
+      logo: '../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',
       current: '../../assets/point/current.png',
       upgrade: '../../assets/point/upgrade.png',
@@ -19,12 +20,13 @@ Page({
       'up': '../../assets/point/up.png',
       'down': '../../assets/point/down.png',
     },
-    cacheData:{
-      points:{
-        current:1,
-        upgrade:550,
-        expire:50,
-        next:800,
+    cacheData: {
+      points: {
+        current: 0,
+        expire: 0,
+        next_level: 0,
+        next_level_progress: 0,
+        total: 0,
       }
     },
   },
@@ -54,22 +56,24 @@ Page({
   changeLanguage() {
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
   },
-  methods:{
-    
+  methods: {
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ currentData: app.global[app.global['currentLanguage']]})
+    this.setData({ currentData: app.global[app.global['currentLanguage']] })
+    ajax.getPoint((data) => {
+      this.setData({ cacheData: { points: data } })
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
     console.log(this.data.currentData)
   },
 
@@ -77,41 +81,41 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

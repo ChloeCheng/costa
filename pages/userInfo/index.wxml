@@ -12,47 +12,50 @@
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
-    <input bindinput="bindUserNameInput"></input>
+      <input bindinput="bindUserNameInput" value='{{name}}'></input>
     </view>
   </view>
 
-<!--日期-->
+  <!--日期-->
   <view class="input-block">
     <view class="input-icon">
       <image mode='aspectFit' src='../../assets/userInfo/day.png' />
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
-    {{date}}
+      {{birthday}}
     </view>
   </view>
 
-<!--性别-->
+  <!--性别-->
   <view class="input-block">
     <view class="input-icon">
       <image mode='aspectFit' src='../../assets/userInfo/sex.png' />
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
-     <picker bindchange="bindSexChange" value="0" range="{{currentData.sex}}">
-      {{sex}}
-     </picker>
+      <picker bindchange="bindSexChange" value="0" range="{{currentData.sex}}">
+        {{gender}}
+        <image class="small-image" mode='aspectFit' src='../../assets/arrow.png' />
+      </picker>
     </view>
   </view>
 
-<!--地点-->
+  <!--地点-->
   <view class="input-block">
     <view class="input-icon">
       <image mode='aspectFit' src='../../assets/userInfo/username.png' />
-      <text >({{currentData.selectType}})</text>
+      <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
-      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="picker">
-          {{region[0]}}-{{region[1]}}
+          {{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}
+          <image class="small-image" mode='aspectFit' src='../../assets/arrow.png' />
         </view>
       </picker>
     </view>
+
   </view>
 
   <!--公司-->
@@ -62,24 +65,24 @@
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
-    <input bindinput="bindCompanyInput" placeholder="{{currentData.company}}"></input>
+      <input bindinput="bindCompanyInput" placeholder="{{currentData.company}}" value="{{company}}"></input>
     </view>
   </view>
 
-    <!--职位-->
+  <!--职位-->
   <view class="input-block">
     <view class="input-icon">
       <image mode='aspectFit' src='../../assets/userInfo/position.png' />
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
-    <input  bindinput="bindPositionInput" placeholder="{{currentData.position}}"></input>
+      <input bindinput="bindPositionInput" value="{{job}}" placeholder="{{currentData.position}}"></input>
     </view>
   </view>
 
   <view class="label-block">
     <view>
-       <text class='title'>{{currentData.subTitle}}</text>
+      <text class='title'>{{currentData.subTitle}}</text>
       <text class='select'>({{currentData.selectsType}})</text>
     </view>
     <view>
@@ -94,6 +97,13 @@
       </label>
     </view>
   </view>
-   <button type="default" hover-class="none" bindtap='submit'> {{currentData.btnTxt}}</button>  
+  <button type="default" hover-class="none" bindtap='submit'> {{currentData.btnTxt}}</button>
 
 </view>
+
+
+
+
+
+
+<zan-dialog id="zan-dialog-test"></zan-dialog>

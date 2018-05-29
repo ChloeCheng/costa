@@ -111,3 +111,7 @@
   color: white;
   background-color: #9e0028;
 }
+.small-image{
+  position:relative;
+  top:10rpx;
+}

@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -85,7 +85,7 @@
 				{
 					"id": 8,
 					"name": "userInfo",
-					"pathName": "pages/index/index",
+					"pathName": "pages/userInfo/index",
 					"query": ""
 				},
 				{
@@ -110,6 +110,12 @@
 					"id": -1,
 					"name": "summer_detail",
 					"pathName": "pages/activity/detail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/index",
 					"query": ""
 				}
 			]
