@@ -1,19 +1,20 @@
 <bar></bar>
 <view class="card-body">
-   <text class="card-title">我的礼券</text>
+   <text class="card-title">{{currentData.title}}</text>
    <view class="card-active">
       <view  class="card-active-head">
          <view class="card-icon">
             <image src="../../assets/card/card_active.png" mode='aspectFit'></image>
          </view>
-         <text class="card-num">我的礼券<text>0</text>张</text>
+         <text class="card-num" wx:if="{{currentLanguage === 'zh'}}">{{currentData.myCard}}<text>0</text>张</text>
+         <text class="card-num" wx:if="{{currentLanguage === 'en'}}">{{currentData.myCard}}<text>0</text></text>
          <view class="card-op" bindtap="activeSpreadTap">
              <image src="{{activeSpread?'../../assets/card/card_active_up.png':'../../assets/card/card_active_down.png'}}" mode='aspectFit'></image>
-             <text>{{activeSpread?'收起':'展开'}}</text>
+             <text>{{activeSpread? currentData.pickUp:currentData.more}}</text>
          </view>
       </view>
       <view class="card-active-list"  wx-if="{{activeSpread}}">
-        <view class="card-active-list-item">
+        <view class="card-active-list-item" bindtap="gotoDetail">
             <view class="card-icon">
                 <image src="../../assets/card/type_4.png" mode='aspectFit'></image>
             </view>
@@ -21,8 +22,8 @@
               <text class="card-active-status">新人礼包</text>
               <text>消费即获双倍积分</text>
             </view>
-            <text class="card-list-time">有效期 2018-05-26</text>
-        </view>
+            <text class="card-list-time">{{currentData.validityTime}} 2018-05-26</text>
+        </view> 
       </view>
    </view>
 
@@ -31,10 +32,11 @@
          <view class="card-icon">
             <image src="../../assets/card/card_overtime.png" mode='aspectFit'></image>
          </view>
-         <text class="card-num">我的礼券<text>0</text>张</text>
+         <text class="card-num" wx:if="{{currentLanguage === 'zh'}}">{{currentData.expiredCoupons}}<text>0</text>张</text>
+         <text class="card-num" wx:if="{{currentLanguage === 'en'}}">{{currentData.expiredCoupons}}<text>0</text></text>
          <view class="card-op"  bindtap="disableSpreadTap">
              <image src="{{disableSpread?'../../assets/card/card_disable_up.png':'../../assets/card/card_disable_down.png'}}" mode='aspectFit'></image>
-             <text>{{disableSpread?'收起':'展开'}}</text>
+             <text>{{disableSpread?currentData.pickUp:currentData.more}}</text>
          </view>
       </view>
       <view class="card-active-list" wx-if="{{disableSpread}}">
@@ -46,7 +48,7 @@
               <text>新人礼包</text>
               <text>消费即获双倍积分</text>
             </view>
-            <text class="card-list-time">有效期 2018-05-26</text>
+            <text class="card-list-time">{{currentData.validityTime}} 2018-05-26</text>
         </view>
       </view>
    </view>

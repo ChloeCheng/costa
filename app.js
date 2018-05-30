@@ -26,6 +26,14 @@ App({
         pickUp: '收起',
         codeDesc: '使用时，出示此码'
       },
+      card:{
+        title: '我的礼券',
+        myCard: '我的礼券',
+        more: '展开',
+        pickUp: '收起',
+        expiredCoupons: '已失效',
+        validityTime: '有效期',
+      },
       member: {
         title: '会员等级介绍',
         content_1: '1. 消费1元 = 1积分（零售商品等除外）；',
@@ -77,6 +85,11 @@ App({
         red_2_1_2: '赠30元礼券',
         red_2_2_1: '丰富的',
         red_2_2_2: '会员专享活动'
+      },
+      store: {
+        title: '门店查询',
+        nearby: '附近',
+        search: '搜索COSTA门店'
       },
       points: {
         flag: '积分',
@@ -232,6 +245,19 @@ App({
         close: 'Closed',
         pickUp: 'pack up',
         codeDesc: 'Please present QR code'
+      },
+      card:{
+        title: 'My Coupons',
+        myCard: 'My coupons * ',
+        more: 'more',
+        pickUp: 'pack up',
+        expiredCoupons: 'Expired coupons * ',
+        validityTime: 'Expiry date ',
+      },
+      store: {
+        title: 'Store Location',
+        nearby: 'Nearby',
+        search: 'Search'
       },
       member: {
         title: 'Member Level Introduction',
