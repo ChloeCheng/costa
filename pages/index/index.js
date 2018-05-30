@@ -1,5 +1,5 @@
 const app = getApp()
-const auth = require('../../modules/auth.js');
+const login = require('../../modules/login.js');
 
 Page({
   data: {
@@ -25,6 +25,7 @@ Page({
     this.setData({
       'userInfo': app.global.wxUserInfo
     });
+    login.checkLogin()
   },
   changeLanguage(){
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
