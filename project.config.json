@@ -117,6 +117,12 @@
 					"name": "test",
 					"pathName": "pages/test/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": ""
 				}
 			]
 		}

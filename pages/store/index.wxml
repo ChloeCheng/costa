@@ -1,7 +1,7 @@
 <view class="store-head">
-   <text class="store-title">门店查询</text>
+   <text class="store-title">{{currentData.title}}</text>
    <view class="store-location">
-     <text class="store-text">附近 </text>
+     <text class="store-text">{{currentData.nearby}} </text>
      <image src="../../assets/store/logo.png" mode='aspectFit' class="store-logo"></image>
      <image src="../../assets/store/location.png" mode='aspectFit'  class="store-location-png"></image>
      <text  class="store-location-city">
@@ -9,7 +9,7 @@
      </text>
    </view>
   <view class="store-search">
-    <input placeholder="搜索COSTA门店"></input>
+    <input placeholder="{{currentData.search}}"></input>
     <view class="store-icon">
      <image src="../../assets/store/search.png" mode='aspectFit'></image>
     </view>

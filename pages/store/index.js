@@ -7,14 +7,17 @@ Page({
    */
   data: {
     authorizeLocation: true,
-    city:''
+    city:'',
+    currentData: app.global[app.global['currentLanguage']].store,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({ 
+      currentData: app.global[app.global['currentLanguage']].store 
+    })
       
   },
   initPage(){
@@ -147,13 +150,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })
