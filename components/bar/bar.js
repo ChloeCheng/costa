@@ -29,12 +29,26 @@ Component({
      */
     methods: {
         skipHome: function(){
-           let url = '/pages/index/index';
-           if(url){
-             wx.navigateTo({
-                url: url,
-              })
-           }    
+          let pages = getCurrentPages();    //获取加载的页面
+          let currentPage = pages[pages.length-1];    //获取当前页面的对象
+          let url = currentPage.route;    //当前页面url
+          let target = '/pages/index/index', prev = '';
+          console.log(url)
+          if(target.indexOf(url) > 0) {
+            return;
+          }
+          if (pages.length > 1) {
+            prev = pages[pages.length-2].route;
+            if(target.indexOf(prev) > 0){
+              wx.navigateBack();
+              return;
+            }
+          }
+          if(target){
+            wx.navigateTo({
+              url: target,
+            })
+          }    
         },
         skipPay: function(){
             /*let url = '/pages/pay/index';
