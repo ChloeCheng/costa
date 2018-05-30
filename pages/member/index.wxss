@@ -76,24 +76,27 @@
   flex: 1;
 }
 .text-block > text{
-  font-size: 22rpx;
+  font-size: 20rpx;
   display:inline-block;
   padding:20rpx 0;
 }
 
 .card-3 .gold-text{
-  font-size: 24rpx;
+  font-size: 22rpx;
   color:#DFC45F;
+  font-weight: bold;
 }
 
 .card-2 .gold-text{
-  font-size: 24rpx;
+  font-size: 22rpx;
   color:#9A9A9A;
+  font-weight: bold;
 }
 
 .card-1 .gold-text{
-  font-size: 24rpx;
+  font-size: 22rpx;
   color:#AE0004;
+  font-weight: bold;
 }
 
 .card-3 {
