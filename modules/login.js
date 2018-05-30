@@ -32,15 +32,15 @@ function goRegister(){
 }
 
 function login(option) {
-  console.log('logining..........');
-  //调用登录接口
-  wx.login({
-    success: function (e) {
-      console.log('wxlogin successd........');
-      var code = e.code;
-      /// 是否需要用户授权待定？？？？
-      checkAuth(function (json) {
-        if (json.auth) {
+  console.log('用户是否授权..........');
+  /// 是否需要用户授权待定？？？？
+  checkAuth(function (json) {
+    if (json.auth) {
+      //调用登录接口
+      wx.login({
+        success: function (e) {
+          console.log('get code successd........');
+          var code = e.code;
           wx.getUserInfo({
             success: function (res) {
               console.log('wxgetUserInfo successd........');
@@ -49,9 +49,12 @@ function login(option) {
             }
           })
         }
-      })
+      });
     }
-  });
+  })
+
+
+  
 }
 
 function thirdLogin(code, encryptedData, iv, option) {
@@ -84,9 +87,9 @@ function thirdLogin(code, encryptedData, iv, option) {
     },
     function (res) {
       wx.setStorageSync('session_id', '失败')
-      getApp().globalData.session_id = 'failed';
-      getApp().globalData.uid = 'failed';
-      getApp().globalData.isLogin = 'failed';
+      // getApp().globalData.session_id = 'failed';
+      // getApp().globalData.uid = 'failed';
+      // getApp().globalData.isLogin = 'failed';
       console.log('my  login failed........');
     }
   )
@@ -102,21 +105,7 @@ function checkAuth(callback) {
           scope: 'scope.userInfo',
           fail: function (err) {
             callback && callback({ auth: false });
-            console.log('认证失败' + JSON.stringify(err));
-            return
-            wx.showModal({
-              content: '检测到您未打开微信用户信息授权，开启后即可进行登录',
-              confirmText: '去开启',
-              cancelText: '取消',
-              confirmColor: '#000000',
-              success: function (res) {
-                if (res.confirm) {
-                  //openSetting();
-                } else if (res.cancel) {
-                  // wx.navigateBack();
-                }
-              }
-            });
+            console.log('未授权，失败' + JSON.stringify(err));
           },
           success: function () {
             callback && callback({ auth: true });

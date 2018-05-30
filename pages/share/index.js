@@ -1,5 +1,6 @@
 // pages/share/index.js
 const app = getApp()
+const login = require('../../modules/login.js');
 
 Page({
 
@@ -14,6 +15,9 @@ Page({
     wx.navigateTo({
       url: '/pages/point/index'
     })
+  },
+  updateInfo: function () {
+    login.checkLogin()
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,4 +1,5 @@
 <!--pages/share/index.wxml-->
+<dialog bind:info="updateInfo"></dialog>
 <bar active="true"></bar>
 <view class='share-container'>
 <view  class='bg-image' >

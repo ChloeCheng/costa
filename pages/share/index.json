@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "bar": "../../components/bar/bar"
+    "bar": "../../components/bar/bar",
+    "dialog": "../../components/dialog/dialog"
   }
 }
