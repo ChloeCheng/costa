@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.addCardTap();
    
   },
 
@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+    this.addCardTap();
   },
   getAppId(callback){
     wx.login({
@@ -56,12 +56,16 @@ Page({
   },
   addCardTap(){
     this.getAppId(function(id, code){
-      let time = new Date().getTime();
+      let time = Math.floor(new Date().getTime()/1000);
      wx.addCard({
       cardList: [
         {
-          cardId: 'piOxp1mVprjRHcshqAKU5d2jZl4U', //'pJYr5jsXWx5ckp82dPu6pVRqPfws', //'piOxp1mVprjRHcshqAKU5d2jZl4U',
-          cardExt:	`{"api_ticket":"HoagFKDcsGMVCIY2vOjf9qFmVACCqHRWLl6jYqMUZUxR2azGe9XmIZWAIKO2fqt-sicB6jAcR66ma6NewLGI6w","code": ${code},"openid": ${id},"nonce_str":"5b0b968ad2049","signature":"d9e0a3c12811e8066631b3a21e08741d016689f7","timestamp":${time}}`
+          // cardId: 'piOxp1mVprjRHcshqAKU5d2jZl4U', //'pJYr5jsXWx5ckp82dPu6pVRqPfws', //'piOxp1mVprjRHcshqAKU5d2jZl4U',
+          // cardExt:	`{"api_ticket":"HoagFKDcsGMVCIY2vOjf9ofcj2a8F5lHBS_Es91nJNj3_oDjKXET2NVfLn4UQHbMROObtZi9UXn8_-ZSFRLHcQ","code": ${code},"openid": ${id},"nonce_str":"5b0b968ad2049","signature":"d9e0a3c12811e8066631b3a21e08741d016689f7","timestamp":${time}}`
+          
+            cardId: 'piOxp1v83D1vnk_JXRd4_QGkGjeE',
+            cardExt: '{"code": "", "openid": "", "timestamp": "1527514580", "nonce_str":"123","signature":"d0747f9af3794a5945dd136a64c678de5a99de78"}'
+          
         }
       ],
       success: function(res) { 
@@ -99,7 +103,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.addCardTap();
   },
 
   /**

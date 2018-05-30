@@ -10,8 +10,8 @@ Page({
       "image": "https:\/\/miniprogrampicture.costa.net.cn\/banner_1.png",
       "url": ""
     }],
-    authorizeUserInfo: true,
-    userInfo: null,
+    authorizeUserInfo: false,
+    userInfo: app.global.wxUserInfo,
     currentLanguage: app.global.currentLanguage || 'zh',
     showCode: false,
     showPhone: false,
@@ -19,46 +19,12 @@ Page({
     currentBarDate: app.global[app.global['currentLanguage']]
   },
   onLoad: function () {
-    let _this = this;
-    wx.getSetting({
-      success(res) {
-          if (res.authSetting['scope.userInfo']) {
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-            wx.getUserInfo({
-              success: function(res) {
-                console.dir(res.userInfo)
-                _this.setData({
-                  'userInfo': res.userInfo
-                });
-              }
-            })
-          } else {
-            _this.setData({
-              'authorizeUserInfo': false
-            });
-          }
-      },
-      fail: function(err){
-          console.log('checkAuth fail!!!!')
-      }
-    })
+  
   },
-  getuserinfo: function(e){
-    let _this = this;
-    let detail = e.detail;
-
-    if (detail.errMsg == 'getUserInfo:ok') {
-      this.setData({
-        'authorizeUserInfo': true
-      }); 
-      wx.getUserInfo({
-        success: function(res) {
-          _this.setData({
-            'userInfo': res.userInfo
-          });
-        }
-      })    
-    }
+  updateInfo: function (){
+    this.setData({
+      'userInfo': app.global.wxUserInfo
+    });
   },
   changeLanguage(){
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
@@ -129,7 +95,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-      //this.initPage();
+    
   },
 
   /**

@@ -2,6 +2,7 @@ var login = require('./modules/login.js')
 
 App({
   global: {
+    wxUserInfo: {},
     currentLanguage: 'zh',
     zh: {
       home: {
