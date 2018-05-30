@@ -27,6 +27,10 @@ function goRegister(){
   if (is_registered == 'false') {
     // 未注册
     var callbackUrl = encodeURIComponent(getUrl.getCurrentPageUrlWithArgs())
+    var currentUrl = getUrl.getCurrentPageUrl()
+    if (currentUrl.includes('pages/login/index')){
+      return
+    }
     wx.redirectTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
   }
 }

@@ -1,7 +1,7 @@
 const ajax = require('../../modules/ajax.js')
 const getUrl = require('../../modules/getPageUrl.js')
 
-exports.register = function (option,callback) {
+exports.register = function (option, callback) {
   ajax.request(
     'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
     option,
@@ -11,9 +11,15 @@ exports.register = function (option,callback) {
       }
       if (json.code == 200) {
         wx.setStorageSync('is_registered', 'true')
-        var url = getUrl.getCallbackUrl()
-        wx.redirectTo({
-          url: url,
+        wx.showModal({
+          showCancel: false,
+          content: '注册成功',
+          success: function (res) {
+            var url = getUrl.getCallbackUrl()
+            wx.redirectTo({
+              url: '/' + url,
+            })
+          }
         })
       }
     }
