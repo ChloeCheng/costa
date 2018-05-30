@@ -69,11 +69,11 @@
       </button>
     </view>
 
-    <view class='button-confirm'>
+    <!-- <view class='button-confirm'>
       <button type="default" size="{{defaultSize}}" hover-class="none" bindtap='openSetting'>
         关闭授权
       </button>
-    </view>
+    </view> -->
 
     <view class='agreement'>
       <view class="check-icon" bindtap='switchCheck'>
@@ -87,11 +87,3 @@
   </view>
 
 </view>
-
-<view class="authorize-cover" wx-if="{{!authorizeUserInfo}}"></view>
-<view class="authorize-dialog" wx-if="{{!authorizeUserInfo}}">
-  <text>检测到您未打开微信用户信息授权，开启后即可进行操作</text>
-  <button class="u-login-wx" type="primary" open-type="getUserInfo" bindgetuserinfo="getuserinfo" hover-class="none">去开启</button>
-</view>
-
-<zan-dialog id="zan-dialog-test"></zan-dialog>

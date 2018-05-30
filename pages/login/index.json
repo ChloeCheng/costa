@@ -1,5 +1,4 @@
 {
   "usingComponents": {
-    "zan-dialog": "../../components/vendor/dist/dialog/index"
   }
 }

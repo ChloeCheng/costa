@@ -27,7 +27,7 @@ function goRegister(){
   if (is_registered == 'false') {
     // 未注册
     var callbackUrl = encodeURIComponent(getUrl.getCurrentPageUrlWithArgs())
-    wx.navigateTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
+    wx.redirectTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
   }
 }
 
@@ -52,9 +52,6 @@ function login(option) {
       });
     }
   })
-
-
-  
 }
 
 function thirdLogin(code, encryptedData, iv, option) {
@@ -86,7 +83,7 @@ function thirdLogin(code, encryptedData, iv, option) {
       console.log('my  login successd........');
     },
     function (res) {
-      wx.setStorageSync('session_id', '失败')
+      wx.setStorageSync('session_id', '')
       // getApp().globalData.session_id = 'failed';
       // getApp().globalData.uid = 'failed';
       // getApp().globalData.isLogin = 'failed';
