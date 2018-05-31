@@ -1,5 +1,7 @@
-const app = getApp()
+const app = getApp();
 const login = require('../../modules/login.js');
+const URL = require('../../modules/api-list.js');
+const ajax = require('../../modules/ajax.js');
 
 Page({
   data: {
@@ -16,10 +18,20 @@ Page({
     showCode: false,
     showPhone: false,
     currentData: app.global[app.global['currentLanguage']].home,
-    currentBarDate: app.global[app.global['currentLanguage']]
+    currentBarDate: app.global[app.global['currentLanguage']],
+
   },
   onLoad: function () {
-  
+    let _this = this;
+    console.log(app.global.currentLanguage)
+    let url = `${URL.default.home.userInfo}?language=cn`;
+    ajax.request(
+      url,
+      {language: app.global.currentLanguage === 'zh' ? 'cn' : 'en'},
+      function(data){
+        console.log(data)
+      }
+     )
   },
   updateInfo: function (){
     this.setData({
