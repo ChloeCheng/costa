@@ -73,7 +73,12 @@ function thirdLogin(code, encryptedData, iv, option) {
     function (json) {
       json = {
         code: 200,
+        data:{
+          name:'2112'
+        },
+        msg:'ERROR'
       }
+
       if (json.code == 200) {
         console.log('登录成功')
         wx.setStorageSync('session_id', (new Date()).toString())
