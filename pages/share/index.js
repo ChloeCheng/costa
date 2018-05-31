@@ -1,7 +1,8 @@
 // pages/share/index.js
 const app = getApp()
+const ajax = require('./_modules.js')
 const login = require('../../modules/login.js');
-
+const getUrl = require('../../modules/getPageUrl.js')
 Page({
 
   /**
@@ -17,7 +18,13 @@ Page({
     })
   },
   updateInfo: function () {
-    login.checkLogin()
+    login.checkLogin(()=>{
+      var option = getUrl.getCurrentPageArgs()
+      ajax.getPoint(option.pointHash, (data) => {
+
+      })
+    })
+    
   },
   /**
    * 生命周期函数--监听页面加载

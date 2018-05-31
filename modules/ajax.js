@@ -2,7 +2,7 @@
 
 const getUrl = require('./getPageUrl.js')
 const cookieKeys = ['session_id']
-
+const hostUrl = 'http://costa.slashsoft.cn'
 /**
  * 获取指定的cookie，并拼装成字符串
  * 用于发送请求时，添加到header
@@ -24,7 +24,7 @@ function getCookies() {
  */
 function setRequestHeader() {
   var header = {}
-  header['content-type'] = header['content-type'] || 'application/json';
+  header['content-type'] = header['content-type'] || 'application/x-www-form-urlencoded';
   header['Cookie'] = getCookies();
   return header;
 }
@@ -35,6 +35,9 @@ function setRequestHeader() {
  * @param {object} currentHeader 当前请求头
  */
 exports.request = function (url, param = {}, success, failed, complete) {
+  if(url.indexOf('http')==-1){
+    url = hostUrl + url
+  }
   wx.showLoading({
     title: 'loading'
   })

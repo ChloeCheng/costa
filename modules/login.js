@@ -4,14 +4,14 @@ const ajax = require('./ajax.js')
 const getUrl = require('./getPageUrl.js')
 
 // 入口统一是否登录判断
-exports.checkLogin = function () {
+exports.checkLogin = function (callback=()=>{}) {
   var session_id = wx.getStorageSync('session_id')
   if (session_id) {
     // 登录态检查
     wx.checkSession({
       success: function () {
         //session_key 未过期，并且在本生命周期一直有效
-        goRegister()
+        goRegister(callback)
       },
       fail: function () {
         login()
@@ -22,7 +22,7 @@ exports.checkLogin = function () {
   }
 }
 
-function goRegister(){
+function goRegister(callback){
   var is_registered = wx.getStorageSync('is_registered')
   if (is_registered == 'false') {
     // 未注册
@@ -33,6 +33,7 @@ function goRegister(){
     }
     wx.redirectTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
   }
+  callback && callback()
 }
 
 function login(option) {
@@ -58,23 +59,16 @@ function login(option) {
   })
 }
 
-function thirdLogin(code, encryptedData, iv, option) {
-  var url = "eeee/xxx/login/ttttt";
-  var params = new Object();
-  params.code = code;
-  params.encryptedData = encryptedData;
-  params.iv = iv;
-  params.option = option
-  console.log(params)
-
+function thirdLogin(code) {
   ajax.request(
-    'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
-    params,
+    '/wechat-mp/oauth/' + encodeURIComponent(code),
+    {},
     function (json) {
       json = {
         code: 200,
         data:{
-          name:'2112'
+          session_id:'111',
+          is_registered:'true'
         },
         msg:'ERROR'
       }

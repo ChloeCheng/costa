@@ -322,7 +322,7 @@ App({
         vipName: 'Red Member',
         current: 'Current Point',
         upgrade: 'Points required to upgrade',
-        expire: 'Expiring at then end of this month',
+        expire: 'Expiring at the end of this month',
         tab1: 'Redeem Points',
         tab2: 'Promotions',
         placeholder: 'Enter the points given',

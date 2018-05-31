@@ -1,6 +1,7 @@
 // pages/points/index.js
 const app = getApp()
-const ajax = require('./modules.js')
+const ajax = require('./_modules.js')
+const dateFormat = require('../../modules/dateFormat.js')
 var moveFlage = true
 var startPosition = 0
 var movePosition = 0
@@ -24,14 +25,19 @@ Page({
       'down': '../../assets/point/down.png',
     },
     points: {
-      current: 0,
-      expire: 0,
-      next_level: 0,
-      next_level_progress: 0,
+      level:'',
+      will_expired_total:0,
       total: 0,
+      usable_total:0,
     },
     list: [],
     animateScroll: '',
+    shareValue:0,
+  },
+  inputChange(e){
+    this.setData({
+      shareValue: e.detail.value
+    })
   },
   goRecord: function (e) {
     wx.navigateTo({
@@ -39,9 +45,19 @@ Page({
     })
   },
   gotoShare: function (e) {
-    wx.navigateTo({
-      url: '/pages/share/index'
-    })
+    if(this.data.shareValue>0){
+      ajax.setPoint(this.data.shareValue,(data) => {
+        console.log('/pages/share/index?pointHash=' + encodeURIComponent(data))
+        wx.navigateTo({
+          url: '/pages/share/index?pointHash=' + encodeURIComponent(data)
+        })
+      })
+    }else{
+      wx.showModal({
+        showCancel:false,
+        content: this.data.currentData.placeholder,
+      })
+    }
   },
   gotoPromotion() {
     let url = '/pages/activity/promotion/index';
@@ -79,6 +95,19 @@ Page({
         setTimeout(function () {
           moveFlage = true
         }, 1000)
+        
+        return
+        var list = this.data.list;
+        setTimeout(() => {
+          this.setData({
+            list: [],
+          })
+        }, 1500)
+        setTimeout(() => {
+          this.setData({
+            list: list,
+          })
+        }, 1600)
       }
       // 上滑
       else if (startPosition - currentY > 10) {
@@ -87,7 +116,7 @@ Page({
         this.setData({
           animateScroll: 'animateScrollTop',
         })
-        setTimeout(function () {
+        setTimeout( ()=> {
           moveFlage = true
         }, 1000)
       }
@@ -103,7 +132,11 @@ Page({
       this.setData({  points: data  })
     })
     ajax.getRecord((data) => {
-      this.setData({  list: data })
+      var n = data.map((item)=>{
+        item.create_time = dateFormat.dateFormat(item.create_time,'yyyy-MM-dd')
+        return item
+      })
+      this.setData({  list: n })
     })
   },
 

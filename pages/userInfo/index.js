@@ -1,6 +1,6 @@
 // pages/userInfo/index.js
 const app = getApp()
-const ajax = require('./modules.js')
+const ajax = require('./_modules.js')
 const Dialog = require('../../components/vendor/dist/dialog/dialog');
 
 Page({
