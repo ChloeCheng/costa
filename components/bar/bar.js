@@ -63,9 +63,8 @@ Component({
                     // cardId: 'piOxp1mVprjRHcshqAKU5d2jZl4U', //'pJYr5jsXWx5ckp82dPu6pVRqPfws', //'piOxp1mVprjRHcshqAKU5d2jZl4U',
                     // cardExt:	`{"api_ticket":"HoagFKDcsGMVCIY2vOjf9ofcj2a8F5lHBS_Es91nJNj3_oDjKXET2NVfLn4UQHbMROObtZi9UXn8_-ZSFRLHcQ","code": ${code},"openid": ${id},"nonce_str":"5b0b968ad2049","signature":"d9e0a3c12811e8066631b3a21e08741d016689f7","timestamp":${time}}`
                     
-                      cardId: 'piOxp1mVprjRHcshqAKU5d2jZl4U',
-                      cardExt: '{"code": "", "openid": "", "timestamp": "1527514580", "nonce_str":"123","signature":"d0747f9af3794a5945dd136a64c678de5a99de78"}'
-                    
+                    cardId: 'pDRa7jn8bf-LsjT1XXnd_e_JZbfc',
+                    cardExt: '{"code": "", "openid": "", "timestamp": "1527759976", "nonce_str":"8328b961-0412-4637-ad82-c9521fe6f9c1","signature":"a0946e27269672afd51346206fdd8a1098013716"}'
                   }
                 ],
                 success: function(res) { 

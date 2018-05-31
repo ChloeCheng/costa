@@ -123,6 +123,30 @@
 					"name": "shareCard",
 					"pathName": "pages/shareCard/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pay",
+					"pathName": "pages/pay/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "agreement",
+					"pathName": "pages/agreement/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pay",
+					"pathName": "pages/pay/index",
+					"query": ""
 				}
 			]
 		}
