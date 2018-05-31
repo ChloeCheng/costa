@@ -96,18 +96,18 @@ Page({
           moveFlage = true
         }, 1000)
         
-        return
+        
         var list = this.data.list;
         setTimeout(() => {
           this.setData({
             list: [],
           })
-        }, 1500)
+        }, 1000)
         setTimeout(() => {
           this.setData({
             list: list,
           })
-        }, 1600)
+        }, 1100)
       }
       // 上滑
       else if (startPosition - currentY > 10) {
