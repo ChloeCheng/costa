@@ -41,7 +41,7 @@ Page({
   },
   changeLanguage(){
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');
-    wx.setStorageSync('language', app.global.currentLanguage=='zh'?0:1)
+    wx.setStorageSync('language', app.global.currentLanguage)
     this.setData({
       'currentLanguage': app.global.currentLanguage,
       'currentData': app.global[app.global['currentLanguage']].home,

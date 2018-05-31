@@ -38,7 +38,7 @@ exports.request = function (url, param = {}, success, failed, complete) {
   wx.showLoading({
     title: 'loading'
   })
-  param.language = wx.getStorageSync('language') || 0
+  param.language = wx.getStorageSync('language') == 'en' ?'en':'cn'
   wx.request({
     url: url,
     data: param,
