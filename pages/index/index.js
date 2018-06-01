@@ -2,6 +2,7 @@ const app = getApp();
 const login = require('../../modules/login.js');
 const URL = require('../../modules/api-list.js');
 const ajax = require('../../modules/ajax.js');
+const QRCode = require('../../common/qrcode.js');
 
 Page({
   data: {
@@ -35,6 +36,14 @@ Page({
           let tmp = data.data, pointValue = tmp.max - tmp.usable_total;
           let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
           tmp.hint = pointHint;
+          var qrcode = new QRCode('canvas', {
+            text: tmp.vipcode,
+            width: 130,
+            height: 130,
+            colorDark: "#9e0028",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H,
+         });
           _this.setData({
             'showData': tmp
           });

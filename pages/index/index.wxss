@@ -260,6 +260,12 @@ button[class="u-login-wx"]::after {
   margin-top:10rpx;
   margin-right:6rpx;
 }
+canvas{
+  width: 130px;
+  height:130px;
+  text-align: center;
+  margin: 0 auto;
+}
 .clear{
   clear: both;
 }
