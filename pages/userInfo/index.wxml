@@ -8,7 +8,7 @@
 <view class="content-block">
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/username.png' />
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/username.png' />
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
@@ -19,7 +19,7 @@
   <!--日期-->
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/day.png' />
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/day.png' />
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
@@ -30,13 +30,13 @@
   <!--性别-->
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/sex.png' />
+      <image class="big-image" mode='aspectFit' src='../../assets/userInfo/sex.png' />
       <text class='require'>({{currentData.requireType}})</text>
     </view>
     <view class="input-ct">
       <picker bindchange="bindSexChange" value="0" range="{{currentData.sex}}">
         {{gender}}
-        <image class="small-image" mode='aspectFit' src='../../assets/arrow.png' />
+        <image class="small-image" mode='aspectFit' src='../../assets/userInfo/down.png' />
       </picker>
     </view>
   </view>
@@ -44,14 +44,14 @@
   <!--地点-->
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/username.png' />
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/city.png' />
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
       <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="picker">
           {{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}
-          <image class="small-image" mode='aspectFit' src='../../assets/arrow.png' />
+          <image class="small-image" mode='aspectFit' src='../../assets/userInfo/down.png' />
         </view>
       </picker>
     </view>
@@ -61,7 +61,7 @@
   <!--公司-->
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/company.png' />
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/company.png' />
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
@@ -72,7 +72,7 @@
   <!--职位-->
   <view class="input-block">
     <view class="input-icon">
-      <image mode='aspectFit' src='../../assets/userInfo/position.png' />
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/position.png' />
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">

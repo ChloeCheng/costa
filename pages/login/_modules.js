@@ -25,3 +25,12 @@ exports.register = function (option, callback) {
     }
   )
 }
+
+exports.sendSms = function (num, callback) {
+  ajax.request(
+    '/wechat-mp/customer/register-get-code/' + num,
+    {},
+    function (json) {
+    }
+  )
+}

@@ -41,7 +41,7 @@
   margin-left:20rpx;
 }
 .card-num text{
-  font-weight: bold;
+  font-weight: bolder;
   margin: 0 4rpx;
 }
 .card-active-head text{

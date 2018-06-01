@@ -19,17 +19,26 @@ Page({
     showPhone: false,
     currentData: app.global[app.global['currentLanguage']].home,
     currentBarDate: app.global[app.global['currentLanguage']],
-
+    showData:{}
   },
   onLoad: function () {
+    this.initPage();
+  },
+  initPage(){
     let _this = this;
-    console.log(app.global.currentLanguage)
-    let url = `${URL.default.home.userInfo}?language=cn`;
+    let url = `${URL.default.home.userInfo}`;
     ajax.request(
       url,
-      {language: app.global.currentLanguage === 'zh' ? 'cn' : 'en'},
+      {},
       function(data){
-        console.log(data)
+        if(data.code === 200) {
+          let tmp = data.data, pointValue = tmp.max - tmp.usable_total;
+          let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
+          tmp.hint = pointHint;
+          _this.setData({
+            'showData': tmp
+          });
+        }
       }
      )
   },
@@ -148,16 +157,5 @@ Page({
       imageUrl: 'https://miniprogrampicture.costa.net.cn/icon_103.jpg',
       path: '/pages/index/index'
     }
-  },
-  initPage(){
-    // auth.checkAuth({
-    //     callback: ({auth}={})=>{
-    //         if(auth){
-    //             console.log('dddd')
-    //         } else {
-    //             console.log('1111')
-    //         }
-    //     }
-    // });
   }
 })

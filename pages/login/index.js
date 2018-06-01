@@ -51,6 +51,7 @@ Page({
     if (this.data.secondFlag != -1) {
       return
     }
+    ajax.sendSms()
     var SECOND_COUNT = 60;
     this.setData({
       secondFlag: SECOND_COUNT

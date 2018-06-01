@@ -31,8 +31,8 @@
   height:100rpx;
 }
 .bean{
-  width:48rpx;
-  height:48rpx;
+  width:32rpx;
+  height:32rpx;
   position: absolute;
   top:50%;
   left: 50%;
@@ -51,7 +51,7 @@
   background: #BF895D;
   color:#fff;
   display: inline-block;
-  padding: 20rpx 100rpx 20rpx 100rpx;
+  padding: 6rpx 100rpx 6rpx 100rpx;
   font-size: 42rpx;
   position: relative;
 }
@@ -59,17 +59,17 @@
 .block-title::after{
   content: '';
   position: absolute;
-  border-top: 50rpx solid transparent;
-  border-left: 50rpx solid transparent;
-  border-bottom: 50rpx solid transparent;
-  border-right: 50rpx solid #fff;
+  border-top: 36rpx solid transparent;
+  border-left: 36rpx solid transparent;
+  border-bottom: 36rpx solid transparent;
+  border-right: 36rpx solid #fff;
   top:0;
   right:0rpx;
 }
 
 .text-block > text{
   display: block;
-  font-size: 34rpx;
+  font-size: 30rpx;
   color:#575757;
   margin: 60rpx 0 0 100rpx;
 
@@ -85,7 +85,7 @@
 
 .text-bock-content > text{
   display: block;
-  font-size: 32rpx;
+  font-size: 28rpx;
   color:#575757;
   padding: 40rpx 80rpx;
 }
