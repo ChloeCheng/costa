@@ -273,7 +273,9 @@
 .point-list {
   width: 90%;
   margin: 0 auto;
-  padding-bottom: 50rpx;
+  padding-bottom: 150rpx;
+  height:70vh;
+  overflow:auto;
 }
 
 .point-list image {

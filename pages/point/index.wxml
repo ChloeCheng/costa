@@ -9,11 +9,11 @@
     <view class="container-point">
       <view class="point-logo">
         <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image" />
-        <text class="name">{{currentData.vipName}}</text>
+        <text class="name">{{points.level}}</text>
       </view>
       <view class="radiu-block-bg">
         <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image" />
-        <text class="num">{{points.current}}</text>
+        <text class="num">{{points.total}}</text>
         <text class="title">{{currentData.flag}}</text>
       </view>
       <view class="point-logo" style="visibility:hidden">
@@ -22,13 +22,13 @@
       </view>
     </view>
     <view class="center-blcok-8">
-      <text class="line" style="width:{{points.current/points.next_level*100}}%"></text>
+      <text class="line" style="width:{{points.total/points.max*100}}%"></text>
     </view>
 
     <view class="container-label">
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.current}}" class="point-label-logo" />
-        <text class="score">{{points.current}}</text>
+        <text class="score">{{points.total}}</text>
         <text class="flag">{{currentData.flag}}</text>
         <text class="text">{{currentData.current}}</text>
       </view>
@@ -37,7 +37,7 @@
       </view>
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo" />
-        <text class="score">{{points.next_level}}</text>
+        <text class="score">{{points.usable_total}}</text>
         <text class="flag">{{currentData.flag}}</text>
         <text class="text">{{currentData.upgrade}}</text>
       </view>
@@ -46,7 +46,7 @@
       </view>
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.expire}}" class="point-label-logo" />
-        <text class="score">{{points.expire}}</text>
+        <text class="score">{{points.will_expired_total}}</text>
         <text class="flag">{{currentData.flag}}</text>
         <text class="text">{{currentData.expire}}</text>
       </view>
@@ -65,7 +65,7 @@
 
     <view class="center-block-9 share-block">
       <view class="ipt-label">
-        <input placeholder="{{currentData.placeholder}}" />
+        <input type="number" bindinput="inputChange" placeholder="{{currentData.placeholder}}" />
       </view>
       <view class="btn-label-red btn-label" bindtap="gotoShare">
         <image mode='aspectFit' src="{{images.share}}" class="label-logo" />
@@ -92,7 +92,7 @@
     </view>
 
   </view>
-  <view class="{{'cover ' + animateScroll}}">
+  <view class="{{'cover ' + animateScroll}}" >
     <view class="center-title">
       <text>{{currentData.title}}</text>
     </view>
@@ -115,8 +115,8 @@
           <image mode='aspectFit' src="{{images.costa}}" />
         </view>
         <view class="point-item-content">
-          <text class="name">{{item.desc}}</text>
-          <text class="time">{{item.date}}</text>
+          <text class="name">{{item.name}}</text>
+          <text class="time">{{item.create_time}}</text>
         </view>
         <view class="point-item-right">
           <view class="point-item-score">
