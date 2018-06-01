@@ -48,10 +48,17 @@ Page({
     })
   },
   sendSMS() {
+    if(this.data.tel==''){
+      wx.showModal({
+        showCancel: false,
+        content: this.data.currentData.tel,
+      })
+      return
+    }
     if (this.data.secondFlag != -1) {
       return
     }
-    ajax.sendSms()
+    ajax.sendSms(this.data.tel)
     var SECOND_COUNT = 60;
     this.setData({
       secondFlag: SECOND_COUNT
@@ -88,8 +95,9 @@ Page({
       })
     } else {
       ajax.register({
-        tel: this.data.tel,
-        code: this.data.code,
+        'form-mobile': this.data.tel,
+        'form-code': this.data.code,
+        'form-birthday': this.data.date
       })
     }
   },

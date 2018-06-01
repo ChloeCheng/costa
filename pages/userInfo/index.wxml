@@ -76,7 +76,7 @@
       <text>({{currentData.selectType}})</text>
     </view>
     <view class="input-ct">
-      <input bindinput="bindPositionInput" value="{{job}}" placeholder="{{currentData.position}}"></input>
+      <input bindinput="bindPositionInput" value="{{position}}" placeholder="{{currentData.position}}"></input>
     </view>
   </view>
 

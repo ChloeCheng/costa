@@ -1,6 +1,7 @@
 // pages/userInfo/index.js
 const app = getApp()
 const ajax = require('./_modules.js')
+const dateFormat = require('../../modules/dateFormat.js')
 const Dialog = require('../../components/vendor/dist/dialog/dialog');
 
 Page({
@@ -15,32 +16,26 @@ Page({
     gender: '',
     city: '北京-北京',
     company: '',
-    job: '',
+    position: '',
     region: ['北京', '北京'],
     favourites: [],
-    items: [
-      { name: '美式' },
-       { name: '拿铁' }, 
-       { name: '卡布奇诺' }, 
-       { name:'摩卡'},
-       { name: '醇艺白' }, { name: '意式浓缩' }, { name: '可塔朵' }, { name:'茶饮'},
-       { name:'巧克力'}],
+    items: [],
     detail: {
       birthday: '',
-      city: '110100',
-      province: '110',
-      company: 'gosg',
-      favourites: ['美式', '拿铁'],
+      city: '',
+      province: '',
+      company: '',
+      favourites: [],
       gender: 1,
-      job: '3234',
-      name: '3223',
+      position: '',
+      name: '',
     },
     address: {},
     multiArray: [[], []],
     multiIndex: [0, 0],
-    provinceId:'',
-    cityID:'',
-    selectedProvince:0,
+    provinceId: '',
+    cityID: '',
+    selectedProvince: 0,
     selectedCity: 0,
   },
   bindMultiPickerChange: function (e) {
@@ -54,14 +49,14 @@ Page({
   bindMultiPickerColumnChange: function (e) {
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var multiIndex = this.data.multiIndex
-    if(e.detail.column == 0){
+    if (e.detail.column == 0) {
       multiIndex[0] = e.detail.value
       multiIndex[1] = 0
       this.setData({
         multiIndex: multiIndex
       })
       this.getMultiArrayByIndex(e.detail.value, 0)
-    }else{
+    } else {
       multiIndex[1] = e.detail.value
       this.setData({
         multiIndex
@@ -72,20 +67,21 @@ Page({
     if (this.data.name === "") {
       wx.showModal({
         title: '',
-        content: '请输入用户名',
+        showCancel: false,
+        content: this.data.currentData.nameTips,
       })
-    }else{
+    } else {
       let favourities = this.getfavourites().join(',')
-      let { cityID, provinceID}  = this.getIDByIndex()
+      let { cityID, provinceID } = this.getIDByIndex()
       ajax.update({
-        name: this.data.name,
-        birthday: this.data.birthday,
-        gender: this.data.gender,
-        province: provinceID,
-        city: cityID,
-        company: this.data.company,
-        job: this.data.job,
-        favourities: favourities,
+        'form-name': this.data.name,
+        'form-birthday': dateFormat.dateFormat(this.data.birthday, 'yyyy-MM-dd'),
+        'form-gender': this.data.gender,
+        'form-province': provinceID,
+        'form-city': cityID,
+        'form-company': this.data.company,
+        'form-position': this.data.position,
+        'form-favourities': favourities,
       })
     }
   },
@@ -114,7 +110,7 @@ Page({
   },
   bindPositionInput: function (e) {
     this.setData({
-      job: e.detail.value,
+      position: e.detail.value,
     })
   },
   bindCompanyInput: function (e) {
@@ -142,7 +138,7 @@ Page({
       var _data = data
       this.setData({ address: data })
       ajax.getDetail((data) => {
-        this.getMultiArray(_data,data.province, data.city)
+        this.getMultiArray(_data, data.province, data.city)
         this.updateInfo(data)
         this.setData({ detail: data })
       })
@@ -153,68 +149,61 @@ Page({
     this.setData({
       gender: app.global[app.global['currentLanguage']].userInfo.sex[data.gender - 1],
       //city: '北京-北京',
-      birthday: data.birthday,
+      birthday: dateFormat.dateFormat(data.birthday, 'yyyy-MM-dd'),
       name: data.name,
       favourites: data.favourites,
-      job: data.job,
+      position: data.position,
       company: data.company,
       provinceID: data.province,
       cityID: data.city
     })
-    var items = []
-    app.global[app.global['currentLanguage']].userInfo.items.map((item, index) => {
-      if (data.favourites.includes(item)){
-        items.push({
-          id: index,
-          name: item,
-          checked: true,
-        })
-      }else{
-        items.push({
-          id: index,
-          name: item,
-          checked: false,
-        })
+
+    ajax.getFavourities((data) => {
+      var items = data.map((item, index) => {
+        if (this.data.favourites.includes(item.id)) {
+          item.checked = true
+        }
+        return item
+      })
+      this.setData({
+        items: items
+      })
+    })
+  },
+  getfavourites() {
+    var r = []
+    this.data.items.map((item) => {
+      if (item.checked) {
+        r.push(item.id)
       }
     })
-    this.setData({
-      items: items
-    })
+    return r
   },
-  getfavourites(){
-    var r = []
-    this.data.items.map((item)=> {
-        if(item.checked){
-          r.push(item.name)
-        }
-      })
-   return r 
-  },
-  getMultiArray(data, provinceID, cityID){
-    if(data == null){
+  getMultiArray(data, provinceID, cityID) {
+    if (data == null) {
       data = wx.getStorageSync('address')
     }
     var province = data.provinces
     var city = data.cities
     var currentProvince = '' //selectedData.province
     var currentCity = '' //city[provinceID][cityID].name
-    var multiArray = [[],[]]
+    var multiArray = [[], []]
     var multiIndex = []
     var multiProvince = []
     var multiCity = []
-    province.map((item,index)=>{
-      if (item.code == provinceID){
+    province.map((item, index) => {
+      if (item.code == provinceID) {
         currentProvince = index
       }
       multiProvince.push(item.name)
     })
-    city[provinceID].map((item, index)=>{
+    city[provinceID].map((item, index) => {
       if (item.code == cityID) {
         currentCity = index
       }
       multiCity.push(item.name)
     })
-    multiIndex = [currentProvince, currentCity ]
+    multiIndex = [currentProvince, currentCity]
     multiArray = [multiProvince, multiCity]
 
     this.setData({
@@ -230,12 +219,12 @@ Page({
       currentCity
     }
   },
-  getMultiArrayByIndex(pIndex,cIndex){
+  getMultiArrayByIndex(pIndex, cIndex) {
     var cityName = this.data.multiArray[1][cIndex]
     var provinceID = this.data.address.provinces[pIndex]['code']
     var multiCity = []
-    
-    this.data.address.cities[provinceID].map((item)=>{
+
+    this.data.address.cities[provinceID].map((item) => {
       multiCity.push(item.name)
     })
     var multiArray = this.data.multiArray
@@ -251,7 +240,7 @@ Page({
     var provinceID = this.data.address.provinces[pIndex]['code']
     var cityID = ''
     this.data.address.cities[provinceID].map((item) => {
-      if (item.name == cityName){
+      if (item.name == cityName) {
         cityID = item.code
       }
     })

@@ -6,19 +6,22 @@ exports.getDetail = function (callback) {
     '/wechat-mp/customer/get-userinfo',
     {},
     function (json) {
-      json = {
-        code: 200,
-        data: {
-          birthday: '2018-3-43',
-          city: '110100',
-          province: '110',
-          company: 'gosg',
-          favourites: ['美式', '拿铁'],
-          gender: 1,
-          job: '3234',
-          name: '3223',
-        }
-      }
+      // json = {
+      //   code: 200,
+      //   data: {
+      //     birthday: '2018-3-43',
+      //     city: '110100',
+      //     province: '110',
+      //     company: 'gosg',
+      //     favourites: ['美式', '拿铁'],
+      //     gender: 1,
+      //     job: '3234',
+      //     name: '3223',
+      //   }
+      // }
+      json.data.province = '110'
+      json.data.city = '110100'
+      json.data.favourites = [1, 2]
       if (json.code == 200) {
         callback && callback(json.data)
       }
@@ -53,61 +56,61 @@ exports.getAddress = function (callback) {
           }
           ],
           cities: {
-              110: [
-                {
-                  code: 110100,
-                  name: '北京'
-                }
-              ],
-              120: [
-                {
-                  code: 120100,
-                  name: '天津'
-                }
-              ],
-              130: [
-                {
-                  code: 130100,
-                  name: '石家庄'
-                },
-                {
-                  code: 130101,
-                  name: '唐山'
-                },
-                {
-                  code: 130102,
-                  name: '秦皇岛'
-                }
-              ],
-              140: [
-                {
-                  code: 140100,
-                  name: '石家庄4'
-                },
-                {
-                  code: 140101,
-                  name: '唐山4'
-                },
-                {
-                  code: 140102,
-                  name: '秦皇岛4'
-                }
-              ],
-              150: [
-                {
-                  code: 150100,
-                  name: '石家庄5'
-                },
-                {
-                  code: 150101,
-                  name: '唐山5'
-                },
-                {
-                  code: 150102,
-                  name: '秦皇岛5'
-                }
-              ]
-            }
+            110: [
+              {
+                code: 110100,
+                name: '北京'
+              }
+            ],
+            120: [
+              {
+                code: 120100,
+                name: '天津'
+              }
+            ],
+            130: [
+              {
+                code: 130100,
+                name: '石家庄'
+              },
+              {
+                code: 130101,
+                name: '唐山'
+              },
+              {
+                code: 130102,
+                name: '秦皇岛'
+              }
+            ],
+            140: [
+              {
+                code: 140100,
+                name: '石家庄4'
+              },
+              {
+                code: 140101,
+                name: '唐山4'
+              },
+              {
+                code: 140102,
+                name: '秦皇岛4'
+              }
+            ],
+            150: [
+              {
+                code: 150100,
+                name: '石家庄5'
+              },
+              {
+                code: 150101,
+                name: '唐山5'
+              },
+              {
+                code: 150102,
+                name: '秦皇岛5'
+              }
+            ]
+          }
         }
       }
       if (json.code == 200) {
@@ -116,6 +119,32 @@ exports.getAddress = function (callback) {
           key: "address",
           data: json.data
         })
+      }
+    }
+  )
+}
+
+exports.getFavourities = function (callback) {
+  ajax.request(
+    'https://miniprogramapi.costa.net.cn/service/v1/area/get',
+    {},
+    function (json) {
+      json = {
+        code: 200,
+        data: [
+          { name: '美式', id: 1 },
+          { name: '拿铁', id: 2 },
+          { name: '卡布奇诺', id: 3 },
+          { name: '摩卡', id: 4 },
+          { name: '醇艺白', id: 5 }, {
+            name: '意式浓缩', id: 6
+          },
+          { name: '可塔朵', id: 7 },
+          { name: '茶饮', id: 8 },
+          { name: '巧克力', id: 9 }]
+      }
+      if (json.code == 200) {
+        callback && callback(json.data)
       }
     }
   )
@@ -133,7 +162,7 @@ exports.update = function (option) {
       if (json.code == 200) {
         wx.showModal({
           content: '更新个人信息成功',
-          showCancel:false,
+          showCancel: false,
           success: function (res) {
             if (res.confirm) {
               wx.navigateBack()
