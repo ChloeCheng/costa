@@ -4,6 +4,7 @@
   font-size: 36rpx;
   color: #a5002a;
   text-align: center;
+  font-weight: bold;
 }
 
 .radiu-block-bg {
