@@ -4,6 +4,7 @@
   font-size: 32rpx;
   color: #a5002a;
   text-align: center;
+  font-weight: bold;
 }
 
 .images-list{
@@ -17,7 +18,7 @@
 margin: 10rpx auto;
 }
 .images-list image{
- height:200rpx;
+ height:240rpx;
  border-radius:10rpx;
  width:100%;
 }

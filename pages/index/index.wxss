@@ -243,8 +243,11 @@ button[class="u-login-wx"]::after {
 }
 
 .code-pick-up{
-  text-align: right;
-  margin-right:20rpx;
+  text-align:center;
+  margin-right:10rpx;
+  width:100rpx;
+  float:right;
+
 }
 .code-pick-up text{
   font-size: 24rpx;
@@ -254,5 +257,9 @@ button[class="u-login-wx"]::after {
 .code-pick-up image{
   width: 32rpx;
   height:32rpx;
+  margin-top:10rpx;
   margin-right:6rpx;
+}
+.clear{
+  clear: both;
 }
