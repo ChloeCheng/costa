@@ -17,10 +17,10 @@
               <text class="col-1-edit">{{currentData.edit}}</text>
           </view>
         </view>
-        <text class="col-2">{{currentData.cardlevel1}}</text>
+        <text class="col-2">{{showData.level}}</text>
         <view class="col-3">
-           <text class="col-3-point"><text>5</text>{{currentData.points}}</text>
-           <text class="small-text" wx-if="{{currentLanguage==='zh'}}">距离银卡需700积分</text>
+           <text class="col-3-point"><text>{{showData.usable_total}}</text>{{currentData.points}}</text>
+           <text class="small-text" wx-if="{{currentLanguage==='zh'}}">{{showData.hint}}</text>
         </view>
        
       </view>
@@ -32,17 +32,17 @@
     <view class="icon-list-col-1">
       <view class="icon-list-col-block" bindtap="gotoPoint">
          <image src="../../assets/point.png" mode='aspectFit'></image>
-         <view class="new-point"></view>
+         <view  wx:if="{{showData.remind_point}}" class="new-point"></view>
          <text>{{currentData.myPoint}}</text>
       </view>
       <view class="icon-list-col-block" bindtap="gotoPage" data-detail='/pages/card/index'>
          <image src="../../assets/card.png" mode='aspectFit'></image>
-         <view class="new-point"></view>
+         <view  wx:if="{{showData.remind_coupon}}" class="new-point"></view>
          <text>{{currentData.myCard}}</text>
       </view>
       <view class="icon-list-col-block" bindtap="gotoPromotion">
          <image src="../../assets/activity.png" mode='aspectFit'></image>
-         <view class="new-point"></view>
+         <view  wx:if="{{showData.remind_campaign}}" class="new-point"></view>
          <text>{{currentData.activity}}</text>
       </view>
     </view>

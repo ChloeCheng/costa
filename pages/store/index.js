@@ -1,5 +1,7 @@
 // pages/points/index.js
 const app = getApp()
+const URL = require('../../modules/api-list.js');
+const ajax = require('../../modules/ajax.js');
 Page({
 
   /**
