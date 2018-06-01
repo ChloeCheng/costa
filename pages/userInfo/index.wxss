@@ -16,7 +16,7 @@
   border-bottom: 2rpx solid #b5b5b5;
   padding: 30rpx 0;
 }
-.input-block image{
+.input-block image.big-image{
   width: 40rpx;
   height: 40rpx;
 }
@@ -114,7 +114,7 @@
 }
 .small-image{
   position:relative;
-  top:10rpx;
-  width: 28rpx;
-  height:28rpx;
+  top:4rpx;
+  width: 24rpx;
+  height:24rpx;
 }

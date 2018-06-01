@@ -18,7 +18,7 @@ Page({
     job: '',
     region: ['北京', '北京'],
     favourites: [],
-    items: ['美式', '拿铁', '卡布奇诺', '摩卡', '醇艺白', '意式浓缩', '可塔朵', '茶饮', '巧克力'],
+    items: [{name: '美式', id:1},{name: '拿铁', id:2},{name: '卡布奇诺', id:3},{name: '摩卡', id:4},{name: '醇艺白', id:5},{name: '意式浓缩', id:6},{name: '可塔朵', id:7},{name: '茶饮', id:8},{name: '巧克力', id:9}],
     detail: {
       birthday: '',
       city: '110100',
