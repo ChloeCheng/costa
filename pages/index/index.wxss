@@ -151,6 +151,9 @@ button[class="u-login-wx"]::after {
   color: #C9C9C9;
   margin-left: 20rpx;
 }
+.small-text text{
+  font-weight: bold;
+}
 .code-url{
   text-align: center;
   border: 1rpx solid #949295;

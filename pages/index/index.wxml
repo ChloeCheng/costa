@@ -20,7 +20,7 @@
         <text class="col-2">{{showData.level}}</text>
         <view class="col-3">
            <text class="col-3-point"><text>{{showData.usable_total}}</text>{{currentData.points}}</text>
-           <text class="small-text" wx-if="{{currentLanguage==='zh'}}">{{showData.hint}}</text>
+           <text class="small-text" wx-if="{{!(currentLanguage!=='zh' || showData.next_id==0)}}">{{showData.hint_front}}<text>{{showData.pointValue}}</text>{{showData.hint_behind}}</text>
         </view>
        
       </view>

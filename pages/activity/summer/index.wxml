@@ -16,13 +16,13 @@
      <view class="bean-type">
         <image class="type-1 big" src="../../../assets/summer/type_1.png" mode='aspectFit'></image>
         <image class="type-2" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-3 big" src="../../../assets/summer/type_3.png" mode='aspectFit'></image>
+        <image class="type-3 big" src="../../../assets/summer/type_3_active.png" mode='aspectFit'></image>
         <image class="type-4" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
         <image class="type-5" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-6 big" src="../../../assets/summer/type_4.png" mode='aspectFit'></image>
+        <image class="type-6 big" src="../../../assets/summer/type_4_active.png" mode='aspectFit'></image>
         <image class="type-7" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
         <image class="type-8" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-9 big" src="../../../assets/summer/type_5.png" mode='aspectFit'></image>        
+        <image class="type-9 big" src="../../../assets/summer/type_5_active.png" mode='aspectFit'></image>        
       </view>
   </view>
   <view class="intr">

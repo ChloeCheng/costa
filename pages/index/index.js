@@ -34,8 +34,8 @@ Page({
       function(data){
         if(data.code === 200) {
           let tmp = data.data, pointValue = tmp.max - tmp.usable_total;
-          let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
-          tmp.hint = pointHint;
+          //let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
+          tmp.pointValue = pointValue;
           var qrcode = new QRCode('canvas', {
             text: tmp.vipcode,
             width: 130,

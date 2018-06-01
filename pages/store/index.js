@@ -11,6 +11,7 @@ Page({
     authorizeLocation: true,
     city:'',
     currentData: app.global[app.global['currentLanguage']].store,
+    list:[]
   },
 
   /**
@@ -34,6 +35,7 @@ Page({
                 var latitude = res.latitude
                 var longitude = res.longitude
                 _this.getCity(latitude,longitude);
+                _this.initData(latitude,longitude);
                 _this.setData({
                   'authorizeLocation': true
                 });
@@ -46,6 +48,7 @@ Page({
                 var latitude = res.latitude;
                 var longitude = res.longitude;
                 _this.getCity(latitude,longitude);
+                _this.initData(latitude,longitude);
                 _this.setData({
                   'authorizeLocation': true
                 });
@@ -63,7 +66,7 @@ Page({
       }
     })
   },
-  openLocation() {
+  openLocation(item) {
     wx.openLocation({
       latitude: 31.23037,
       longitude: 31.23037,
@@ -76,6 +79,22 @@ Page({
    */
   onReady: function () {
     this.initPage();
+  },
+  initData(latitude,longitude){
+    let _this = this;
+    let url = `${URL.default.store.storeList}${latitude}/${longitude}`;
+    ajax.request(
+      url,
+      {},
+      function(data){
+        if(data.code === 200) {
+
+          _this.setData({
+            'list': data.data
+          });
+        }
+      }
+     )
   },
   getCity(latitude,longitude) {
     let _this = this;
@@ -124,7 +143,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.initPage();
+    // this.initPage();
   },
 
   /**
