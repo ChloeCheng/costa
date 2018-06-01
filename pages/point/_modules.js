@@ -28,6 +28,11 @@ exports.setPoint = function (num,callback) {
     function (json) {
       if (json.code == 200) {
         callback && callback(json.data.hash)
+      }else{
+        wx.showModal({
+          showCancel: false,
+          content:json.message,
+        })
       }
     }
   )

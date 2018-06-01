@@ -1,25 +1,47 @@
 const ajax = require('../../modules/ajax.js')
 const getUrl = require('../../modules/getPageUrl.js')
-
+const app = getApp()
 exports.register = function (option, callback) {
+  option.method = 'POST'
   ajax.request(
-    'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+    '/wechat-mp/customer/register-submit',
     option,
     function (json) {
-      json = {
-        code: 200
-      }
       if (json.code == 200) {
         wx.setStorageSync('is_registered', 'true')
         wx.showModal({
           showCancel: false,
-          content: '注册成功',
+          content: app.global[app.global['currentLanguage']].login.success,
           success: function (res) {
             var url = getUrl.getCallbackUrl()
             wx.redirectTo({
               url: '/' + url,
             })
           }
+        })
+      } else  {
+        wx.showModal({
+          showCancel: false,
+          content: json.message,
+          success: function (res) {
+          }
+        })
+      }
+    }
+  )
+}
+
+exports.sendSms = function (num, callback) {
+  ajax.request(
+    '/wechat-mp/customer/register-get-code/' + num,
+    {},
+    function (json) {
+      if(json.code != 200){
+        wx.showModal({
+          showCancel: false,
+          content: json.message,
+          success: function (res) {
+           }
         })
       }
     }

@@ -130,8 +130,19 @@ App({
         position: '职位',
         subTitle: '产品偏好',
         tips: '告诉我们你的产品偏好，可获得20积分',
-        items: ['美式', '拿铁', '卡布奇诺', '摩卡', '醇艺白', '意式浓缩', '可塔朵', '茶饮', '巧克力'],
+        items: [
+          { name: '美式', id: 1 },
+          { name: '拿铁', id: 2 },
+          { name: '卡布奇诺', id: 3 },
+          { name: '摩卡', id: 4 },
+          { name: '醇艺白', id: 5 }, {
+            name: '意式浓缩', id: 6
+          },
+          { name: '可塔朵', id: 7 },
+          { name: '茶饮', id: 8 },
+          { name: '巧克力', id: 9 }],
         btnTxt: '确认修改',
+        nameTips:"请输入用户名",
       },
       login: {
         title: '欢迎加入',
@@ -143,7 +154,8 @@ App({
         btnAgreement1: '我已阅读并同意',
         btnAgreement2: '服务条款',
         agreementTitle: '会员服务条款',
-        agreementBtnTxt: "同意并继续注册"
+        agreementBtnTxt: "同意并继续注册",
+        success:'注册成功',
       },
       agreement: {
         list: [
@@ -345,9 +357,19 @@ App({
         company: 'My Company',
         position: 'My Position',
         subTitle: 'My Favorite',
+        nameTips: "Please input your name",
         tips: 'Tell us you favorite veverage and get extra 20 points',
         items:
-        ['Americano', 'Latte', 'Cappuccino', 'Mocha', 'Flat White', 'Espresso', 'Cortadp', 'Tea', 'Cholcolate'],
+        [
+          {name:'Americano',id:1},
+          { name: 'Latte', id: 2}, 
+          { name: 'Cappuccino}', id: 3},
+           {name: 'Mocha', id: 4}, 
+           { name: 'Flat White', id: 5},
+           { name: 'Espresso', id: 6}, 
+           { name: 'Cortadp', id: 7}, 
+           { name: 'Tea', id: 8}, 
+           { name: 'Cholcolate', id: 9}],
         btnTxt: 'Save Updates',
       },
       login: {
@@ -360,7 +382,8 @@ App({
         btnAgreement1: '我已阅读并同意1',
         btnAgreement2: '服务条款1',
         agreementTitle: '会员服务条款1',
-        agreementBtnTxt: "同意并继续注册1"
+        agreementBtnTxt: "同意并继续注册1",
+        success: 'Register Success',
       },
       agreement: {
         list: [
