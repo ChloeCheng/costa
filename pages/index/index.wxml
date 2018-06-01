@@ -65,7 +65,8 @@
         <image src="../../assets/card/card_active_up.png" mode='aspectFit'></image>
         <text>{{currentData.pickUp}}</text>
       </view>
-      <image src="../../assets/code.png" mode='aspectFit'></image>
+      <view class="clear"></view>
+      <image src="../../assets/91806-01865685.png" mode='aspectFit'></image>
       <text>{{currentData.codeDesc}}</text>
     </view>
   </view>
