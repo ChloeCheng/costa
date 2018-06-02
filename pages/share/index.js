@@ -12,14 +12,14 @@ Page({
   goback() {
     if (this.data.shareType == 1) {
       return
-    }else if(this.data.shareType == 2){
+    } else if (this.data.shareType == 2) {
       var option = getUrl.getCurrentPageArgs()
-      ajax.receivePoint(option.pointHash,()=>{
-          this.setData({
-            shareType:3,
-          })
+      ajax.receivePoint(option.pointHash, () => {
+        this.setData({
+          shareType: 3,
+        })
       })
-      return 
+      return
     }
     wx.navigateTo({
       url: '/pages/point/index'
@@ -33,7 +33,7 @@ Page({
           this.setData({
             shareType: 1
           })
-        }else if (data.status == false) {
+        } else if (data.status == false) {
           this.setData({
             shareType: 4
           })
@@ -98,6 +98,20 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      success: function (res) {
+        // 转发成功之后的回调
+        wx.showModal({
+          title: '提示',
+          content: '分享成功',
+          showCancel: false,
+          success:()=>{
+            wx.navigateTo({
+              url: '/pages/point/index',
+            })
+          }
+        })
+      },
+    }
   }
 })
