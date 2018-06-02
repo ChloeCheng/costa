@@ -14,7 +14,8 @@ let URL = {
         searchStore: 'http://costa.slashsoft.cn/wechat-mp/store/by-search/'  //搜索门店信息
     },
     card: {
-        list: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-all',  //获取卡券列表   
+        list: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-all',  //获取卡券列表  
+        detail: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-by-id/'  //获取优惠券详情 
     }
 }
 

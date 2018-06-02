@@ -1,7 +1,8 @@
 // pages/share/index.js
 const app = getApp()
 const login = require('../../modules/login.js');
-
+const URL = require('../../modules/api-list.js');
+const ajax = require('../../modules/ajax.js');
 Page({
 
   /**
@@ -10,6 +11,7 @@ Page({
   data: {
     currentData: app.global[app.global['currentLanguage']],
     shareType:1,//1,分享， 2，领积分， 3，领成， 4，领完了
+    detail: {},
   },
   goback(){
     wx.navigateTo({
@@ -24,8 +26,24 @@ Page({
    */
   onLoad: function (options) {
      wx.hideShareMenu();
+     this.initData(options.id);
   },
-
+  initData(id){
+      let _this = this;
+      let url = `${URL.default.card.detail}${id}`;
+      ajax.request(
+        url,
+        {},
+        function(data){
+          if(data.code === 200) {
+            console.log(data.data)
+            _this.setData({
+              'detail': data.data
+            });
+          }
+        }
+      )
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
