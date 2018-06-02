@@ -9,11 +9,12 @@ const hostUrl = 'http://costa.slashsoft.cn'
  * @method getCookies
  */
 function getCookies() {
-  var cookieStr = '';
-  cookieKeys.map(function (key) {
-    var value = wx.getStorageSync(key);
-    cookieStr += key + '=' + value //+ ';';
-  });
+  // var cookieStr = '';
+  // cookieKeys.map(function (key) {
+  //   var value = wx.getStorageSync(key);
+  //   cookieStr += key + '=' + value //+ ';';
+  // });
+  var cookieStr = wx.getStorageSync('JSESSIONID')
   return cookieStr;
 }
 
@@ -50,6 +51,11 @@ exports.request = function (url, param = {}, success, failed, complete) {
     dataType: 'application/x-www-form-urlencoded',
     success: function (res) {
       if (res.statusCode == 200) {
+        if (url.indexOf('wechat-mp/oauth')> -1) {
+          if (res.header['Set-Cookie']){
+            wx.setStorageSync('JSESSIONID', res.header['Set-Cookie'])
+          }
+        }
         var data = JSON.parse(res.data)
           success(data)
       } else {

@@ -55,7 +55,7 @@ Page({
     this.setData({
       'userInfo': app.global.wxUserInfo
     });
-    login.checkLogin()
+    //login.checkLogin()
   },
   changeLanguage(){
     app.global.currentLanguage = (app.global.currentLanguage === 'zh' ? 'en' : 'zh');

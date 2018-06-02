@@ -77,7 +77,7 @@ function thirdLogin(code) {
 
       if (json.code == 200) {
         console.log('登录成功')
-        wx.setStorageSync('JSESSIONID', json.data.session_id)
+        //wx.setStorageSync('JSESSIONID', json.data.session_id)
         if (json.data.is_register == false) {
           // 未注册
           wx.setStorageSync('is_registered', 'false')
