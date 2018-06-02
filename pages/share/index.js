@@ -5,8 +5,6 @@ const login = require('../../modules/login.js');
 const getUrl = require('../../modules/getPageUrl.js')
 Page({
 
-  /**
-   * 页面的初始数据
   data: {
     currentData: app.global[app.global['currentLanguage']],
     shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了
