@@ -14,7 +14,7 @@ exports.register = function (option, callback) {
           content: app.global[app.global['currentLanguage']].login.success,
           success: function (res) {
             var url = getUrl.getCallbackUrl()
-            wx.redirectTo({
+            wx.reLaunch({
               url: '/' + url,
             })
           }

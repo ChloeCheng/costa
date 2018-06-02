@@ -1,5 +1,6 @@
 // pages/activity/redeem/index.js
 const app = getApp()
+const ajax = require('./_modules.js')
 Page({
 
   /**
@@ -19,13 +20,18 @@ Page({
       'up': '../../assets/point/up.png',
       'down': '../../assets/point/down.png',
     },
+    list:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    ajax.getList((data)=>{
+      this.setData({
+        list:data
+      })
+    })
   },
 
   /**

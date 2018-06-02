@@ -7,7 +7,8 @@
 }
 .content-block{
   width: 90%;
-  margin:0 auto 200rpx auto;
+  margin:0 auto;
+  padding-bottom:200rpx;
 }
 .input-block{
   width: 100%;

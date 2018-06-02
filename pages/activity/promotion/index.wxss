@@ -8,7 +8,7 @@
 }
 
 .block-radiu{
-  width: 90%;
+  transform:scale(0.9,0.9);
   margin: 0 auto;
 }
 .block-radiu image{

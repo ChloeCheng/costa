@@ -37,6 +37,11 @@ Page({
   onShow: function () {
   
   },
+  goback(){
+    wx.navigateBack({
+      
+    })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

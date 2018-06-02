@@ -3,9 +3,14 @@
 <view class="center-title">
   <text>{{currentData.redeem.title}}</text>
 </view>
-<view class="images-list">
+<!-- <view class="images-list">
   <view class="images-item" wx:for="{{[1,2,3,4]}}" wx:key="unique">
      <image mode='aspectFit' src="{{'../../../assets/activity/'+item + '.png'}}" mode='aspectFill'/>
+  </view>
+</view> -->
+<view class="images-list">
+  <view class="images-item" wx:for="list" wx:key="unique">
+     <image mode='aspectFit' src="{{item.img}}" mode='aspectFill'/>
   </view>
 </view>
 

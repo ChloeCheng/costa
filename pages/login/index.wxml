@@ -77,11 +77,11 @@
 
     <view class='agreement'>
       <view class="check-icon" bindtap='switchCheck'>
-        <image wx:if="{{checked}}" mode='aspectFit' src='../../assets/uncheck.png' />
-        <image wx:if="{{!checked}}" mode='aspectFit' src='../../assets/checked.png' />
+        <image wx:if="{{!checked}}" mode='aspectFit' src='../../assets/uncheck.png' />
+        <image wx:if="{{checked}}" mode='aspectFit' src='../../assets/checked.png' />
       </view>
       <text>{{currentData.btnAgreement1}}</text>
-      <text class='red-txt'>{{currentData.btnAgreement2}}</text>
+      <text class='red-txt' bindtap='goAgreement'>{{currentData.btnAgreement2}}</text>
     </view>
 
   </view>

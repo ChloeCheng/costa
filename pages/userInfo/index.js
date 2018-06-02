@@ -18,14 +18,14 @@ Page({
     company: '',
     position: '',
     region: ['北京', '北京'],
-    favourites: [],
+    favorites: [],
     items: [],
     detail: {
       birthday: '',
       city: '',
       province: '',
       company: '',
-      favourites: [],
+      favorites: [],
       gender: 1,
       position: '',
       name: '',
@@ -37,6 +37,7 @@ Page({
     cityID: '',
     selectedProvince: 0,
     selectedCity: 0,
+    ts: (new Date()).getTime(),
   },
   bindMultiPickerChange: function (e) {
     // 确定按钮
@@ -70,18 +71,18 @@ Page({
         showCancel: false,
         content: this.data.currentData.nameTips,
       })
-    } else {
-      let favourities = this.getfavourites().join(',')
+    }  else {
+      let favorites = this.getfavourites().join(',')
       let { cityID, provinceID } = this.getIDByIndex()
       ajax.update({
-        'form-name': this.data.name,
-        'form-birthday': dateFormat.dateFormat(this.data.birthday, 'yyyy-MM-dd'),
-        'form-gender': this.data.gender,
-        'form-province': provinceID,
-        'form-city': cityID,
-        'form-company': this.data.company,
-        'form-position': this.data.position,
-        'form-favourities': favourities,
+        'name': this.data.name,
+        'birthday': dateFormat.dateFormat(this.data.birthday, 'yyyy-MM-dd'),
+        'gender': this.data.gender,
+        //'province': provinceID,
+        'city': provinceID + " " +cityID,
+        'company': this.data.company,
+        'position': this.data.position,
+        'favorite': favorites,
       })
     }
   },
@@ -129,9 +130,6 @@ Page({
   onLoad: function (options) {
     this.setData({
       currentData: app.global[app.global['currentLanguage']].userInfo,
-      sex: app.global[app.global['currentLanguage']].userInfo.sex[0],
-      city: '北京-北京',
-      date: "2017-01-02"
     })
 
     ajax.getAddress((data) => {
@@ -151,7 +149,7 @@ Page({
       //city: '北京-北京',
       birthday: dateFormat.dateFormat(data.birthday, 'yyyy-MM-dd'),
       name: data.name,
-      favourites: data.favourites,
+      favorites: data.favorites,
       position: data.position,
       company: data.company,
       provinceID: data.province,
@@ -160,7 +158,7 @@ Page({
 
     ajax.getFavourities((data) => {
       var items = data.map((item, index) => {
-        if (this.data.favourites.includes(item.id)) {
+        if (this.data.favorites.includes(item.id)) {
           item.checked = true
         }
         return item
@@ -183,8 +181,8 @@ Page({
     if (data == null) {
       data = wx.getStorageSync('address')
     }
-    var province = data.provinces
-    var city = data.cities
+    var province = data.provinces || []
+    var city = data.cities || []
     var currentProvince = '' //selectedData.province
     var currentCity = '' //city[provinceID][cityID].name
     var multiArray = [[], []]
@@ -197,18 +195,21 @@ Page({
       }
       multiProvince.push(item.name)
     })
-    city[provinceID].map((item, index) => {
-      if (item.code == cityID) {
-        currentCity = index
-      }
-      multiCity.push(item.name)
-    })
+    if(city[provinceID]){
+      city[provinceID].map((item, index) => {
+        if (item.code == cityID) {
+          currentCity = index
+        }
+        multiCity.push(item.name)
+      })
+    }
     multiIndex = [currentProvince, currentCity]
     multiArray = [multiProvince, multiCity]
 
     this.setData({
-      multiArray,
-      multiIndex
+      multiArray: multiArray,
+      multiIndex,
+      ts: (new Date()).getTime()
     });
     return {
       multiIndex,
@@ -230,16 +231,17 @@ Page({
     var multiArray = this.data.multiArray
     multiArray[1] = multiCity
     this.setData({
-      multiArray: multiArray
+      multiArray: multiArray,
+      ts: (new Date()).getTime()
     })
   },
   getIDByIndex() {
     var pIndex = this.data.multiIndex[0]
     var cIndex = this.data.multiIndex[1]
     var cityName = this.data.multiArray[1][cIndex]
-    var provinceID = this.data.address.provinces[pIndex]['code']
+    var provinceID = (this.data.address.provinces[pIndex]&&this.data.address.provinces[pIndex]['code']) || ''
     var cityID = ''
-    this.data.address.cities[provinceID].map((item) => {
+    this.data.address.cities[provinceID]&&this.data.address.cities[provinceID].map((item) => {
       if (item.name == cityName) {
         cityID = item.code
       }

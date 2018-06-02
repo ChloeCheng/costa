@@ -21,7 +21,7 @@
   <text class="txt"  wx:if="{{shareType == 4}}">{{currentData.share.titleNone}}</text>
   
   <block wx:if="{{shareType == 1}}">
-    <button type="default" open-type="share" hover-class="none" bindtap='goback'> {{currentData.share.btnTxt}}     </button>
+    <button type="default" open-type="share" bindshare="" hover-class="none" bindtap='goback'> {{currentData.share.btnTxt}}     </button>
   </block>
     <block wx:if="{{shareType == 2}}">
     <button type="default" hover-class="none" bindtap='goback'> {{currentData.share.btnTxtApt}} </button>

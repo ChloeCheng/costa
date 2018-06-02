@@ -1,16 +1,17 @@
-const app = getApp()
+
 const storage = require('./storage.js')
 const ajax = require('./ajax.js')
 const getUrl = require('./getPageUrl.js')
+const app = getApp()
 
 // 入口统一是否登录判断
-exports.checkLogin = function (callback=()=>{}) {
-  var session_id = wx.getStorageSync('session_id')
+exports.checkLogin = function (callback = () => { }) {
+  var session_id = wx.getStorageSync('JSESSIONID')
   if (session_id) {
     // 登录态检查
     wx.checkSession({
       success: function () {
-        //session_key 未过期，并且在本生命周期一直有效
+        //session_key 未过期，并且在本生命周期一直有
         goRegister(callback)
       },
       fail: function () {
@@ -22,16 +23,17 @@ exports.checkLogin = function (callback=()=>{}) {
   }
 }
 
-function goRegister(callback){
+function goRegister(callback) {
   var is_registered = wx.getStorageSync('is_registered')
   if (is_registered == 'false') {
     // 未注册
-    var callbackUrl = encodeURIComponent(getUrl.getCurrentPageUrlWithArgs())
-    var currentUrl = getUrl.getCurrentPageUrl()
-    if (currentUrl.includes('pages/login/index')){
+    var callbackUrl = wx.getStorageSync('callbackUrl')
+    if (callbackUrl.includes('pages/login/index')) {
       return
     }
-    wx.redirectTo({ url: '/pages/login/index?callbackUrl=' + callbackUrl })
+    wx.reLaunch({ 
+     url: '/pages/login/index?callbackUrl=' + encodeURIComponent(callbackUrl) 
+     })
   }
   callback && callback()
 }
@@ -64,29 +66,30 @@ function thirdLogin(code) {
     '/wechat-mp/oauth/' + encodeURIComponent(code),
     {},
     function (json) {
-      json = {
-        code: 200,
-        data:{
-          session_id:'111',
-          is_registered:'true'
-        },
-        msg:'ERROR'
-      }
+      // json = {
+      //   code: 200,
+      //   data:{
+      //     session_id:'111',
+      //     is_registered:'true'
+      //   },
+      //   msg:'ERROR'
+      // }
 
       if (json.code == 200) {
         console.log('登录成功')
-        wx.setStorageSync('session_id', (new Date()).toString())
-        wx.setStorageSync('is_registered', 'true')
-      } else if (json.code == 400) {
-        wx.setStorageSync('session_id', (new Date()).toString())
-        // 未注册
-        wx.setStorageSync('is_registered', 'false')
-        goRegister()
+        wx.setStorageSync('JSESSIONID', json.data.session_id)
+        if (json.data.is_register == false) {
+          // 未注册
+          wx.setStorageSync('is_registered', 'false')
+          goRegister()
+        } else {
+          wx.setStorageSync('is_registered', 'true')
+        }
       }
       console.log('my  login successd........');
     },
     function (res) {
-      wx.setStorageSync('session_id', '')
+
       // getApp().globalData.session_id = 'failed';
       // getApp().globalData.uid = 'failed';
       // getApp().globalData.isLogin = 'failed';
