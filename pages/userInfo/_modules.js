@@ -171,6 +171,13 @@ exports.update = function (option) {
             }
           }
         })
+      }else{
+        wx.showModal({
+          showCancel: false,
+          content: json.message,
+          success: function (res) {
+          }
+        })
       }
     }
   )

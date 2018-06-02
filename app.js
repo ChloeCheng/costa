@@ -1,5 +1,5 @@
 var login = require('./modules/login.js')
-
+const app = getApp()
 App({
   global: {
     wxUserInfo: {},
@@ -145,7 +145,7 @@ App({
         agreementTitle: '会员服务条款',
         agreementBtnTxt: "同意并继续注册",
         success:'注册成功',
-        agree:'请勾选服务协议',
+        agree:'请同意服务协议',
       },
       agreement: {
         list: [
@@ -353,8 +353,8 @@ App({
       },
       login: {
         title: 'Welcome join',
-        tel: 'please input your telephone',
-        code: 'please input your message',
+        tel: 'input telephone',
+        code: 'input message',
         sms: 'Send SMS',
         tips: 's send later',
         btnTxt: 'Submit',
@@ -445,7 +445,16 @@ App({
       }
     }
   },
-  onLaunch: function () {
+  onLaunch: function (option) {
+    //拼接url的参数
+    var urlWithArgs = option.path + '?'
+    for (var key in option.query) {
+      var value = options[key]
+      urlWithArgs += key + '=' + value + '&'
+    }
+    urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length - 1)
+    wx.setStorageSync('callbackUrl', urlWithArgs)
+    console.log(urlWithArgs)
     login.checkLogin()
     wx.setStorageSync('language', 'zh')
   }

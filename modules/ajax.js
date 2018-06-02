@@ -1,7 +1,7 @@
 
 
 const getUrl = require('./getPageUrl.js')
-const cookieKeys = ['session_id']
+const cookieKeys = ['JSESSIONID']
 const hostUrl = 'http://costa.slashsoft.cn'
 /**
  * 获取指定的cookie，并拼装成字符串
@@ -12,7 +12,7 @@ function getCookies() {
   var cookieStr = '';
   cookieKeys.map(function (key) {
     var value = wx.getStorageSync(key);
-    cookieStr += key + '=' + value + ';';
+    cookieStr += key + '=' + value //+ ';';
   });
   return cookieStr;
 }
@@ -24,7 +24,7 @@ function getCookies() {
  */
 function setRequestHeader() {
   var header = {}
-  header['content-type'] = header['content-type'] || 'application/x-www-form-urlencoded';
+  header['content-type'] = header['content-type'] || 'application/x-www-form-urlencoded' || 'application/json' ;
   header['Cookie'] = getCookies();
   return header;
 }
@@ -50,7 +50,8 @@ exports.request = function (url, param = {}, success, failed, complete) {
     dataType: 'application/x-www-form-urlencoded',
     success: function (res) {
       if (res.statusCode == 200) {
-        success(JSON.parse(res.data))
+        var data = JSON.parse(res.data)
+          success(data)
       } else {
         // 未注册
         // if (res.statusCode === 400) {
