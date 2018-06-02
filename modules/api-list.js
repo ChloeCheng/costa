@@ -8,7 +8,7 @@ let URL = {
     },
     store: {
         storeList: 'http://costa.slashsoft.cn/wechat-mp/store/by-geo/',  // 获取门店信息
-        searchStore: 'http://costa.slashsoft.cn/wechat-mp/store/by-search'  //搜索门店信息
+        searchStore: 'http://costa.slashsoft.cn/wechat-mp/store/by-search/'  //搜索门店信息
     }
 }
 

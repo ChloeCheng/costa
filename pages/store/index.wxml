@@ -9,15 +9,15 @@
      </text>
    </view>
   <view class="store-search">
-    <input placeholder="{{currentData.search}}"></input>
-    <view class="store-icon">
+    <input placeholder="{{currentData.search}}" mode="{{inputValue}}" bindinput="bindKeyInput"></input>
+    <view class="store-icon" bindtap="searchListByKey"> 
      <image src="../../assets/store/search.png" mode='aspectFit'></image>
     </view>
   </view>
 </view>
 
-<view class="store-list" wx:for="{{list}}" wx:key="{{item.index}}">
-    <view class="store-item" bindtap="openLocation" data-item="{{item}}">
+<view class="store-list">
+    <view class="store-item" bindtap="openLocation"  wx:for="{{list}}" wx:key="{{item.index}}" data-item="{{item}}">
       <image src="../../assets/store/store_logo.png" mode='aspectFit'></image>
       <view class="store-item-ad">
          <text class="store-item-ad-title">{{item.name}}</text>
@@ -25,7 +25,7 @@
          <text>{{item.phone}}</text>
       </view> 
       <view class="store-item-distance">
-        <text>距离{{parseFloat(item.distance%1000).toFixed(1)}}km</text>
+        <text>距离{{item.distance}}km</text>
       </view>
     </view>
 </view>

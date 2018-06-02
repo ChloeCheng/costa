@@ -75,7 +75,7 @@
 }
 
 .store-list{
-  margin: 20rpx 40rpx;
+  margin: 20rpx 40rpx 140rpx 40rpx;
 }
 .store-item{
   padding:24rpx;
@@ -83,6 +83,7 @@
   border-radius: 8rpx;
   display: flex;
   align-items: center;
+  margin-bottom: 20rpx;
 }
 
 .store-item image {

@@ -9,9 +9,14 @@ Page({
    */
   data: {
     authorizeLocation: true,
+    location:{
+      'latitude': '',
+      'longitude': ''
+    },
     city:'',
     currentData: app.global[app.global['currentLanguage']].store,
-    list:[]
+    list:[],
+    inputValue:''
   },
 
   /**
@@ -22,6 +27,11 @@ Page({
       currentData: app.global[app.global['currentLanguage']].store 
     })
       
+  },
+  bindKeyInput: function(e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
   },
   initPage(){
     let _this = this;
@@ -37,6 +47,10 @@ Page({
                 _this.getCity(latitude,longitude);
                 _this.initData(latitude,longitude);
                 _this.setData({
+                  'location':{
+                    'latitude': latitude,
+                    'longitude': longitude
+                  },
                   'authorizeLocation': true
                 });
               }
@@ -50,6 +64,10 @@ Page({
                 _this.getCity(latitude,longitude);
                 _this.initData(latitude,longitude);
                 _this.setData({
+                  'location':{
+                    'latitude': latitude,
+                    'longitude': longitude
+                  },
                   'authorizeLocation': true
                 });
               },
@@ -66,12 +84,22 @@ Page({
       }
     })
   },
-  openLocation(item) {
+  openLocation(event) {
+    const {currentTarget:{dataset:{item}}} = event
     wx.openLocation({
-      latitude: 31.23037,
-      longitude: 31.23037,
-      scale: 28
+      latitude: item.lat,
+      longitude: item.lng
     })          
+  },
+  searchListByKey(){
+    if(!this.data.inputValue){
+      wx.showModal({
+        content: '请输入搜索内容',
+        showCancel: false
+      })
+      return;
+    }
+    this.initData(this.data.location.latitude,this.data.location.longitude, true)
   },
 
   /**
@@ -80,17 +108,23 @@ Page({
   onReady: function () {
     this.initPage();
   },
-  initData(latitude,longitude){
+  initData(latitude,longitude,search){
     let _this = this;
     let url = `${URL.default.store.storeList}${latitude}/${longitude}`;
+    if(search){
+       url = `${URL.default.store.searchStore}${latitude}/${longitude}/${_this.data.inputValue}`;
+    }  
     ajax.request(
       url,
       {},
       function(data){
         if(data.code === 200) {
-
+          let dataList = data.data;
+          dataList.forEach(item=>{
+            item.distance = parseFloat(item.distance%1000).toFixed(1)
+          })
           _this.setData({
-            'list': data.data
+            'list': dataList
           });
         }
       }
