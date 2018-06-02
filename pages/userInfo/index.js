@@ -37,6 +37,7 @@ Page({
     cityID: '',
     selectedProvince: 0,
     selectedCity: 0,
+    ts: (new Date()).getTime(),
   },
   bindMultiPickerChange: function (e) {
     // 确定按钮
@@ -129,9 +130,6 @@ Page({
   onLoad: function (options) {
     this.setData({
       currentData: app.global[app.global['currentLanguage']].userInfo,
-      sex: app.global[app.global['currentLanguage']].userInfo.sex[0],
-      city: '北京-北京',
-      date: "2017-01-02"
     })
 
     ajax.getAddress((data) => {
@@ -209,8 +207,9 @@ Page({
     multiArray = [multiProvince, multiCity]
 
     this.setData({
-      multiArray,
-      multiIndex
+      multiArray: multiArray,
+      multiIndex,
+      ts: (new Date()).getTime()
     });
     return {
       multiIndex,
@@ -232,7 +231,8 @@ Page({
     var multiArray = this.data.multiArray
     multiArray[1] = multiCity
     this.setData({
-      multiArray: multiArray
+      multiArray: multiArray,
+      ts: (new Date()).getTime()
     })
   },
   getIDByIndex() {

@@ -64,14 +64,14 @@ function thirdLogin(code) {
     '/wechat-mp/oauth/' + encodeURIComponent(code),
     {},
     function (json) {
-      json = {
-        code: 200,
-        data:{
-          session_id:'111',
-          is_registered:'true'
-        },
-        msg:'ERROR'
-      }
+      // json = {
+      //   code: 200,
+      //   data:{
+      //     session_id:'111',
+      //     is_registered:'true'
+      //   },
+      //   msg:'ERROR'
+      // }
 
       if (json.code == 200) {
         console.log('登录成功')
