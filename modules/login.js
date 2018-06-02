@@ -31,9 +31,9 @@ function goRegister(callback) {
     if (callbackUrl.includes('pages/login/index')) {
       return
     }
-    wx.reLaunch({ 
-     url: '/pages/login/index?callbackUrl=' + encodeURIComponent(callbackUrl) 
-     })
+    wx.reLaunch({
+      url: '/pages/login/index?callbackUrl=' + encodeURIComponent(callbackUrl)
+    })
   }
   callback && callback()
 }
@@ -77,6 +77,7 @@ function thirdLogin(code) {
 
       if (json.code == 200) {
         console.log('登录成功')
+        wx.setStorageSync('is_login', 'true')
         //wx.setStorageSync('JSESSIONID', json.data.session_id)
         if (json.data.is_register == false) {
           // 未注册
