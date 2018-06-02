@@ -32,7 +32,7 @@ Component({
            let url = e.currentTarget.dataset.bannerItem.url;
            if(url){
              wx.navigateTo({
-                url: url
+                url: ('/pages/special/special?url=' + url)
               })
            } 
         }

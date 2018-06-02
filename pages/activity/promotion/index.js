@@ -1,25 +1,39 @@
 // pages/activity/promotion/index.js
+const app = getApp();
+const URL = require('../../../modules/api-list.js');
+const ajax = require('../../../modules/ajax.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    bannerList: [{
-      "image":
-      "https:\/\/miniprogrampicture.costa.net.cn\/u\/1804\/2018042316385234.jpg",
-      "url": "\/pages\/activity\/summer\/index"
-    }, {
-      "image": "https:\/\/miniprogrampicture.costa.net.cn\/banner_1.png",
-      "url": ""
-    }],
+    bannerList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getBanner();
+  },
+  getBanner(){
+    let _this = this;
+    let url = `${URL.default.home.bannerList}`;
+    ajax.request(
+      url,
+      {},
+      function(data){
+        if(data.code === 200) {
+          let tmp = data.data;
+          tmp.forEach(item=>{
+            item.img = `${app.global.host}${item.img}`;
+          });
+          _this.setData({
+            'bannerList': tmp
+          });
+        }
+      }
+     )
   },
 
   /**
