@@ -1,5 +1,8 @@
 // pages/points/index.js
 const app = getApp()
+const URL = require('../../modules/api-list.js');
+const ajax = require('../../modules/ajax.js');
+const formatTime = require('../../common/formatTime.js');
 Page({
 
   /**
@@ -9,7 +12,9 @@ Page({
     currentLanguage: app.global['currentLanguage'],
     currentData: app.global[app.global['currentLanguage']].card,
     activeSpread: false,
-    disableSpread: false
+    disableSpread: false,
+    notExpired: [],
+    expired: []
   },
 
   /**
@@ -20,7 +25,46 @@ Page({
       currentLanguage: app.global['currentLanguage'],
       currentData: app.global[app.global['currentLanguage']].card 
     })
-   
+   this.initPage();
+  },
+  initPage(){
+    let _this = this;
+    let url = `${URL.default.card.list}`;
+    ajax.request(
+      url,
+      {},
+      function(data){
+        if(data.code === 200) {
+          let tmp = data.data;
+          const {notExpired,expired} = _this.splitItemData(tmp);
+          _this.setData({
+            'notExpired': notExpired,
+            'expired': expired
+          });
+        }
+      }
+     )
+  },
+  /**
+   * 拆分已过期、未过期数据
+   * @param list
+   */
+   splitItemData(list){
+    // return {notExpired: [], expired: list};
+    let notExpired = [], expired = [], ts = Date.now();
+    list.forEach(item=>{
+        item.time = formatTime.formatTime(new Date(item.expired_time));
+        if(item.expired_time>ts){
+            item
+            notExpired.push(item);
+        } else {
+            expired.push(item);
+        }
+    });
+    return {
+        notExpired,
+        expired
+    };
   },
   activeSpreadTap(){
     let value = this.data.activeSpread;
@@ -34,9 +78,10 @@ Page({
       'disableSpread': !value
     });
   },
-  gotoDetail(){
+  gotoDetail(event){
+    const {currentTarget:{dataset:{item}}} = event 
     wx.navigateTo({
-      url: '/pages/shareCard/index'
+      url: '/pages/shareCard/index?id=' + item.id
     });
   },
   /**

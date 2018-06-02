@@ -467,6 +467,7 @@ App({
   },
   onLaunch: function () {
     login.checkLogin()
+    wx.setStorageSync('language', 'zh')
   }
 
 })
