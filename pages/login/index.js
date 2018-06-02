@@ -85,19 +85,19 @@ Page({
     if (this.data.tel == "") {
       wx.showModal({
         showCancel: false,
-        content: '请输入手机号码',
+        content: this.data.currentData.tel || '请输入手机号码',
       })
     }
     else if (this.data.code == "") {
       wx.showModal({
         showCancel: false,
-        content: '请输入短信验证码',
+        content: this.data.currentData.code || '请输入短信验证码',
       })
     } else {
       ajax.register({
-        'form-mobile': this.data.tel,
-        'form-code': this.data.code,
-        'form-birthday': this.data.date
+        'mobile': this.data.tel,
+        'code': this.data.code,
+        'birthday': this.data.date
       })
     }
   },
