@@ -15,6 +15,7 @@ Page({
     },
     city:'',
     currentData: app.global[app.global['currentLanguage']].store,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     list:[],
     inputValue:''
   },

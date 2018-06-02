@@ -11,6 +11,7 @@ Page({
   data: {
     currentLanguage: app.global['currentLanguage'],
     currentData: app.global[app.global['currentLanguage']].cardShare,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     activeSpread: false,
     disableSpread: false,
     notExpired: [],

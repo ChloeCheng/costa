@@ -6,17 +6,20 @@
   <image src='../../assets/share-bg.png' mode='widthFix'></image> 
 </view>
 <view class='content'>
-  <text class="share-tips" style="display:none">{{currentData.titleNone}}</text>
+  <text class="share-tips" wx:if="{{shareType == 5 && detail.status}}">{{currentData.myselfTipFalse}}</text>
+  <text class="share-tips" wx:if="{{shareType == 5 && !detail.status}}">{{currentData.myselfTipTrue}}</text>
+  <text class="share-tips" wx:if="{{shareType == 3}}">{{currentData.tips}}</text>
+  <text class="share-tips" wx:if="{{shareType == 4}}">{{currentData.tipsNone}}</text>
    <view>
     <image mode='aspectFit' src='../../assets/card_explain.png'></image>
   </view>
   <text class="title">{{detail.name}}</text>
   <text class="sub-title marginTop">{{detail.summary}}</text>
-  <text class="sub-title">有效期：{{detail.expired_time}}</text>
-  <view class="card-explain">
+  <text class="sub-title-time">有效期：{{detail.time}}</text>
+  <view class="card-explain" wx:if="{{noShareExplain}}">
      <view>
         <text class="explain-title">优惠券说明</text>
-        <text class="explain-content">{{detail.content}}</text>
+        <text class="explain-content">22123dsafdsafds{{detail.content}}</text>
      </view>
   </view>
   
@@ -24,10 +27,10 @@
     <button type="default" open-type="share" hover-class="none" bindtap='goback'> {{currentData.btnTxt}}  </button>
   </block>
     <block wx:if="{{shareType == 2}}">
-    <button type="default" hover-class="none" bindtap='goback'> {{currentData.btnTxtApt}} </button>
+    <button type="default" hover-class="none" bindtap='getCard'> {{currentData.btnTxtApt}} </button>
   </block>
-  <block wx:if="{{shareType != 1&&shareType != 2}}">
-    <button type="default" hover-class="none" bindtap='goback'> {{currentData.btnTxtBack}}                   </button>
+  <block wx:if="{{shareType != 1&& shareType != 2}}">
+    <button type="default" hover-class="none" bindtap='gobackPath'> {{currentData.btnTxtBack}}                   </button>
   </block>
 </view>
 </view>

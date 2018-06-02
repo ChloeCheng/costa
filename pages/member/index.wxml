@@ -1,4 +1,4 @@
-<bar></bar>
+<bar currentData="{{currentDataTotal}}"></bar>
 
 <view class="body">
    <text class="title">{{currentData.title}}</text>

@@ -15,7 +15,10 @@ let URL = {
     },
     card: {
         list: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-all',  //获取卡券列表  
-        detail: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-by-id/'  //获取优惠券详情 
+        detail: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-by-id/',  //获取优惠券详情
+        share: 'http://costa.slashsoft.cn/wechat-mp/coupon/set-share/', //获取优惠券分享码 
+        shareDatail: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-by-hash/', //分享的优惠券详情
+        getShare: 'http://costa.slashsoft.cn/wechat-mp/coupon/get-by-hash/receive-share/' //领取分享的优惠券
     }
 }
 

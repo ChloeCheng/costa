@@ -122,6 +122,8 @@ App({
       },
       cardShare: {
         title: '分享给好友',
+        myselfTipFalse:'好友未领取···',
+        myselfTipTrue:'已领取···',
         titleNone: '慢一步啦',
         txt: '感觉自己壕壕哒',
         txtNone: '积分已被拿走',

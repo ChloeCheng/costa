@@ -23,7 +23,16 @@ Page({
     showData:{}
   },
   onLoad: function () {
-    this.initPage();
+    let _this = this;
+    wx.getUserInfo({
+      success: function(res) {
+          getApp().global.wxUserInfo = res.userInfo;
+          _this.setData({
+            'userInfo': res.userInfo
+          });
+      }
+    })
+    _this.initPage();
   },
   initPage(){
     let _this = this;
@@ -163,7 +172,7 @@ Page({
   onShareAppMessage: function (options) {
     return {
       title: '欢迎加入Costa会员',
-      imageUrl: 'https://miniprogrampicture.costa.net.cn/icon_103.jpg',
+      imageUrl: '',
       path: '/pages/index/index'
     }
   }

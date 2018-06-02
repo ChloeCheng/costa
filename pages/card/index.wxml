@@ -1,4 +1,4 @@
-<bar></bar>
+<bar currentData="{{currentDataTotal}}"></bar>
 <view class="card-body">
    <text class="card-title">{{currentData.title}}</text>
    <view class="card-active">

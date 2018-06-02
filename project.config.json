@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -66,21 +66,21 @@
 				},
 				{
 					"id": 5,
-					"name": "share",
-					"pathName": "pages/share/index",
-					"query": "pointHash=aerjqgywnutanskufvijtdzscvcbjumi"
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": "id=6226621"
 				},
 				{
-					"id": -1,
-					"name": "userInfo",
-					"pathName": "pages/userInfo/index",
-					"query": ""
+					"id": 6,
+					"name": "shareCardHash",
+					"pathName": "pages/shareCard/index",
+					"query": "hash=bdfavachhtaebdqpqrvizfrftxxfeqbw"
 				},
 				{
-					"id": -1,
-					"name": "card",
-					"pathName": "pages/card/index",
-					"query": ""
+					"id": 7,
+					"name": "url",
+					"pathName": "pages/special/special",
+					"query": "url=https%3A%2Fbaidu.com"
 				},
 				{
 					"id": 8,
@@ -189,6 +189,30 @@
 					"name": "shareCard",
 					"pathName": "pages/shareCard/index",
 					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/card/index",
+					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "url",
+					"pathName": "pages/special/special",
+					"query": "url=https%3A%2Fbaidu.com"
 				}
 			]
 		}
