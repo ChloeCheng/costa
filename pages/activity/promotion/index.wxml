@@ -2,11 +2,11 @@
 <view class="center-title">
   <text>最新活动</text>
 </view>
-<view class='block-radiu'>
+ <view class='block-radiu'>
   <banner list="{{bannerList}}"></banner>
-</view>
-<bar active="true"></bar>
+</view> 
 
+<bar active="true"></bar>
 <view class="promotion-info">
   <view>
    <image mode='aspectFit' src='../../../assets/activity/logo-red.png'/>
