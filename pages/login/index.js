@@ -41,6 +41,11 @@ Page({
       code: e.detail.value
     })
   },
+  goAgreement(){
+    wx.navigateTo({
+      url: '/pages/agreement/index'
+    })
+  },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -54,7 +59,7 @@ Page({
         content: this.data.currentData.tel,
       })
       return
-    }
+    } 
     if (this.data.secondFlag != -1) {
       return
     }
@@ -93,7 +98,12 @@ Page({
         showCancel: false,
         content: this.data.currentData.code || '请输入短信验证码',
       })
-    } else {
+    } else if (!this.data.checked) {
+      wx.showModal({
+        showCancel: false,
+        content: this.data.currentData.agree,
+      })
+    }else {
       ajax.register({
         'mobile': this.data.tel,
         'code': this.data.code,
