@@ -9,14 +9,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentData: app.global[app.global['currentLanguage']],
-    shareType:1,//1,分享， 2，领积分， 3，领成， 4，领完了
+    currentData: app.global[app.global['currentLanguage']].cardShare,
+    shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了
     detail: {},
   },
   goback(){
-    wx.navigateTo({
+    /*wx.navigateTo({
       url: '/pages/card/index'
-    })
+    })*/
   },
   updateInfo: function () {
     login.checkLogin()

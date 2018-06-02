@@ -10,7 +10,7 @@ Page({
    */
   data: {
     currentLanguage: app.global['currentLanguage'],
-    currentData: app.global[app.global['currentLanguage']].card,
+    currentData: app.global[app.global['currentLanguage']].cardShare,
     activeSpread: false,
     disableSpread: false,
     notExpired: [],

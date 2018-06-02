@@ -29,9 +29,16 @@
 }
 .content image{
   width: 300rpx;
+  height:320rpx;
 }
 .content .title{
-  font-size: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.sub-title{
+  font-size: 24rpx;
+  display: block;
+  text-align: center;
 }
 .content .txt{
   font-size:32rpx;
@@ -44,7 +51,9 @@
   color: white;
   background-color: #9e0028;
 }
-
+.marginTop{
+  margin-top: 30rpx;
+}
 .share-tips{
   margin-top:100rpx;
   height: 100rpx;
@@ -53,4 +62,24 @@
   line-height: 100rpx;
   color: white;
   background-color:rgba(0,0,0,0.2) ;
+}
+
+.card-explain{
+  background-color: rgba(172, 0, 35, 0.4);
+  padding: 20rpx 40rpx 40rpx;
+  width:100%;
+  margin-top: 30rpx;
+}
+
+.card-explain .explain-title{
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.card-explain .explain-content{
+  font-size: 24rpx;
+  color:#fff;
+  display: block;
 }
