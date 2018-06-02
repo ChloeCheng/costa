@@ -59,13 +59,14 @@ Component({
             {},
             function(data){
               if(data.code === 200) {
+
                 wx.addCard({
                   cardList: [
                     {  
-                      // cardId: data.data.cardapiConfig.cardId,
-                      // cardExt: JSON.stringify(data.data.cardExt)
-                      cardId: 'pDRa7jn8bf-LsjT1XXnd_e_JZbfc',
-                      cardExt: '{"code": "", "openid": "", "timestamp": "1527759976", "nonce_str":"8328b961-0412-4637-ad82-c9521fe6f9c1","signature":"a0946e27269672afd51346206fdd8a1098013716"}'
+                      cardId: data.data.cardapiConfig.cardId,
+                      cardExt: JSON.stringify(data.data.cardapiConfig.cardExt)
+                        //cardId: 'pDRa7jn8bf-LsjT1XXnd_e_JZbfc',
+                       // cardExt: '{"code": "", "openid": "", "timestamp": "1527923255", "nonce_str":"776f42ed-cc24-4e1a-b681-bce2118bb9e0","signature":"13b269085ef156148843ffd4ea0fdc4206f23872"}'
   
                     }
                   ],

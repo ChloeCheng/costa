@@ -177,6 +177,18 @@
 					"name": "shareCard",
 					"pathName": "pages/shareCard/index",
 					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": "id=6226589"
+				},
+				{
+					"id": -1,
+					"name": "shareCard",
+					"pathName": "pages/shareCard/index",
+					"query": "id=6226589"
 				}
 			]
 		}
