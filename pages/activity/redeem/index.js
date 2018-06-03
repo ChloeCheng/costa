@@ -8,6 +8,7 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']],
+    hostUrl: app.global.hostUrl,
     images: {
       logo: '../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',

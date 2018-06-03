@@ -2,6 +2,7 @@ var login = require('./modules/login.js')
 const app = getApp()
 App({
   global: {
+    hostUrl:'http://costa.slashsoft.cn',
     wxUserInfo: {},
     host: 'http://costa.slashsoft.cn/',
     currentLanguage: 'zh',

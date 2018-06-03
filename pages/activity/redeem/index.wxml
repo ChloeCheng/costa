@@ -8,9 +8,10 @@
      <image mode='aspectFit' src="{{'../../../assets/activity/'+item + '.png'}}" mode='aspectFill'/>
   </view>
 </view> -->
+
 <view class="images-list">
-  <view class="images-item" wx:for="list" wx:key="unique">
-     <image mode='aspectFit' src="{{item.img}}" mode='aspectFill'/>
+  <view class="images-item" wx:for="{{list}}" wx:key="unique">
+     <image mode='aspectFit' src="{{hostUrl+item.img}}" mode='aspectFill'/>
   </view>
 </view>
 
