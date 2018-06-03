@@ -25,6 +25,7 @@ Page({
   onReady: function () {
     this.setData({
       'currentLanguage': app.global['currentLanguage'],
+      'currentDataTotal': app.global[app.global['currentLanguage']],
       'currentData': app.global[app.global['currentLanguage']].member
     })
   },

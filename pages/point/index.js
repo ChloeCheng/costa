@@ -12,6 +12,7 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']].points,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     images: {
       logo: '../../assets/point/vip-logo.png',
       bg: '../../assets/point/bg.png',
@@ -127,7 +128,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ currentData: app.global[app.global['currentLanguage']].points })
+    this.setData({ 
+      currentData: app.global[app.global['currentLanguage']].points,
+      'currentDataTotal': app.global[app.global['currentLanguage']]
+   })
     ajax.getPoint((data) => {
       this.setData({  points: data  })
     })

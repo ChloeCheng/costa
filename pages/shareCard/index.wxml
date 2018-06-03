@@ -24,7 +24,7 @@
   </view>
   
   <block wx:if="{{shareType == 1}}">
-    <button type="default" open-type="share" hover- class="none" bindtap='gobackPath'> {{currentData.btnTxt}}  </button>
+    <button type="default" open-type="share" hover- class="none"> {{currentData.btnTxt}}  </button>
   </block>
     <block wx:if="{{shareType == 2}}">
     <button type="default" hover-class="none" bindtap='getCard'> {{currentData.btnTxtApt}} </button>

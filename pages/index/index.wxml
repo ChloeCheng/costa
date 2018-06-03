@@ -90,5 +90,5 @@
       </view>
 </view>
 
-<bar active="true" currentDate="{{currentBarDate}}"></bar>
+<bar active="true" currentData="{{currentBarDate}}"></bar>
 

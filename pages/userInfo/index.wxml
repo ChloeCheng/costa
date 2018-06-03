@@ -1,5 +1,5 @@
 <!--pages/userInfo/index.wxml-->
-<bar active="true"></bar>
+<bar active="true" currentData="{{currentDataTotal}}"></bar>
 <view class="center-title">
   <text>{{currentData.title}}</text>
 </view>
