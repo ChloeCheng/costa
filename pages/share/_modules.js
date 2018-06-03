@@ -16,10 +16,9 @@ exports.getPoint = function (hash, callback) {
 
 exports.receivePoint = function (hash, callback) {
   ajax.request(
-    '/wechat-mp/point/receive-share/3' + hash,
+    '/wechat-mp/point/receive-share/' + hash,
     {},
     function (json) {
-      json.code = 200
       if (json.code == 200) {
         callback && callback()
       }else{

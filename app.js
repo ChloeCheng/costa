@@ -477,7 +477,7 @@ App({
     //拼接url的参数
     var urlWithArgs = option.path + '?'
     for (var key in option.query) {
-      var value = option[key]
+      var value = option.query[key]
       urlWithArgs += key + '=' + value + '&'
     }
     urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length - 1)
