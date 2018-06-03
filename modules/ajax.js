@@ -11,12 +11,13 @@ var countFlag = 0
 
 function ajaxLogin(url, data) {
   if (url.indexOf('/wechat-mp/oauth') == -1) {
-    if (data && data.data.is_register == true && (data.code == 403 || data.code == 401 || data.code == 400 || data.code == 405)) {
+    if (data && data.is_register !== false && (data.code == 403 || data.code == 401 || data.code == 400 || data.code == 405)) {
       wx.setStorageSync('is_login', 'false')
       wx.setStorageSync('JSESSIONID', '')
+      wx.setStorageSync('JSESSIONID_EXPIRED', new Date('2018-06-01').getTime())
       // return
       countFlag++;
-      if (countFlag < 10) {
+      if (countFlag < 5) {
         var callbackUrl = wx.getStorageSync('callbackUrl')
         clearTimeout(ajaxFlag)
         ajaxFlag = setTimeout(() => {
@@ -94,7 +95,7 @@ function checkRequest(url, param = {}, success, failed, complete) {
           }
         }
         var data = JSON.parse(res.data)
-        //ajaxLogin(_url, data)
+        ajaxLogin(_url, data)
         success(data)
       } else {
         failed && failed(JSON.parse(res.data));

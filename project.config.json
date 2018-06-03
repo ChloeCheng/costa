@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 30,
 			"list": [
 				{
 					"id": -1,
@@ -213,6 +213,12 @@
 					"name": "url",
 					"pathName": "pages/special/special",
 					"query": "url=https%3A%2Fbaidu.com"
+				},
+				{
+					"id": -1,
+					"name": "sharePoint",
+					"pathName": "pages/share/index",
+					"query": "pointHash=bsznkhqadpvvtgxclmsnmizhcpnyqjgf"
 				}
 			]
 		}

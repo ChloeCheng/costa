@@ -49,7 +49,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var option = getUrl.getCurrentPageArgs()
+    ajax.getPoint(option.pointHash, (data) => {
+      if (data.myself) {
+        this.setData({
+          shareType: 1
+        })
+      } else if (data.status == false) {
+        this.setData({
+          shareType: 4
+        })
+      } else if (data.status == true) {
+        this.setData({
+          shareType: 2
+        })
+      }
+    })
   },
 
   /**
