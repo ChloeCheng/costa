@@ -27,3 +27,10 @@ exports.dateFormat = function(date, fmt) {
     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
   return fmt;
 }
+
+exports.checkBeyondTime = function (startDate, endDate) {
+  if (!startDate || !endDate) return true
+  var start = new Date(startDate).getTime();
+  var end = new Date(endDate).getTime();
+  return ((end - start) > 2* 60 * 60 * 1000)
+}

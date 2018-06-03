@@ -3,14 +3,16 @@
 const getUrl = require('./getPageUrl.js')
 const cookieKeys = ['JSESSIONID']
 const hostUrl = 'http://costa.slashsoft.cn'
-
+const dateFormat = require('./dateFormat.js')
+const checkSession = require('./checkSession.js')
 var ajaxFlag = ''
 var countFlag = 0
 
 function ajaxLogin(url, data) {
   if (url.indexOf('/wechat-mp/oauth') == -1) {
-    if (data && (data.code == 403 || data.code == 401 || data.code == 400 || data.code == 405)) {
-      // wx.setStorageSync('is_login','false')
+    if (data && data.data.is_register==true && (data.code == 403 || data.code == 401 || data.code == 400 || data.code == 405)) {
+      wx.setStorageSync('is_login','false')
+      wx.setStorageSync('JSESSIONID','')
       // return
       countFlag++;
       if (countFlag < 10) {
@@ -53,15 +55,13 @@ function setRequestHeader() {
   return header;
 }
 
-exports.checkRequest = function(callback){
-  wx.checkSession({
-    success: function () {
-      //session_key 未过期，并且在本生命周期一直有
-      goRegister(callback)
-    },
-  })
-  var is_login = wx.getStorageSync('is_login')
-  callback()
+exports.request = function (url, param = {}, success, failed, complete){
+  checkSession.checkExpired(
+    url,
+    ()=>{
+      checkRequest(url, param = {}, success, failed, complete);
+    }
+  )
 }
 
 /**
@@ -69,7 +69,7 @@ exports.checkRequest = function(callback){
  * @method setRequestHeader
  * @param {object} currentHeader 当前请求头
  */
-exports.request = function (url, param = {}, success, failed, complete) {
+function checkRequest(url, param = {}, success, failed, complete) {
   var _url = url
   if(url.indexOf('http')==-1){
     url = hostUrl + url
@@ -89,18 +89,13 @@ exports.request = function (url, param = {}, success, failed, complete) {
         if (url.indexOf('wechat-mp/oauth')> -1) {
           if (res.header['Set-Cookie']){
             wx.setStorageSync('JSESSIONID', res.header['Set-Cookie'])
+            wx.setStorageSync('JSESSIONID_EXPIRED', (new Date()).getTime())
           }
         }
         var data = JSON.parse(res.data)
-        ajaxLogin(_url, data)
+        //ajaxLogin(_url, data)
         success(data)
       } else {
-        // 未注册
-        // if (res.statusCode === 400) {
-        //   var pages = getCurrentPages()
-        //   var currentPage = pages[pages.length - 1]
-        //   wx.navigateTo('/pages/login/index?callbackUrl=' + encodeURIComponent(getUrl.getCurrentPageUrlWithArgs()))
-        // }
         failed && failed(JSON.parse(res.data));
         wx.showModal({
           showCancel:false,

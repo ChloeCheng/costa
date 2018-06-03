@@ -2,22 +2,30 @@
 const storage = require('./storage.js')
 const ajax = require('./ajax.js')
 const getUrl = require('./getPageUrl.js')
+const dateFormat = require('./dateFormat.js')
 const app = getApp()
 
 // 入口统一是否登录判断
 exports.checkLogin = function (callback = () => { }) {
   var session_id = wx.getStorageSync('JSESSIONID')
-  if (session_id) {
-    // 登录态检查
-    wx.checkSession({
-      success: function () {
-        //session_key 未过期，并且在本生命周期一直有
-        goRegister(callback)
-      },
-      fail: function () {
-        login()
-      }
-    });
+  var JSESSIONID_EXPIRED = wx.getStorageSync('JSESSIONID_EXPIRED')
+  if (session_id && JSESSIONID_EXPIRED) {
+    var is_expired = dateFormat.checkBeyondTime(JSESSIONID_EXPIRED,new Date())
+    if (is_expired){
+      login()
+    }else{
+      goRegister(callback)
+    }
+    // // 登录态检查
+    // wx.checkSession({
+    //   success: function () {
+    //     //session_key 未过期，并且在本生命周期一直有
+    //     goRegister(callback)
+    //   },
+    //   fail: function () {
+    //     login()
+    //   }
+    // });
   } else {
     login()
   }
@@ -78,8 +86,10 @@ function thirdLogin(code) {
       if (json.code == 200) {
         console.log('登录成功')
         wx.setStorageSync('is_login', 'true')
+        wx.setStorageSync('JSESSIONID_EXPIRED', (new Date()).getTime())
+        //json.data.is_register = false
         //wx.setStorageSync('JSESSIONID', json.data.session_id)
-        if (json.data.is_register == false) {
+        if (json.data&&json.data.is_register == false) {
           // 未注册
           wx.setStorageSync('is_registered', 'false')
           goRegister()
