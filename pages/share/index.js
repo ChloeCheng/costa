@@ -52,6 +52,22 @@ Page({
     this.setData({ 
       currentData: app.global[app.global['currentLanguage']]
     })
+    var option = getUrl.getCurrentPageArgs()
+    ajax.getPoint(option.pointHash, (data) => {
+      if (data.myself) {
+        this.setData({
+          shareType: 1
+        })
+      } else if (data.status == false) {
+        this.setData({
+          shareType: 4
+        })
+      } else if (data.status == true) {
+        this.setData({
+          shareType: 2
+        })
+      }
+    })
   },
 
   /**
