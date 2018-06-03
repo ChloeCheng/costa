@@ -63,20 +63,23 @@ Page({
     if (this.data.secondFlag != -1) {
       return
     }
-    ajax.sendSms(this.data.tel)
-    var SECOND_COUNT = 60;
-    this.setData({
-      secondFlag: SECOND_COUNT
-    })
-    var timeSecond = setInterval(() => {
-      if (this.data.secondFlag == -1) {
-        clearInterval(timeSecond)
-        return
-      }
+    ajax.sendSms(this.data.tel,
+    ()=>{
+      var SECOND_COUNT = 60;
       this.setData({
-        secondFlag: (this.data.secondFlag - 1)
+        secondFlag: SECOND_COUNT
       })
-    }, 1000)
+      var timeSecond = setInterval(() => {
+        if (this.data.secondFlag == -1) {
+          clearInterval(timeSecond)
+          return
+        }
+        this.setData({
+          secondFlag: (this.data.secondFlag - 1)
+        })
+      }, 1000)
+    })
+    
   },
   /**
    * 生命周期函数--监听页面加载

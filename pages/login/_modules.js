@@ -31,7 +31,7 @@ exports.register = function (option, callback) {
   )
 }
 
-exports.sendSms = function (num, callback) {
+exports.sendSms = function (num, success,failed) {
   ajax.request(
     '/wechat-mp/customer/register-get-code/' + num,
     {},
@@ -43,6 +43,9 @@ exports.sendSms = function (num, callback) {
           success: function (res) {
            }
         })
+        failed && failed()
+      }else{
+        success && success()
       }
     }
   )
