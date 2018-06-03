@@ -1,6 +1,6 @@
 <!--pages/share/index.wxml-->
 <dialog bind:info="updateInfo"></dialog>
-<bar active="true"></bar>
+<bar active="true" currentData="{{currentDataTotal}}"></bar>
 <view class='share-container'>
 <view  class='bg-image' >
   <image src='../../assets/share-bg.png' mode='widthFix'></image> 
