@@ -59,7 +59,7 @@ exports.request = function (url, param = {}, success, failed, complete){
   checkSession.checkExpired(
     url,
     ()=>{
-      checkRequest(url, param = {}, success, failed, complete);
+      checkRequest(url, param, success, failed, complete);
     }
   )
 }
