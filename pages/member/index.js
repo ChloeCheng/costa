@@ -7,6 +7,7 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']].member,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     currentLanguage: app.global['currentLanguage']
   },
 

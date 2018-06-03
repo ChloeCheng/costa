@@ -38,4 +38,4 @@
       </view>
 </view>
 
-<bar></bar>
+<bar currentData="{{currentDataTotal}}"></bar>

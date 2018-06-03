@@ -10,7 +10,7 @@
   >
     <block wx:for="{{list}}" wx:for-item="item" wx:key="vs-index-banner-{{item.index}}">
       <swiper-item>
-        <image src="{{item.image}}" bind:tap="handleBannerItemTap" data-banner-index="{{index}}" data-banner-item="{{item}}" class="vs-index-b-image" mode='widthFix'/>
+        <image src="{{item.img}}" bind:tap="handleBannerItemTap" data-banner-index="{{index}}" data-banner-item="{{item}}" class="vs-index-b-image" mode='widthFix'/>
       </swiper-item>
     </block>
   </swiper>

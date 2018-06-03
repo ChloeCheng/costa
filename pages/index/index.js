@@ -14,7 +14,7 @@ Page({
       "url": ""
     }],
     authorizeUserInfo: false,
-    userInfo: app.global.wxUserInfo,
+    userInfo: {},
     currentLanguage: app.global.currentLanguage || 'zh',
     showCode: false,
     showPhone: false,
@@ -23,7 +23,17 @@ Page({
     showData:{}
   },
   onLoad: function () {
-    this.initPage();
+    let _this = this;
+    wx.getUserInfo({
+      success: function(res) {
+          getApp().global.wxUserInfo = res.userInfo;
+          _this.setData({
+            'userInfo': res.userInfo
+          });
+      }
+    })
+    _this.initPage();
+    _this.getBanner();
   },
   initPage(){
     let _this = this;
@@ -46,6 +56,25 @@ Page({
          });
           _this.setData({
             'showData': tmp
+          });
+        }
+      }
+     )
+  },
+  getBanner(){
+    let _this = this;
+    let url = `${URL.default.home.bannerList}`;
+    ajax.request(
+      url,
+      {},
+      function(data){
+        if(data.code === 200) {
+          let tmp = data.data;
+          tmp.forEach(item=>{
+            item.img = `${app.global.host}${item.img}`;
+          });
+          _this.setData({
+            'bannerList': tmp
           });
         }
       }
@@ -163,7 +192,7 @@ Page({
   onShareAppMessage: function (options) {
     return {
       title: '欢迎加入Costa会员',
-      imageUrl: 'https://miniprogrampicture.costa.net.cn/icon_103.jpg',
+      imageUrl: '',
       path: '/pages/index/index'
     }
   }

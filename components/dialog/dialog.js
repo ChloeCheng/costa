@@ -24,7 +24,7 @@ Component({
                 success: function(res) {
                     // console.dir(res.userInfo)
                     getApp().global.wxUserInfo = res.userInfo;
-                    _this.triggerEvent('info')
+                    // _this.triggerEvent('info')  //写上通用在
                 }
                 })
             } else {
