@@ -1,4 +1,4 @@
-<bar active="true"></bar>
+<bar active="true" currentData="{{currentDataTotal}}"></bar>
 <view class='top-cover' bind:touchstart="touchstart" bind:touchmove='touchmove'>
   <view class="{{'cover ' + animateScroll}}">
 

@@ -8,12 +8,16 @@ Page({
    */
   data: {
     bannerList: [],
+    currentBarDate: app.global[app.global['currentLanguage']] 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ 
+      'currentDataTotal': app.global[app.global['currentLanguage']] 
+    })
     this.getBanner();
   },
   getBanner(){

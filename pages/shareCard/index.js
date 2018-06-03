@@ -175,11 +175,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (options) {
+    let _this = this;
     return {
       title: '欢迎加入Costa会员',
       imageUrl: '',
       path: '/pages/shareCard/index?hash=' + this.data.shareCode,
       success: function (res) {
+       
         // 转发成功之后的回调
         wx.showModal({
           title: '提示',

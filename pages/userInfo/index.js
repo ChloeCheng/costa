@@ -11,6 +11,7 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']].userInfo,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     name: "",
     birthday: "",
     gender: '',
@@ -130,6 +131,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       currentData: app.global[app.global['currentLanguage']].userInfo,
+      currentDataTotal: app.global[app.global['currentLanguage']]
     })
 
     ajax.getAddress((data) => {

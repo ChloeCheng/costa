@@ -24,7 +24,8 @@ Page({
   onLoad: function (options) {
     this.setData({ 
       currentLanguage: app.global['currentLanguage'],
-      currentData: app.global[app.global['currentLanguage']].card 
+      currentData: app.global[app.global['currentLanguage']].card,
+      'currentDataTotal': app.global[app.global['currentLanguage']] 
     })
    this.initPage();
   },

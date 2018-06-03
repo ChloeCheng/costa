@@ -25,7 +25,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({ 
-      currentData: app.global[app.global['currentLanguage']].store 
+      currentData: app.global[app.global['currentLanguage']].store,
+      'currentDataTotal': app.global[app.global['currentLanguage']]
     })
       
   },

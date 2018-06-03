@@ -10,7 +10,7 @@ Component({
             type: Boolean,
             value: false
         },
-        currentDate: {
+        currentData: {
             type: Object,
             value: {home:{home:'主页','myPay':'微信支付'}}
         }
