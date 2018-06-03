@@ -11,6 +11,7 @@ Page({
    */
   data: {
     currentData: app.global[app.global['currentLanguage']].cardShare,
+    currentDataTotal: app.global[app.global['currentLanguage']],
     shareType: 1, //1,分享， 2，领积分， 3，领成， 4，领完了, 5自己的
     detail: {},
     shareCode: '',
@@ -29,6 +30,10 @@ Page({
    */
   onLoad: function (options) {
      wx.hideShareMenu();
+     this.setData({ 
+      currentData: app.global[app.global['currentLanguage']].cardShare,
+      currentDataTotal: app.global[app.global['currentLanguage']]
+    })
      if(options.id){
       this.initData(options.id);
       this.setData({
@@ -176,10 +181,11 @@ Page({
    */
   onShareAppMessage: function (options) {
     let _this = this;
+    // console.log(_this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index')
     return {
       title: '欢迎加入Costa会员',
       imageUrl: '',
-      path: '/pages/shareCard/index?hash=' + this.data.shareCode,
+      path: _this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index',
       success: function (res) {
        
         // 转发成功之后的回调

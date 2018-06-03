@@ -360,7 +360,7 @@ App({
         titleNone: '慢一步啦',
         txt: '感觉自己壕壕哒',
         txtNone: '积分已被拿走',
-        btnTxt: '分享给好友',
+        btnTxt: 'Share with friends',
         btnTxtBack: '返回我的优惠券',
         btnTxtApt: '确认领取优惠券',
         tips: '你已成功抢到此优惠券',
