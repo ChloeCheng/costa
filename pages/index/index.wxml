@@ -60,7 +60,7 @@
          <text>{{currentData.contactUs}}</text>
       </view>
     </view>
-    <view class="code-view"  wx-if="{{showCode}}">
+    <view class="code-view" style="z-index:{{showCode? '11': '-1'}}">
       <view class="code-pick-up" bindtap="codeOperater">
         <image src="../../assets/card/card_active_up.png" mode='aspectFit'></image>
         <text>{{currentData.pickUp}}</text>
