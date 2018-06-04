@@ -31,6 +31,7 @@ Component({
         handleBannerItemTap: function(e){
            let url = e.currentTarget.dataset.bannerItem.url;
            if(url){
+             url = getApp().global.hostUrl + url;
              wx.navigateTo({
                 url: ('/pages/special/special?url=' + url)
               })
