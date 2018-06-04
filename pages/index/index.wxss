@@ -268,11 +268,18 @@ button[class="u-login-wx"]::after {
   margin-top:10rpx;
   margin-right:6rpx;
 }
+.canvas-cover{
+  border:1rpx solid #B95165;
+  padding:10rpx;
+  background: #fff;
+  display: inline-block;
+  margin: 0 auto;
+}
 canvas{
   width: 130px;
   height:130px;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto;  
 }
 .clear{
   clear: both;
