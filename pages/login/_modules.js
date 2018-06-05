@@ -7,13 +7,18 @@ exports.register = function (option, callback) {
     '/wechat-mp/customer/register-submit',
     option,
     function (json) {
+      //json.code = 200
       if (json.code == 200) {
         wx.setStorageSync('is_registered', 'true')
         wx.showModal({
           showCancel: false,
           content: app.global[app.global['currentLanguage']].login.success,
           success: function (res) {
-            var url = getUrl.getCallbackUrl()
+            var url = wx.getStorageSync('callbackUrl')
+            if (url == "" || url.indexOf('pages/login/index')>-1){
+              url = 'pages/index/index'
+            } 
+            console.log(url)
             wx.reLaunch({
               url: '/' + url,
             })
