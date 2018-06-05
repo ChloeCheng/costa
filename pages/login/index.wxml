@@ -3,9 +3,9 @@
   <view class='bg-image'>
     <image src='../../assets/share-bg.png' mode='widthFix'></image>
   </view>
-  <view class="language-change" bindtap="changeLanguage">
+  <!--view class="language-change" bindtap="changeLanguage">
     <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>
-  </view>
+  </view-->
 
   <view class='content-block'>
     <view class="title-block">

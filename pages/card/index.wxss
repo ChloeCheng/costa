@@ -89,13 +89,21 @@ margin-top:40rpx;
 .card-center{
   font-size: 28rpx;
   flex:1;
+  margin-left: 20rpx;
 }
 .card-center text{
-  font-size: 30rpx;
+  font-size: 24rpx;
   display: block;
 }
 .card-center text.card-active-status{
   color:#9A0020;
+}
+.card-center text.card-center-title{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.card-center text.card-center-title + text {
+  margin-top: 6rpx;
 }
 .card-list-time{
   font-size: 24rpx;

@@ -1,4 +1,4 @@
-<dialog bind:info="updateInfo"></dialog>
+<dialog bind:info="updateInfo" hideDialog="{{hideDialog}}"></dialog>
 <banner list="{{bannerList}}"></banner>
 <view class="language-change" bindtap="changeLanguage">
   <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>

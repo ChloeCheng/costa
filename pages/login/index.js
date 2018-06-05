@@ -12,7 +12,7 @@ Page({
     authorizeUserInfo: true,
     currentData: app.global[app.global['currentLanguage']].login,
     'currentLanguage': app.global.currentLanguage,
-    date: date.dateFormat(new Date(), 'yyyy-MM-dd'),
+    date: date.dateFormat(new Date('1968-01-01'), 'yyyy-MM-dd'),
     code: '',
     tel: '',
     checked: false,

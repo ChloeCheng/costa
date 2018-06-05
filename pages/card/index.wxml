@@ -19,7 +19,7 @@
                 <image src="../../assets/card/type_{{item.icon}}.png" mode='aspectFit'></image>
             </view>
             <view class="card-center">
-              <text class="card-active-status">{{item.name}}</text>
+              <text class="card-center-title card-active-status">{{item.name}}</text>
               <text>{{item.summary}}</text>
             </view>
             <text class="card-list-time">{{currentData.validityTime}} {{item.time}}</text>
@@ -45,7 +45,7 @@
                 <image src="../../assets/card/type_{{item.icon}}.png" mode='aspectFit'></image>
             </view>
             <view class="card-center">
-              <text>{{item.name}}</text>
+              <text class="card-center-title">{{item.name}}</text>
               <text>{{item.summary}}</text>
             </view>
             <text class="card-list-time">{{currentData.validityTime}} {{item.time}}</text>

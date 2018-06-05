@@ -12,7 +12,7 @@ Page({
   data: {
     currentData: app.global[app.global['currentLanguage']].userInfo,
     currentDataTotal: app.global[app.global['currentLanguage']],
-    name: "",
+    name: app.global.wxUserInfo.nickName,
     birthday: "",
     gender: '',
     city: '北京-北京',
@@ -150,7 +150,7 @@ Page({
       gender: app.global[app.global['currentLanguage']].userInfo.sex[data.gender - 1],
       //city: '北京-北京',
       birthday: dateFormat.dateFormat(data.birthday, 'yyyy-MM-dd'),
-      name: data.name,
+      name: app.global.wxUserInfo.nickName,
       favorites: data.favorites,
       position: data.position,
       company: data.company,

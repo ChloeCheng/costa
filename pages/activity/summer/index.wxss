@@ -1,6 +1,6 @@
 /* pages/points/index.wxss */
 .body{
-  padding: 20rpx 30rpx 0 30rpx;
+  padding: 20rpx 24rpx 0 24rpx;
 }
 .title{
   color: #b28862;
@@ -46,11 +46,12 @@
   display: block;
   text-align: center;
   color:#b28862;
-  font-size: 30rpx;
+  font-size: 26rpx;
 }
 
 .desc text.big{
-  font-size: 34rpx;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
 }
 
 .intr{
@@ -67,13 +68,16 @@
   margin: 40rpx 30rpx;
 }
 .btn{
-  background: #b28862;
+  background:#b28862;
   color:#fff;
-  width:350rpx;
+  width:380rpx;
   height:80rpx;
-  line-height: 80rpx;
-  font-size: 32rpx;
-  margin: 0 auto;
+  line-height:80rpx;
+  font-size:34rpx;
+  margin:0 auto;
+  letter-spacing:8rpx;
+  font-weight:bold;
+
 }
 
 .text-desc{

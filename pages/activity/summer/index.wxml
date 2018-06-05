@@ -14,15 +14,15 @@
   <view class="icons">
      <image class="icon-bg" src="../../../assets/summer/icon_bg.png"></image>
      <view class="bean-type">
-        <image class="type-1 big" src="../../../assets/summer/type_1.png" mode='aspectFit'></image>
-        <image class="type-2" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-3 big" src="../../../assets/summer/type_3_active.png" mode='aspectFit'></image>
-        <image class="type-4" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-5" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-6 big" src="../../../assets/summer/type_4_active.png" mode='aspectFit'></image>
-        <image class="type-7" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-8" src="../../../assets/summer/type_2.png" mode='aspectFit'></image>
-        <image class="type-9 big" src="../../../assets/summer/type_5_active.png" mode='aspectFit'></image>        
+        <image class="type-1 big" src="{{cups > 0 ? '../../../assets/summer/type_1_active.png' : '../../../assets/summer/type_1.png'}}" mode='aspectFit'></image>
+        <image class="type-2" src="{{cups > 1 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
+        <image class="type-3 big" src="{{cups > 2 ? '../../../assets/summer/type_4.png' : '../../../assets/summer/type_4_active.png'}}" mode='aspectFit'></image>
+        <image class="type-4" src="{{cups > 3 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
+        <image class="type-5" src="{{cups > 4 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
+        <image class="type-6 big" src="{{cups > 5 ? '../../../assets/summer/type_4.png' : '../../../assets/summer/type_4_active.png'}}" mode='aspectFit'></image>
+        <image class="type-7" src="{{cups > 6 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
+        <image class="type-8" src="{{cups > 7 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
+        <image class="type-9 big" src="{{cups > 8 ? '../../../assets/summer/type_5.png' : '../../../assets/summer/type_5_active.png'}}" mode='aspectFit'></image>        
       </view>
   </view>
   <view class="intr">

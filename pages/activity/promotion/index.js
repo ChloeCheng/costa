@@ -8,7 +8,7 @@ Page({
    */
   data: {
     bannerList: [],
-    currentBarDate: app.global[app.global['currentLanguage']] 
+    currentBarDate: app.global[app.global['currentLanguage']],
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({ 
-      'currentDataTotal': app.global[app.global['currentLanguage']] 
+      'currentBarDate': app.global[app.global['currentLanguage']] 
     })
     this.getBanner();
   },

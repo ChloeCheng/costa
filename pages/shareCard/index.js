@@ -183,14 +183,14 @@ Page({
     let _this = this;
     // console.log(_this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index')
     return {
-      title: '欢迎加入Costa会员',
+      title: _this.data.detail.name || '欢迎加入Costa会员',
       imageUrl: '',
       path: _this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index',
       success: function (res) {
-       
+       let lau = app.global['currentLanguage'];
         // 转发成功之后的回调
         wx.showModal({
-          title: '提示',
+          title: (lau === 'zh' ? '提示' : 'Notice'),
           content: '分享成功',
           showCancel: false,
           success:()=>{

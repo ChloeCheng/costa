@@ -116,11 +116,15 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    
     return {
+      title: '速度！你的壕友在撒COSTA福利！就看谁手快！',
+      imageUrl: '',
       success: function (res) {
+        let lau = app.global['currentLanguage'];
         // 转发成功之后的回调
         wx.showModal({
-          title: '提示',
+          title: (lau === 'zh' ? '提示' : 'Notice'),
           content: '分享成功',
           showCancel: false,
           success:()=>{

@@ -20,7 +20,8 @@ Page({
     showPhone: false,
     currentData: app.global[app.global['currentLanguage']].home,
     currentBarDate: app.global[app.global['currentLanguage']],
-    showData:{}
+    showData:{},
+    hideDialog: false
   },
   onLoad: function () {
     let _this = this;
@@ -28,14 +29,15 @@ Page({
       success: function(res) {
           getApp().global.wxUserInfo = res.userInfo;
           _this.setData({
-            'userInfo': res.userInfo
+            'userInfo': res.userInfo,
+            hideDialog: true
           });
       }
     })
     _this.initPage();
     _this.getBanner();
   },
-  initPage(){
+  initPage(noInit){
     let _this = this;
     let url = `${URL.default.home.userInfo}`;
     ajax.request(
@@ -46,14 +48,16 @@ Page({
           let tmp = data.data, pointValue = tmp.max - tmp.usable_total;
           //let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
           tmp.pointValue = pointValue;
-          var qrcode = new QRCode('canvas', {
-            text: tmp.vipcode,
-            width: 130,
-            height: 130,
-            colorDark: "#9e0028",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H,
-          });
+          if(!noInit){
+            var qrcode = new QRCode('canvas', {
+              text: tmp.vipcode,
+              width: 130,
+              height: 130,
+              colorDark: "#9e0028",
+              colorLight: "#ffffff",
+              correctLevel: QRCode.CorrectLevel.H,
+            });
+          }
           _this.setData({
             'showData': tmp,
             showCode: false
@@ -95,6 +99,7 @@ Page({
       'currentData': app.global[app.global['currentLanguage']].home,
       'currentBarDate': app.global[app.global['currentLanguage']]
     });
+    this.initPage(true);
   },
   codeOperater(){
     let code = this.data.showCode;

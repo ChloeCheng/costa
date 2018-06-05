@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 31,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -225,6 +225,24 @@
 					"name": "Card",
 					"pathName": "pages/card/index",
 					"query": "hash=bdfavachhtaebdqpqrvizfrftxxfeqbw"
+				},
+				{
+					"id": -1,
+					"name": "summer",
+					"pathName": "pages/activity/summer/index",
+					"query": "hash=bdfavachhtaebdqpqrvizfrftxxfeqbw"
+				},
+				{
+					"id": -1,
+					"name": "summer",
+					"pathName": "pages/activity/summer/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index",
+					"query": ""
 				}
 			]
 		}

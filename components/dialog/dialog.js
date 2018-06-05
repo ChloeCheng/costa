@@ -4,7 +4,11 @@ Component({
      * 组件的属性列表
      */
     properties: {
-       
+        hideDialog:{
+            type: Boolean,
+            value: false,
+            observer: '_hideDialogFun'
+        }
     },
 
     /**
@@ -16,6 +20,7 @@ Component({
 
     ready(){
         let _this = this;
+        
         wx.getSetting({
         success(res) {
             if (res.authSetting['scope.userInfo']) {
@@ -58,6 +63,13 @@ Component({
                   _this.triggerEvent('info')
                 }
               })    
+            }
+          },
+          _hideDialogFun: function(){
+            if(this.properties.hideDialog){
+                this.setData({
+                    'authorizeUserInfo': true
+                }); 
             }
           }
     }

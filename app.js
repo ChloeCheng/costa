@@ -256,7 +256,7 @@ App({
         store: 'Store Location',
         points: 'Points',
         contactUs: 'Contact us',
-        serviceTel: 'Service HotLine：',
+        serviceTel: 'Service Hotline：',
         serviceTime: 'Service Time：',
         serviceTimeDetail: 'Mon-Sun ',
         close: 'Closed',
@@ -469,7 +469,7 @@ App({
           }
         ],
         title: 'Membership Service',
-        btnTxt: 'Ggree and Register',
+        btnTxt: 'Agree and Register',
       }
     }
   },

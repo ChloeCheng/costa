@@ -1,19 +1,33 @@
 // pages/points/index.js
 const app = getApp()
+const URL = require('../../../modules/api-list.js');
+const ajax = require('../../../modules/ajax.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    cups: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let _this = this;
+    let url = `${URL.default.home.activity}`;
+    ajax.request(
+      url,
+      {},
+      function(data){
+        if(data.code === 200) {
+          _this.setData({
+            cups: +data.data.cups
+          })
+        }
+      }
+     )
    
   },
   gotoDetail(){

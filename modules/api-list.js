@@ -8,7 +8,8 @@ let URL = {
     home: {
         userInfo: 'https://costa.slashsoft.cn/wechat-mp/customer/get-userinfo',   //获取用户信息
         status: 'httpss://api.union.vip.com/vsp/user/join/b2clogin',   //获取提醒设置状态
-        bannerList: 'https://costa.slashsoft.cn/wechat-mp/campaign/get-all'
+        bannerList: 'https://costa.slashsoft.cn/wechat-mp/campaign/get-banner',
+        activity: 'https://costa.slashsoft.cn/wechat-mp/campaign/dianliang/get-cups'
     },
     store: {
         storeList: 'https://costa.slashsoft.cn/wechat-mp/store/by-geo/',  // 获取门店信息
