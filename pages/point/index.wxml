@@ -37,9 +37,9 @@
       </view>
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo" />
-        <text class="score">{{points.max-points.total}}</text>
+        <text class="score">{{points.next_id === 0 ? points.usable_total : (points.max-points.total)}}</text>
         <text class="flag">{{currentData.flag}}</text>
-        <text class="text">{{currentData.upgrade}}</text>
+        <text class="text">{{points.next_id === 0 ?currentData.theLast :currentData.upgrade}}</text>
       </view>
       <view class="point-label">
         <text class="line-h" />
@@ -120,7 +120,7 @@
         </view>
         <view class="point-item-right">
           <view class="point-item-score">
-            <text class="score">{{item.point}}</text>
+            <text class="score {{item.point>0? '' : 'grayColor'}}">{{item.point}}</text>
             <text class="flag">{{currentData.flag}}</text>
           </view>
           <view class="point-item-icon">

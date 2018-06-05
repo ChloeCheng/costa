@@ -59,29 +59,43 @@ Component({
             {},
             function(data){
               if(data.code === 200) {
-
-                wx.addCard({
-                  cardList: [
-                    {  
-                      cardId: data.data.cardapiConfig.cardId,
-                      cardExt: JSON.stringify(data.data.cardapiConfig.cardExt)
-                        //cardId: 'pDRa7jn8bf-LsjT1XXnd_e_JZbfc',
-                       // cardExt: '{"code": "", "openid": "", "timestamp": "1527923255", "nonce_str":"776f42ed-cc24-4e1a-b681-bce2118bb9e0","signature":"13b269085ef156148843ffd4ea0fdc4206f23872"}'
-  
+                let code = data.data.code;
+                if(code){
+                  wx.openCard({
+                    cardList: [
+                      {
+                        cardId: data.data.cardapiConfig.cardId,
+                        code: code
+                      }
+                    ],
+                    success: function(res) {
+                      console.log(res)
                     }
-                  ],
-                  success: function(res) { 
-                    console.log(res)
-                  },
-                  fail: function (res){
-                    console.log(res)
-                  }
-                })
+                  })
+                } else {
+                  wx.addCard({
+                    cardList: [
+                      {  
+                        cardId: data.data.cardapiConfig.cardId,
+                        cardExt: JSON.stringify(data.data.cardapiConfig.cardExt)
+                          //cardId: 'pDRa7jn8bf-LsjT1XXnd_e_JZbfc',
+                         // cardExt: '{"code": "", "openid": "", "timestamp": "1527923255", "nonce_str":"776f42ed-cc24-4e1a-b681-bce2118bb9e0","signature":"13b269085ef156148843ffd4ea0fdc4206f23872"}'
+    
+                      }
+                    ],
+                    success: function(res) { 
+                      console.log(res)
+                    },
+                    fail: function (res){
+                      console.log(res)
+                    }
+                  })
+
+                }
+                
               }
             }
-           )
-
-              
+           )          
          }
     }
 })

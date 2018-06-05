@@ -16,7 +16,7 @@
      <view class="bean-type">
         <image class="type-1 big" src="{{cups > 0 ? '../../../assets/summer/type_1_active.png' : '../../../assets/summer/type_1.png'}}" mode='aspectFit'></image>
         <image class="type-2" src="{{cups > 1 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
-        <image class="type-3 big" src="{{cups > 2 ? '../../../assets/summer/type_4.png' : '../../../assets/summer/type_4_active.png'}}" mode='aspectFit'></image>
+        <image class="type-3 big" src="{{cups > 2 ? '../../../assets/summer/type_3.png' : '../../../assets/summer/type_3_active.png'}}" mode='aspectFit'></image>
         <image class="type-4" src="{{cups > 3 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
         <image class="type-5" src="{{cups > 4 ? '../../../assets/summer/type_2_active.png' : '../../../assets/summer/type_2.png'}}" mode='aspectFit'></image>
         <image class="type-6 big" src="{{cups > 5 ? '../../../assets/summer/type_4.png' : '../../../assets/summer/type_4_active.png'}}" mode='aspectFit'></image>

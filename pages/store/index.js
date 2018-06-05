@@ -134,7 +134,7 @@ Page({
   },
   getCity(latitude,longitude) {
     let _this = this;
-    let url = `https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=WO7BZ-N5AWK-HV6JT-AAOKY-GY6VK-O2BWZ`
+    let url = `https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=QYQBZ-PJ7CF-GKMJP-NI4GO-EM7TQ-UDFQM`
     wx.request({
       url: url, 
       header: {

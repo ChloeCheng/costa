@@ -77,7 +77,7 @@
 
 <view class="dialog-cover" wx-if="{{showPhone}}"></view>
 <view class="dialog" wx-if="{{showPhone}}">
-      <text class="dialog-title">{{currentData.contactUs}}</text>
+      <text class="dialog-title">{{currentData.contactUsForTel}}</text>
       <view class="dialog-content">
         <text class="">{{currentData.serviceTel}} <text class="bold">400-060-1971</text></text>
         <text class="">{{currentData.serviceTime}} {{currentData.serviceTimeDetail}}<text class="bold">9:00-21:00</text></text>

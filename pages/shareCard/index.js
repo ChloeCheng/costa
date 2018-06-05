@@ -193,6 +193,7 @@ Page({
           title: (lau === 'zh' ? '提示' : 'Notice'),
           content: '分享成功',
           showCancel: false,
+          confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
           success:()=>{
             wx.navigateTo({
               url: '/pages/card/index',

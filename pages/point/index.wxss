@@ -104,7 +104,7 @@
 }
 
 .container-label .point-label-logo {
-  width: 80rpx;
+  width: 110rpx;
   height: 100rpx;
 }
 
@@ -327,7 +327,9 @@
   color: #a5002a;
   font-size: 50rpx;
 }
-
+.point-item-score .grayColor {
+  color:#535c64;
+}
 .point-item-score .flag {
   font-size: 30rpx;
   color: #535c64;

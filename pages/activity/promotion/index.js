@@ -8,6 +8,7 @@ Page({
    */
   data: {
     bannerList: [],
+    crosswiseList: [],
     currentBarDate: app.global[app.global['currentLanguage']],
   },
 
@@ -22,22 +23,38 @@ Page({
   },
   getBanner(){
     let _this = this;
-    let url = `${URL.default.home.bannerList}`;
+    let url = `${URL.default.home.bannerAll}`;
     ajax.request(
       url,
       {},
       function(data){
         if(data.code === 200) {
           let tmp = data.data;
+          let tmpa = [], tmpb = [];
           tmp.forEach(item=>{
             item.img = `${app.global.host}${item.img}`;
+            if(item.banner){
+              tmpa.push(item);
+            } else {
+              tmpb.push(item);
+            }
           });
           _this.setData({
-            'bannerList': tmp
+            'bannerList': tmpa,
+            'crosswiseList': tmpb
           });
         }
       }
      )
+  },
+  tapClick(e){
+    let url = e.currentTarget.dataset.banneritem.url;
+    if(url){
+      url = '/pages/activity/summer/index' // getApp().global.hostUrl + url;
+      wx.navigateTo({
+        url: url // ('/pages/special/special?url=' + url)
+      })
+    } 
   },
 
   /**

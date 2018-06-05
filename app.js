@@ -21,12 +21,16 @@ App({
         store: '门店查询',
         points: '积分',
         contactUs: '联系客服',
+        contactUsForTel: '联系客服',
         serviceTel: '服务热线：',
         serviceTime: '服务时间：',
         serviceTimeDetail: '周一至周日',
         close: '关闭',
         pickUp: '收起',
         codeDesc: '使用时，出示此码'
+      },
+      promotion:{
+        title:'最新活动'
       },
       card:{
         title: '我的礼券',
@@ -40,13 +44,13 @@ App({
         title: '会员等级介绍',
         content_1: '1. 消费1元 = 1积分（零售商品等除外）；',
         content_2: '2. 20积分抵1元，积分需要整单兑换（当笔积分有效期为次年的同月月底）;',
-        content_3: '3. 会员使用权益时需出示会员卡或电子会员卡',
-        content_4: '4. 会员权益暂不可累积使用或者与门店其他活动叠加使用',
+        content_3: '3. 会员使用权益时需出示会员卡或电子会员卡；',
+        content_4: '4. 会员权益暂不可累积使用或者与门店其他活动叠加使用；',
         content_5: '5. 会员积分以及权益使用范围仅限咖世家咖啡所属门店（万达影城店、火车站店、机场店以及杭州阿里巴巴店、SSP店、COMPASS店除外）',
         content_5_1: '·如享受门店其他活动折扣，例如银行卡折扣，则不可以使用会员优惠券或者会员积分兑换权益',
         content_5_2: '·门店会员活动、会员优惠券以及会员积分兑换不可同时享用',
         content_5_3: '·累计杯数按正价产品累计，非正价产品不计入杯数',
-        content_6: '6. 升级后的12个月内，若累计积分未达到您所在等级的积分，您将自动降级至当前积分相应等级，您将享受降级后相应等级的权益；',
+        content_6: '6. 升级后的12个月内，若累计积分未达到您所在等级的积分，您将自动降级至当前积分相应等级，您将享受降级后相应等级的权益。',
         gold_1_1_1: '一年内累计',
         gold_1_1_2: '1500积分\r\n',
         gold_1_1_3: '  即刻成为',
@@ -105,6 +109,7 @@ App({
         placeholder: '输入您的转赠积分',
         btnTxt: '分享给好友',
         subTitle: '积分记录',
+        theLast: '已是最高等级'
       },
       redeem: {
         title: '积分兑换',
@@ -256,6 +261,7 @@ App({
         store: 'Store Location',
         points: 'Points',
         contactUs: 'Contact us',
+        contactUsForTel: 'Contact Us',
         serviceTel: 'Service Hotline：',
         serviceTime: 'Service Time：',
         serviceTimeDetail: 'Mon-Sun ',
@@ -271,6 +277,9 @@ App({
         expiredCoupons: 'Expired coupons * ',
         validityTime: 'Expiry date ',
       },
+      promotion:{
+        title:'Promotions'
+      },
       store: {
         title: 'Store Location',
         nearby: 'Nearby',
@@ -278,10 +287,10 @@ App({
       },
       member: {
         title: 'Member Level Introduction',
-        content_1: '1. You will earn 1 point for each￥1.00 you spend at designated Costa stores using your registered membership card (retail products etc. excluded).',
-        content_2: '2. Every 20 points is worth ￥1.00. Points can only be redeemed if members have enough points to cover the full value of the order (The points earned will be valid to the end of the same month of your purchase of the following year).',
-        content_3: '3. Members need to show the unique membership QR Code when using member benefits.',
-        content_4: '4. Member benefits cannot be used multiple times in one order or be combined with other discounts and promotions at the same time.',
+        content_1: '1. You will earn 1 point for each￥1.00 you spend at designated Costa stores using your registered membership card (retail products etc. excluded);',
+        content_2: '2. Every 20 points is worth ￥1.00. Points can only be redeemed if members have enough points to cover the full value of the order (The points earned will be valid to the end of the same month of your purchase of the following year);',
+        content_3: '3. Members need to show the unique membership QR Code when using member benefits;',
+        content_4: '4. Member benefits cannot be used multiple times in one order or be combined with other discounts and promotions at the same time;',
         content_5: '5. Member points and member benefits can only be used in designated stores under Costa Coffee (the stores in Wanda cinemas, train stations, airports, Alibaba Hangzhou, SSP, and COMPASS are excluded).',
         content_5_1: '·In-store discounts or promotions cannot be combined with member benefits (for example credit card discounts cannot be combined with member benefits).',
         content_5_2: '·Coupon and rewards redemption cannot be used at the same time.',
@@ -335,7 +344,7 @@ App({
       },
       points: {
         flag: 'Points',
-        title: 'Point Center',
+        title: 'Points Center',
         vipName: 'Red Member',
         current: 'Current Point',
         upgrade: 'Points required to upgrade',
@@ -345,6 +354,7 @@ App({
         placeholder: 'Enter the points given',
         btnTxt: 'Share with',
         subTitle: 'Points History',
+        theLast: 'The Highest Level Member'
       },
       share: {
         title: '送给大家',
