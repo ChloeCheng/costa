@@ -15,7 +15,16 @@
       <input bindinput="bindUserNameInput" value='{{name}}'></input>
     </view>
   </view>
-
+<!--手机号-->
+  <view class="input-block">
+    <view class="input-icon">
+      <image class="big-image"  mode='aspectFit' src='../../assets/userInfo/username.png' />
+      <text class='require'>({{currentData.requireType}})</text>
+    </view>
+    <view class="input-ct">
+      {{mobile}}
+    </view>
+  </view>
   <!--日期-->
   <view class="input-block">
     <view class="input-icon">

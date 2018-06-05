@@ -13,6 +13,7 @@ Page({
     currentData: app.global[app.global['currentLanguage']].userInfo,
     currentDataTotal: app.global[app.global['currentLanguage']],
     name: app.global.wxUserInfo.nickName,
+    mobile:"",
     birthday: "",
     gender: '',
     city: '北京-北京',
@@ -30,6 +31,7 @@ Page({
       gender: 1,
       position: '',
       name: '',
+      mobile:''
     },
     address: {},
     multiArray: [[], []],
@@ -77,6 +79,7 @@ Page({
       let { cityID, provinceID } = this.getIDByIndex()
       ajax.update({
         'name': this.data.name,
+        'mobile': this.data.mobile,
         'birthday': dateFormat.dateFormat(this.data.birthday, 'yyyy-MM-dd'),
         'gender': this.data.gender,
         //'province': provinceID,
@@ -151,6 +154,7 @@ Page({
       //city: '北京-北京',
       birthday: dateFormat.dateFormat(data.birthday, 'yyyy-MM-dd'),
       name: app.global.wxUserInfo.nickName,
+      mobile: data.mobile,
       favorites: data.favorites,
       position: data.position,
       company: data.company,

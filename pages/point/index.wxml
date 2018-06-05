@@ -13,7 +13,7 @@
       </view>
       <view class="radiu-block-bg">
         <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image" />
-        <text class="num">{{points.total}}</text>
+        <text class="num">{{points.usable_total}}</text>
         <text class="title">{{currentData.flag}}</text>
       </view>
       <view class="point-logo" style="visibility:hidden">
@@ -28,7 +28,7 @@
     <view class="container-label">
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.current}}" class="point-label-logo" />
-        <text class="score">{{points.total}}</text>
+        <text class="score">{{points.usable_total}}</text>
         <text class="flag">{{currentData.flag}}</text>
         <text class="text">{{currentData.current}}</text>
       </view>
@@ -37,7 +37,7 @@
       </view>
       <view class="point-label width-30">
         <image mode='aspectFit' src="{{images.upgrade}}" class="point-label-logo" />
-        <text class="score">{{points.usable_total}}</text>
+        <text class="score">{{points.max-points.total}}</text>
         <text class="flag">{{currentData.flag}}</text>
         <text class="text">{{currentData.upgrade}}</text>
       </view>
