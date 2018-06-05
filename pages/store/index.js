@@ -123,7 +123,7 @@ Page({
         if(data.code === 200) {
           let dataList = data.data;
           dataList.forEach(item=>{
-            item.distance = parseFloat(item.distance%1000).toFixed(1)
+            item.distance = parseFloat(item.distance/1000).toFixed(1)
           })
           _this.setData({
             'list': dataList
