@@ -7,7 +7,7 @@ exports.register = function (option, callback) {
     '/wechat-mp/customer/register-submit',
     option,
     function (json) {
-      json.code = 200
+      //json.code = 200
       if (json.code == 200) {
         wx.setStorageSync('is_registered', 'true')
         wx.showModal({
