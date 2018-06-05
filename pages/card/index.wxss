@@ -23,7 +23,7 @@
   border: 2px solid #9E0028;
   border-radius: 10rpx;
 }
-.card-icon{
+.card-icon, .card-icon-small{
   height:140rpx;
   width:120rpx;
   background:#9E0028;
@@ -35,6 +35,13 @@
   width:80rpx;
   height:80rpx;
   margin-top:26rpx;
+
+}
+
+.card-icon-small image{
+  width:56rpx;
+height:56rpx;
+margin-top:40rpx;
 
 }
 .card-num{
@@ -76,7 +83,7 @@
   margin-top:20rpx;
 }
 
-.card-active-list-item .card-icon{
+.card-active-list-item .card-icon, .card-active-list-item .card-icon-small{
   background: #fff;
 }
 .card-center{

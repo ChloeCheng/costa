@@ -53,9 +53,10 @@ Page({
             colorDark: "#9e0028",
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H,
-         });
+          });
           _this.setData({
-            'showData': tmp
+            'showData': tmp,
+            showCode: false
           });
         }
       }

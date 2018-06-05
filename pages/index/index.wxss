@@ -280,6 +280,7 @@ canvas{
   height:130px;
   text-align: center;
   margin: 0 auto;  
+  z-index: 1;
 }
 .clear{
   clear: both;

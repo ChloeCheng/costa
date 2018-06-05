@@ -67,8 +67,8 @@
       </view>
       <view class="clear"></view>
       <!--image src="../../assets/91806-01865685.png" mode='aspectFit'></image-->
-      <view class="canvas-cover">
-        <canvas class='canvas' canvas-id='canvas'></canvas>
+      <view class="canvas-cover"  style="opacity:{{showCode? '1': '0'}}">
+        <canvas class='canvas' canvas-id='canvas'   style="display:{{showCode? 'block': 'none'}}"></canvas>
       </view>
       <text>{{currentData.codeDesc}}</text>
     </view>

@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 31,
 			"list": [
 				{
 					"id": -1,
@@ -219,6 +219,12 @@
 					"name": "sharePoint",
 					"pathName": "pages/share/index",
 					"query": "pointHash=bsznkhqadpvvtgxclmsnmizhcpnyqjgf"
+				},
+				{
+					"id": -1,
+					"name": "Card",
+					"pathName": "pages/card/index",
+					"query": "hash=bdfavachhtaebdqpqrvizfrftxxfeqbw"
 				}
 			]
 		}
