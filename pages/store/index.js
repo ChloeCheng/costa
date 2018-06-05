@@ -44,9 +44,9 @@ Page({
             wx.getLocation({
               type: 'wgs84',
               success: function(res) {
-                var latitude = res.latitude
-                var longitude = res.longitude
-                _this.getCity(latitude,longitude);
+                var latitude = (res.latitude + '').replace('.', '_');
+                var longitude = (res.longitude + '').replace('.', '_');
+                _this.getCity(res.latitude,res.longitude);
                 _this.initData(latitude,longitude);
                 _this.setData({
                   'location':{
@@ -61,9 +61,9 @@ Page({
             wx.getLocation({
               type: 'wgs84',
               success: function(res) {
-                var latitude = res.latitude;
-                var longitude = res.longitude;
-                _this.getCity(latitude,longitude);
+                var latitude = (res.latitude + '').replace('.', '_');
+                var longitude = (res.longitude + '').replace('.', '_');
+                _this.getCity(res.latitude,res.longitude);
                 _this.initData(latitude,longitude);
                 _this.setData({
                   'location':{
