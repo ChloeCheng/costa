@@ -7,7 +7,7 @@
   <view class="user-info-content">
       <view  class="avatar-url"  bindtap='gotoEdit'>
         <image class="avatar-image" src="{{userInfo.avatarUrl}}" mode='aspectFit'></image>
-        <image class="avatar-bg" src="../../assets/bg-headimg-{{showData.next_id==3?'silver':(showData.next_id==0?'gold':'red')}}.png" mode='aspectFit'></image>
+        <image class="avatar-bg" src="{{showData.next_id==3?'../../assets/bg-headimg-silver.png':(showData.next_id==0?'../../assets/bg-headimg-gold.png':'')}}" mode='aspectFit'></image>
       </view>
       
       <view class="user-info-detail">

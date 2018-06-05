@@ -19,12 +19,12 @@
   <view class="card-explain" wx:if="{{noShareExplain}}">
      <view>
         <text class="explain-title">优惠券说明</text>
-        <text class="explain-content">22123dsafdsafds{{detail.content}}</text>
+        <text class="explain-content">{{detail.content}}</text>
      </view>
   </view>
   
   <block wx:if="{{shareType == 1}}">
-    <button type="default" open-type="share" hover- class="none"> {{currentData.btnTxt}}  </button>
+    <button type="default" open-type="share" hover-class="none"> {{currentData.btnTxt}}  </button>
   </block>
     <block wx:if="{{shareType == 2}}">
     <button type="default" hover-class="none" bindtap='getCard'> {{currentData.btnTxtApt}} </button>
