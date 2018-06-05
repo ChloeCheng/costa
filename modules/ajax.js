@@ -15,17 +15,9 @@ function ajaxLogin(url, data) {
       wx.setStorageSync('is_login', 'false')
       wx.setStorageSync('JSESSIONID', '')
       wx.setStorageSync('JSESSIONID_EXPIRED', new Date('2018-06-01').getTime())
-      // return
-      countFlag++;
-      if (countFlag < 5) {
-        var callbackUrl = wx.getStorageSync('callbackUrl')
-        clearTimeout(ajaxFlag)
-        ajaxFlag = setTimeout(() => {
-          wx.reLaunch({
-            url: "/" + callbackUrl,
-          })
-        }, 1000)
-      }
+      wx.reLaunch({
+        url: "/pages/index/index" ,
+      })
     }
   }
 }
