@@ -2,7 +2,7 @@
 const app = getApp()
 const date = require('../../modules/dateFormat.js');
 const ajax = require('./_modules.js')
-
+const login = require('../../modules/login.js');
 Page({
 
   /**
@@ -126,7 +126,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    login.checkLogin()
   },
   openSetting() {
     wx.openSetting({
