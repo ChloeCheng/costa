@@ -13,7 +13,7 @@ exports.register = function (option, callback) {
           showCancel: false,
           content: app.global[app.global['currentLanguage']].login.success,
           success: function (res) {
-            var url = getUrl.getCallbackUrl()
+            var url = wx.getStorageSync('callbackUrl') || 'pages/index/index'
             wx.reLaunch({
               url: '/' + url,
             })
