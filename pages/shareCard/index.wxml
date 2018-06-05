@@ -3,7 +3,7 @@
 <bar active="true" currentData="{{currentDataTotal}}"></bar>
 <view class='share-container'>
 <view  class='bg-image' >
-  <image src='../../assets/share-bg.png' mode='widthFix'></image> 
+  <image src='../../assets/share-bg.png' mode='heightFix'></image> 
 </view>
 <view class='content'>
   <text class="share-tips" wx:if="{{shareType == 5 && detail.status}}">{{currentData.myselfTipFalse}}</text>
