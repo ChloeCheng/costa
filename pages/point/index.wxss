@@ -62,7 +62,7 @@
 .point-logo {
   display: flex;
   flex-direction: column;
-  width: 100rpx;
+  width: 120rpx;
 }
 
 .point-logo .point-logo-image {

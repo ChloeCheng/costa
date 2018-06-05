@@ -17,7 +17,7 @@
 }
 
 .text-content{
-   font-size: 22rpx;
+   font-size: 20rpx;
    color:7A8288;
    padding: 0 30rpx 40rpx 30rpx;
 }
@@ -26,7 +26,7 @@
 }
 
 .text-content text.small{
-  font-size: 20rpx;
+  font-size: 18rpx;
   display: block;
   margin-left:20rpx;
 }
@@ -76,25 +76,25 @@
   flex: 1;
 }
 .text-block > text{
-  font-size: 20rpx;
+  font-size: 18rpx;
   display:inline-block;
   padding:20rpx 0;
 }
 
 .card-3 .gold-text{
-  font-size: 22rpx;
+  font-size: 20rpx;
   color:#DFC45F;
   font-weight: bold;
 }
 
 .card-2 .gold-text{
-  font-size: 22rpx;
+  font-size: 20rpx;
   color:#9A9A9A;
   font-weight: bold;
 }
 
 .card-1 .gold-text{
-  font-size: 22rpx;
+  font-size: 20rpx;
   color:#AE0004;
   font-weight: bold;
 }

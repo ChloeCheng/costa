@@ -183,7 +183,7 @@ Page({
     let _this = this;
     // console.log(_this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index')
     return {
-      title: _this.data.detail.name || '欢迎加入Costa会员',
+      title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
       imageUrl: '',
       path: _this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index',
       success: function (res) {
