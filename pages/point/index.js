@@ -15,6 +15,9 @@ Page({
     currentDataTotal: app.global[app.global['currentLanguage']],
     images: {
       logo: '../../assets/point/vip-logo.png',
+      red:'../../assets/point/red.png',
+      silver:'../../assets/point/silver.png',
+      gold:'../../assets/point/gold.png',
       costa:'../../assets/costa.png',
       bg: '../../assets/point/bg.png',
       current: '../../assets/point/current.png',

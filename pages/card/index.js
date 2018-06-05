@@ -57,8 +57,12 @@ Page({
     list.forEach(item=>{
         item.time = formatTime.formatTime(new Date(item.expired_time));
         if(item.expired_time>ts){
-            item
-            notExpired.push(item);
+            if(item.status === 1){
+              notExpired.push(item);
+            } else {
+              expired.push(item);
+            }
+            
         } else {
             expired.push(item);
         }

@@ -8,8 +8,8 @@
 
     <view class="container-point">
       <view class="point-logo">
-        <image mode='aspectFit' src="{{images.logo}}" class="point-logo-image" />
-        <text class="name">{{points.level}}</text>
+        <image mode='aspectFit' src="{{points.next_id === 0 ? images.gold : (points.next_id === 3 ? images.silver : images.red)}}" class="point-logo-image" />
+        <text class="name {{points.next_id === 0 ? 'gold' : (points.next_id === 3 ? 'silver' : 'red')}}">{{points.level}}</text>
       </view>
       <view class="radiu-block-bg">
         <image mode='aspectFit' src="{{images.bg}}" mode='aspectFill' class="point-logo-image" />

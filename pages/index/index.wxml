@@ -6,7 +6,8 @@
 <view class="user-info">
   <view class="user-info-content">
       <view  class="avatar-url"  bindtap='gotoEdit'>
-        <image src="{{userInfo.avatarUrl}}"></image>
+        <image class="avatar-image" src="{{userInfo.avatarUrl}}" mode='aspectFit'></image>
+        <image class="avatar-bg" src="../../assets/bg-headimg-{{showData.next_id==3?'silver':(showData.next_id==0?'gold':'red')}}.png" mode='aspectFit'></image>
       </view>
       
       <view class="user-info-detail">
@@ -17,7 +18,7 @@
               <text class="col-1-edit">{{currentData.edit}}</text>
           </view>
         </view>
-        <text class="col-2">{{showData.level}}</text>
+        <text class="col-2 {{showData.next_id==3?'col-silver':(showData.next_id==0?'col-gold':'')}}">{{showData.level}}</text>
         <view class="col-3">
            <text class="col-3-point"><text>{{showData.usable_total}}</text>{{currentData.points}}</text>
            <text class="small-text" wx-if="{{!(currentLanguage!=='zh' || showData.next_id==0)}}">{{showData.hint_front}}<text>{{showData.pointValue}}</text>{{showData.hint_behind}}</text>

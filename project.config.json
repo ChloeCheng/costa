@@ -243,6 +243,12 @@
 					"name": "login",
 					"pathName": "pages/login/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index",
+					"query": ""
 				}
 			]
 		}
