@@ -15,11 +15,11 @@ exports.checkExpired = function (url,callback) {
     callback()
   } else {
     var flag = setInterval(() => {
-      console.log(url)
+      //console.log(url)
       if (checkSession(_url)) {
         clearInterval(flag)
         callback()
       }
-    }, 200)
+    }, 300)
   }
 }

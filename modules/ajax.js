@@ -80,13 +80,13 @@ function checkRequest(url, param = {}, success, failed, complete) {
     dataType: 'application/x-www-form-urlencoded',
     success: function (res) {
       if (res.statusCode == 200) {
-        if (url.indexOf('wechat-mp/oauth') > -1) {
+        var data = JSON.parse(res.data)
+        if (url.indexOf('wechat-mp/oauth') > -1&&data.code==200) {
           if (res.header['Set-Cookie']) {
             wx.setStorageSync('JSESSIONID', res.header['Set-Cookie'])
             wx.setStorageSync('JSESSIONID_EXPIRED', (new Date()).getTime())
           }
         }
-        var data = JSON.parse(res.data)
         ajaxLogin(_url, data)
         success(data)
         if(data&&data.code!=200){

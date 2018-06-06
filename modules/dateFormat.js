@@ -32,5 +32,5 @@ exports.checkBeyondTime = function (startDate, endDate) {
   if (!startDate || !endDate) return true
   var start = new Date(startDate).getTime();
   var end = new Date(endDate).getTime();
-  return ((end - start) > 2* 60 * 60 * 1000)
+  return ((end - start) > 1* 60 * 60 * 1000)
 }

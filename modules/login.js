@@ -16,16 +16,6 @@ exports.checkLogin = function (callback = () => { }) {
     }else{
       goRegister(callback)
     }
-    // // 登录态检查
-    // wx.checkSession({
-    //   success: function () {
-    //     //session_key 未过期，并且在本生命周期一直有
-    //     goRegister(callback)
-    //   },
-    //   fail: function () {
-    //     login()
-    //   }
-    // });
   } else {
     login()
   }
@@ -59,7 +49,6 @@ function login(option) {
           wx.getUserInfo({
             withCredentials: true,
             success: function (res) {
-            
               console.log('wxgetUserInfo successd........');
               var encryptedData = encodeURIComponent(res.encryptedData);
               var iv = encodeURIComponent(res.iv)
@@ -81,15 +70,6 @@ function thirdLogin(code, encryptedData, iv, data) {
       iv:iv
     },
     function (json) {
-      // json = {
-      //   code: 200,
-      //   data:{
-      //     session_id:'111',
-      //     is_registered:'true'
-      //   },
-      //   msg:'ERROR'
-      // }
-
       if (json.code == 200) {
         console.log('登录成功')
         wx.setStorageSync('is_login', 'true')
@@ -107,10 +87,6 @@ function thirdLogin(code, encryptedData, iv, data) {
       console.log('my  login successd........');
     },
     function (res) {
-
-      // getApp().globalData.session_id = 'failed';
-      // getApp().globalData.uid = 'failed';
-      // getApp().globalData.isLogin = 'failed';
       console.log('my  login failed........');
     }
   )
