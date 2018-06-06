@@ -174,7 +174,7 @@ Page({
   /**
    * 获取分享码
    */
-  getShareCode(callBcak){
+  getShareCode(){
     let shareCodeUrl = `${URL.default.card.share}${this.data.cardId}`;
     ajax.request(
       shareCodeUrl,
@@ -185,11 +185,9 @@ Page({
             'shareCode': data.data.hash
           });*/
 
-          callBcak && callBcak(data.data.hash)
+          // callBcak && callBcak(data.data.hash)
         } else if(data.code === 501) {
-          _this.setData({
-            'shareType': 6
-          });
+         
         }
       }
     )
@@ -201,28 +199,27 @@ Page({
   onShareAppMessage: function (options) {
     let _this = this;
     // console.log(_this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index')
-    _this.getShareCode(function(hash){
-      return {
-        title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
-        imageUrl: '',
-        path: '/pages/shareCard/index?hash=' + hash,
-        success: function (res) {
-         let lau = app.global['currentLanguage'];
-          // 转发成功之后的回调
-          wx.showModal({
-            title: (lau === 'zh' ? '提示' : 'Notice'),
-            content: '分享成功',
-            showCancel: false,
-            confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
-            success:()=>{
-              wx.navigateTo({
-                url: '/pages/card/index',
-              })
-            }
-          })
-        }
+    _this.getShareCode();
+    return {
+      title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
+      imageUrl: '',
+      path: '/pages/shareCard/index?hash=' + _this.data.detail.hash,
+      success: function (res) {
+       let lau = app.global['currentLanguage'];
+        // 转发成功之后的回调
+        wx.showModal({
+          title: (lau === 'zh' ? '提示' : 'Notice'),
+          content: '分享成功',
+          showCancel: false,
+          confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
+          success:()=>{
+            wx.navigateTo({
+              url: '/pages/card/index',
+            })
+          }
+        })
       }
-    })
+    }
     
   }
 })

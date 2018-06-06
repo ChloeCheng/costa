@@ -19,7 +19,7 @@
   <view class="card-explain" wx:if="{{noShareExplain}}">
      <view>
         <text class="explain-title">优惠券说明</text>
-        <text class="explain-content">{{detail.content}}</text>
+        <text class="explain-content" wx:for="{{detail.content}}" wx:key="{{index}}">{{item}}</text>
      </view>
   </view>
   
