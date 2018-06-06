@@ -1,6 +1,6 @@
 /* pages/points/index.wxss */
 .card-body{
-  margin: 0rpx 40rpx 140rpx 40rpx;
+  padding: 0rpx 40rpx 180rpx 40rpx;
 }
 .card-title{
   color:#9A0020;
