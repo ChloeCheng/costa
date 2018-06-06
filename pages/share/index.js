@@ -139,7 +139,7 @@ Page({
     var shareUrl = "/" + getUrl.getCurrentPageUrlWithArgs() + "&isShared=1";
     return {
       title: '速度！你的壕友在撒COSTA福利！就看谁手快！',
-      imageUrl: '',
+      imageUrl: app.global.hostUrl + '/default/img/img-coupon-share.jpg',
       path: shareUrl,
       success: function (res) {
         console.log(shareUrl)

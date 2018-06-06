@@ -47,7 +47,7 @@ Page({
         if(data.code === 200) {
           let tmp = data.data, pointValue = tmp.max - tmp.total;
           //let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
-          tmp.pointValue = pointValue;
+          tmp.pointValue = pointValue || 0;
           if(!noInit){
             var qrcode = new QRCode('canvas', {
               text: '12' + tmp.vipcode,
@@ -198,7 +198,7 @@ Page({
   onShareAppMessage: function (options) {
     return {
       title: '欢迎加入Costa会员',
-      imageUrl: '',
+      imageUrl: app.global.hostUrl + '/default/img/img-coupon-share.jpg',
       path: '/pages/index/index'
     }
   }

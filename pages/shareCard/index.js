@@ -202,7 +202,7 @@ Page({
     _this.getShareCode();
     return {
       title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
-      imageUrl: '',
+      imageUrl: app.global.hostUrl + '/default/img/img-coupon-share.jpg',
       path: '/pages/shareCard/index?hash=' + _this.data.detail.hash,
       success: function (res) {
        let lau = app.global['currentLanguage'];
