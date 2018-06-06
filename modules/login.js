@@ -10,10 +10,10 @@ exports.checkLogin = function (callback = () => { }) {
   var session_id = wx.getStorageSync('JSESSIONID')
   var JSESSIONID_EXPIRED = wx.getStorageSync('JSESSIONID_EXPIRED')
   if (session_id && JSESSIONID_EXPIRED) {
-    var is_expired = dateFormat.checkBeyondTime(JSESSIONID_EXPIRED,new Date())
-    if (is_expired){
+    var is_expired = dateFormat.checkBeyondTime(JSESSIONID_EXPIRED, new Date())
+    if (is_expired) {
       login()
-    }else{
+    } else {
       goRegister(callback)
     }
   } else {
@@ -66,28 +66,29 @@ function thirdLogin(code, encryptedData, iv, data) {
   ajax.request(
     '/wechat-mp/oauth/' + encodeURIComponent(code),
     {
-      'encrypted-data':encryptedData,
-      iv:iv
+      'encrypted-data': encryptedData,
+      iv: iv
     },
     function (json) {
       if (json.code == 200) {
-        console.log('登录成功')
         wx.setStorageSync('is_login', 'true')
         wx.setStorageSync('JSESSIONID_EXPIRED', (new Date()).getTime())
         //json.data.is_register = false
         //wx.setStorageSync('JSESSIONID', json.data.session_id)
-        if (json.data&&json.data.is_register == false) {
+        if (json.data && json.data.is_register == false) {
           // 未注册
           wx.setStorageSync('is_registered', 'false')
           goRegister()
         } else {
           wx.setStorageSync('is_registered', 'true')
         }
+        console.log('my  login successd........');
+      } else {
+        wx.showModal({
+          showCancel: false,
+          content: json.message || '登录失败',
+        })
       }
-      console.log('my  login successd........');
-    },
-    function (res) {
-      console.log('my  login failed........');
     }
   )
 
