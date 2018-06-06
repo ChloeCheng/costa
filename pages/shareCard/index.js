@@ -15,7 +15,8 @@ Page({
     shareType: 1, //1,分享， 2，领积分， 3，领成， 4，领完了, 5自己的 6不能分享
     detail: {},
     shareCode: '',
-    noShareExplain: false
+    noShareExplain: false,
+    cardId:''
   },
   gobackPath(){
     wx.navigateTo({
@@ -37,7 +38,8 @@ Page({
      if(options.id){
       this.initData(options.id);
       this.setData({
-        'noShareExplain': true
+        'noShareExplain': true,
+        'cardId': options.id
       });
       return;
      }
@@ -84,7 +86,6 @@ Page({
   initData(id){
       let _this = this;
       let url = `${URL.default.card.detail}${id}`;
-      let shareCodeUrl = `${URL.default.card.share}${id}`;
       ajax.request(
         url,
         {},
@@ -96,24 +97,15 @@ Page({
             _this.setData({
               'detail': data.data
             });
+            if(data.data.can_share === 0){
+              _this.setData({
+                'shareType': 6
+              })
+            }
           }
         }
       );
-      ajax.request(
-        shareCodeUrl,
-        {},
-        function(data){
-          if(data.code === 200) {
-            _this.setData({
-              'shareCode': data.data.hash
-            });
-          } else if(data.code === 501) {
-            _this.setData({
-              'shareType': 6
-            });
-          }
-        }
-      )
+
     },
     getCard(){
       let _this = this;
@@ -179,6 +171,29 @@ Page({
   onReachBottom: function () {
   
   },
+  /**
+   * 获取分享码
+   */
+  getShareCode(callBcak){
+    let shareCodeUrl = `${URL.default.card.share}${this.data.cardId}`;
+    ajax.request(
+      shareCodeUrl,
+      {},
+      function(data){
+        if(data.code === 200) {
+         /* _this.setData({
+            'shareCode': data.data.hash
+          });*/
+
+          callBcak && callBcak(data.data.hash)
+        } else if(data.code === 501) {
+          _this.setData({
+            'shareType': 6
+          });
+        }
+      }
+    )
+  },
 
   /**
    * 用户点击右上角分享
@@ -186,25 +201,28 @@ Page({
   onShareAppMessage: function (options) {
     let _this = this;
     // console.log(_this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index')
-    return {
-      title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
-      imageUrl: '',
-      path: _this.data.shareCode ? '/pages/shareCard/index?hash=' + _this.data.shareCode : '/pages/index/index',
-      success: function (res) {
-       let lau = app.global['currentLanguage'];
-        // 转发成功之后的回调
-        wx.showModal({
-          title: (lau === 'zh' ? '提示' : 'Notice'),
-          content: '分享成功',
-          showCancel: false,
-          confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
-          success:()=>{
-            wx.navigateTo({
-              url: '/pages/card/index',
-            })
-          }
-        })
+    _this.getShareCode(function(hash){
+      return {
+        title: '一张' + _this.data.detail.name + '已送出！就看谁手快！',
+        imageUrl: '',
+        path: '/pages/shareCard/index?hash=' + hash,
+        success: function (res) {
+         let lau = app.global['currentLanguage'];
+          // 转发成功之后的回调
+          wx.showModal({
+            title: (lau === 'zh' ? '提示' : 'Notice'),
+            content: '分享成功',
+            showCancel: false,
+            confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
+            success:()=>{
+              wx.navigateTo({
+                url: '/pages/card/index',
+              })
+            }
+          })
+        }
       }
-    }
+    })
+    
   }
 })

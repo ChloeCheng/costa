@@ -153,7 +153,7 @@ Page({
       gender: app.global[app.global['currentLanguage']].userInfo.sex[data.gender - 1],
       //city: '北京-北京',
       birthday: dateFormat.dateFormat(data.birthday, 'yyyy-MM-dd'),
-      name: app.global.wxUserInfo.nickName,
+      name: data.name || app.global.wxUserInfo.nickName,
       mobile: data.mobile,
       favorites: data.favorites,
       position: data.position,

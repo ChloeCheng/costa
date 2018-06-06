@@ -140,3 +140,17 @@
   color: white;
   opacity:0.8;
 }
+.select-data {
+  width:100%;
+  z-index:11;
+  margin-right:-30rpx;
+}
+.select-data picker{
+  height:60rpx;
+  line-height:60rpx;
+  width:100%;
+  position:relative;
+  left:30rpx;
+  margin-left:-30rpx;
+
+}

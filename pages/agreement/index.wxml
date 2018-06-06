@@ -1,6 +1,6 @@
 <view class='bg-container'>
   <view class='bg-image'>
-    <image src='../../assets/share-bg.png' mode='widthFix'></image>
+    <image src='../../assets/share-bg.png' mode='heightFix'></image>
   </view>
   <!-- <view class="language-change" bindtap="changeLanguage">
     <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>

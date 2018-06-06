@@ -1,7 +1,7 @@
 <!--pages/share/index.wxml-->
 <view class='bg-container'>
   <view class='bg-image'>
-    <image src='../../assets/share-bg.png' mode='widthFix'></image>
+    <image src='../../assets/share-bg.png' mode='heightFit'></image>
   </view>
   <!--view class="language-change" bindtap="changeLanguage">
     <image src="{{currentLanguage==='zh' ? '../../assets/en.png' : '../../assets/zh.png'}}" mode='aspectFit'></image>
@@ -50,7 +50,7 @@
         </view>
       </view>
       <view class="input-ct">
-        <view>
+        <view class="select-data">
           <picker mode="date" value="{{date}}" bindchange="bindDateChange">
             <view class="picker">
               {{date}}
