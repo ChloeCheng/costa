@@ -89,11 +89,14 @@ function checkRequest(url, param = {}, success, failed, complete) {
         var data = JSON.parse(res.data)
         ajaxLogin(_url, data)
         success(data)
+        if(data&&data.code!=200){
+          console.log(data.message || '网络请求异常，请重试')
+        }
       } else {
         failed && failed(JSON.parse(res.data));
         wx.showModal({
           showCancel: false,
-          content: JSON.parse(res.data).msg || '网络请求异常，请重试',
+          content: JSON.parse(res.data).message || '网络请求异常，请重试',
         })
       }
     },
