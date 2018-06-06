@@ -30,9 +30,13 @@ Page({
       var option = getUrl.getCurrentPageArgs()
       ajax.getPoint(option.pointHash, (data) => {
         if (data.myself) {
-          if (option.isShared==1){
+          if (option.isShared == 1 && data.status == false){
             this.setData({
               shareType: 5
+            })
+          } if (option.isShared == 1 && data.status == true) {
+            this.setData({
+              shareType: 4
             })
           }else{
             this.setData({
