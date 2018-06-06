@@ -198,7 +198,7 @@ Page({
   onShareAppMessage: function (options) {
     return {
       title: '欢迎加入Costa会员',
-      imageUrl: '',
+      imageUrl: app.global.hostUrl + '/default/img/img-coupon-share.jpg',
       path: '/pages/index/index'
     }
   }
