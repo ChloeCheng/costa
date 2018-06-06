@@ -162,6 +162,7 @@ Page({
    */
   onShow: function () {
     login.checkLogin()
+    this.initPage(true);
   },
 
   /**
