@@ -57,10 +57,14 @@ function login(option) {
           console.log('get code successd........');
           var code = e.code;
           wx.getUserInfo({
+            withCredentials: true,
             success: function (res) {
+            
               console.log('wxgetUserInfo successd........');
               var encryptedData = encodeURIComponent(res.encryptedData);
-              thirdLogin(code, encryptedData, res.iv, option);//调用服务器api
+              var iv = encodeURIComponent(res.iv)
+              var data = encodeURIComponent(JSON.stringify(res))
+              thirdLogin(code, encryptedData, iv, data);//调用服务器api
             }
           })
         }
@@ -69,10 +73,12 @@ function login(option) {
   })
 }
 
-function thirdLogin(code) {
+function thirdLogin(code, encryptedData, iv, data) {
   ajax.request(
     '/wechat-mp/oauth/' + encodeURIComponent(code),
-    {},
+    {
+      data
+    },
     function (json) {
       // json = {
       //   code: 200,
