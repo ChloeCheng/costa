@@ -34,7 +34,7 @@ Page({
             this.setData({
               shareType: 5
             })
-          } if (option.isShared == 1 && data.status == false) {
+          } else if (option.isShared == 1 && data.status == false) {
             this.setData({
               shareType: 4
             })
@@ -69,7 +69,7 @@ Page({
           this.setData({
             shareType: 5
           })
-        } if (option.isShared == 1 && data.status == false) {
+        } else if (option.isShared == 1 && data.status == false) {
           this.setData({
             shareType: 4
           })
