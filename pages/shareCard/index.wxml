@@ -7,7 +7,7 @@
 </view>
 <view class='content'>
   <text class="share-tips" wx:if="{{shareType == 5 && detail.status}}">{{currentData.myselfTipFalse}}</text>
-  <text class="share-tips" wx:if="{{shareType == 5 && !detail.status}}">{{currentData.myselfTipTrue}}</text>
+  <text class="share-tips" wx:if="{{shareType == 5 && !detail.status}}">{{detail.to_customer_name}}{{currentData.myselfTipTrue}}</text>
   <text class="share-tips" wx:if="{{shareType == 3}}">{{currentData.tips}}</text>
   <text class="share-tips" wx:if="{{shareType == 4}}">{{currentData.tipsNone}}</text>
    <view>

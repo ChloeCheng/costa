@@ -70,7 +70,7 @@
   margin-top: 30rpx;
 }
 .share-tips{
-  margin-top:40rpx;
+  padding-top:40rpx;
   height: 100rpx;
   width: 100%;
   text-align: center;

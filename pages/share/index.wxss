@@ -46,11 +46,12 @@
 }
 
 .share-tips{
-  margin-top:100rpx;
+  padding-top:40rpx;
   height: 100rpx;
   width: 100%;
   text-align: center;
   line-height: 100rpx;
   color: white;
   background-color:rgba(0,0,0,0.2) ;
+  font-size: 32rpx;
 }

@@ -111,7 +111,7 @@
 
 .agreement{
   position: fixed;
-  bottom:20rpx;
+  bottom:60rpx;
   right:15rpx;
   color: white;
   font-size: 24rpx;
