@@ -16,7 +16,7 @@
       <view class="card-active-list"  wx:if="{{activeSpread}}">
         <view class="card-active-list-item" bindtap="gotoDetail" wx:for="{{notExpired}}"  wx:key="{{index}}" data-item="{{item}}">
             <view class="card-icon-small">
-                <image src="../../assets/card/type_{{item.icon}}.png" mode='aspectFit'></image>
+                <image src="{{item.icon ? ('../../assets/card/type_'+item.icon+'.png') : ''}}" mode='aspectFit'></image>
             </view>
             <view class="card-center">
               <text class="card-center-title card-active-status">{{item.name}}</text>
@@ -42,7 +42,7 @@
       <view class="card-active-list" wx-if="{{disableSpread}}">
         <view class="card-active-list-item"  wx:for="{{expired}}" wx:key="{{index}}">
             <view class="card-icon-small">
-                <image src="../../assets/card/type_{{item.icon}}.png" mode='aspectFit'></image>
+                <image src="{{item.icon ? ('../../assets/card/type_'+item.icon+'.png') : ''}}" mode='aspectFit'></image>
             </view>
             <view class="card-center">
               <text class="card-center-title">{{item.name}}</text>

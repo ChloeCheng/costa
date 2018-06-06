@@ -90,10 +90,14 @@ margin-top:40rpx;
   font-size: 28rpx;
   flex:1;
   margin-left: 20rpx;
+  max-width:300rpx;
 }
 .card-center text{
   font-size: 24rpx;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-center text.card-active-status{
   color:#9A0020;
