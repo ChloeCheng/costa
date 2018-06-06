@@ -77,7 +77,8 @@ function thirdLogin(code, encryptedData, iv, data) {
   ajax.request(
     '/wechat-mp/oauth/' + encodeURIComponent(code),
     {
-      data
+      'encrypted-data':encryptedData,
+      iv:iv
     },
     function (json) {
       // json = {
