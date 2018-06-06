@@ -7,7 +7,7 @@ Page({
 
   data: {
     currentData: app.global[app.global['currentLanguage']],
-    shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了
+    shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了, 5 好友未领取
   },
   goback() {
     if (this.data.shareType == 1) {
@@ -30,9 +30,15 @@ Page({
       var option = getUrl.getCurrentPageArgs()
       ajax.getPoint(option.pointHash, (data) => {
         if (data.myself) {
-          this.setData({
-            shareType: 1
-          })
+          if (option.isShared==1){
+            this.setData({
+              shareType: 5
+            })
+          }else{
+            this.setData({
+              shareType: 1
+            })
+          }
         } else if (data.status == false) {
           this.setData({
             shareType: 4
@@ -55,9 +61,15 @@ Page({
     var option = getUrl.getCurrentPageArgs()
     ajax.getPoint(option.pointHash, (data) => {
       if (data.myself) {
-        this.setData({
-          shareType: 1
-        })
+        if (option.isShared == 1) {
+          this.setData({
+            shareType: 5
+          })
+        } else {
+          this.setData({
+            shareType: 1
+          })
+        }
       } else if (data.status == false) {
         this.setData({
           shareType: 4
@@ -116,11 +128,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    var shareUrl = "/" + getUrl.getCurrentPageUrlWithArgs() + "&isShared=1";
     return {
       title: '速度！你的壕友在撒COSTA福利！就看谁手快！',
       imageUrl: '',
+      path: shareUrl,
       success: function (res) {
+        console.log(shareUrl)
         let lau = app.global['currentLanguage'];
         // 转发成功之后的回调
         wx.showModal({

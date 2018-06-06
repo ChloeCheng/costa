@@ -126,6 +126,7 @@ App({
         btnTxtApt: '确认领取积分',
         tips: '你已成功抢到此积分',
         tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
+        tipsWaite:'好友未领取',
       },
       cardShare: {
         title: '分享给好友',
