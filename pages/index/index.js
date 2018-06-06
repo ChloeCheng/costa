@@ -47,7 +47,7 @@ Page({
         if(data.code === 200) {
           let tmp = data.data, pointValue = tmp.max - tmp.total;
           //let pointHint = tmp.hint.replace(/<[^>]+>/g, '').replace('POINTS', pointValue)
-          tmp.pointValue = pointValue;
+          tmp.pointValue = pointValue || 0;
           if(!noInit){
             var qrcode = new QRCode('canvas', {
               text: '12' + tmp.vipcode,
