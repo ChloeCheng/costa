@@ -5,10 +5,11 @@
 <view  class='bg-image' >
   <image src='../../assets/share-bg.png' mode='heightFix'></image> 
 </view>
-<view class="share-tips" wx:if="{{shareType == 3}}">{{currentData.share.tips}}</view>
+  <view class="share-tips" wx:if="{{shareType == 3}}">{{currentData.share.tips}}</view>
   <view class="share-tips" wx:if="{{shareType == 4}}">{{currentData.share.tipsNone}}</view>
   <view class="share-tips" wx:if="{{shareType == 5}}">{{currentData.share.tipsWaite}}</view>
-  <text class="share-tips" wx:if="{{shareType == 7}}">{{currentData.share.tipsPastDue}}</text>
+  <view class="share-tips" wx:if="{{shareType == 7}}">{{currentData.share.tipsPastDue}}</view>
+  <view class="share-tips" wx:if="{{shareType == 8}}">{{infoDetail.to_customer_name}} {{currentData.share.tipsNoneMy}}</view>
 <view class='content'>
   <view wx:if="{{shareType != 4}}">
     <image mode='aspectFit' src='../../assets/share-icon.png' />

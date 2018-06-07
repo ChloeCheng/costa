@@ -128,7 +128,8 @@ App({
         tips: '你已成功抢到此积分',
         tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
         tipsWaite:'好友未领取',
-        tipsPastDue: '超过24小时未领取，已退回'
+        tipsPastDue: '超过24小时未领取，已退回',
+        tipsNoneMy:'已领取'
       },
       cardShare: {
         title: '分享给好友',
@@ -365,12 +366,13 @@ App({
         title: '送给大家',
         txt: '感觉自己壕壕哒',
         btnTxt: 'Share with friends',
-        btnTxtBack: 'Back',
-        btnTxtApt: 'Confirm',
-        tips: '你已成功抢到此积分',
-        tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
-        tipsWaite: '好友未领取',
+        btnTxtBack: 'Back to My Points',
+        btnTxtApt: 'Accept the points',
+        tips: 'You have succeeded in getting the points',
+        tipsNone: 'The points have been accepted by other friends',
+        tipsWaite: "Not yet accepted by friends",
         tipsPastDue: 'Not opened within 24 hrs, gifts had been returned',
+        tipsNoneMy: 'has accepted the points'
       },
       cardShare: {
         title: '分享给好友',

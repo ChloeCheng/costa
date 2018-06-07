@@ -6,8 +6,8 @@ exports.getPoint = function (hash, callback) {
     {},
     function (json) {
       if (json.code == 200) {
-        //json.data.status = false //未领取true,
-        //json.data.myself = false
+        json.data.status = false //未领取true,
+        json.data.myself = true
         callback && callback(json.data)
       }
     }
