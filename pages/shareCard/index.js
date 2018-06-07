@@ -120,10 +120,12 @@ Page({
         {},
         function(data){
           if(data.code === 200) {
+            let lau = app.global['currentLanguage'];
             wx.showModal({
-              title: '提示',
+              title: (lau === 'zh' ? '提示' : 'Notice'),
               content: '领取成功',
               showCancel: false,
+              confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
               success:()=>{
                 _this.setData({
                   'shareType': 3
