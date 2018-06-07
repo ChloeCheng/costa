@@ -60,9 +60,9 @@ Page({
       {},
       function(data){
         if(data.code === 200) {
-          console.log(data.data)
           let tmp = data.data;
-          tmp.time = formatTime.formatTime(new Date(tmp.expired_time))
+          tmp.time = formatTime.formatTime(new Date(tmp.expired_time));
+          tmp.content = (tmp.content=== null) ? [] : tmp.content;
           if(tmp.myself){
             _this.setData({
               'shareType': 5
@@ -95,9 +95,9 @@ Page({
         {},
         function(data){
           if(data.code === 200) {
-            console.log(data.data)
             let tmp = data.data;
-            tmp.time = formatTime.formatTime(new Date(tmp.expired_time))
+            tmp.time = formatTime.formatTime(new Date(tmp.expired_time));
+            tmp.content = (tmp.content=== null) ? [] : tmp.content;
             _this.setData({
               'detail': data.data
             });
