@@ -365,9 +365,12 @@ App({
         title: '送给大家',
         txt: '感觉自己壕壕哒',
         btnTxt: 'Share with friends',
-        btnTxtBack: 'back',
+        btnTxtBack: 'Back',
         btnTxtApt: 'Confirm',
-        tipsPastDue: 'Not opened within 24 hrs, gifts had been returned'
+        tips: '你已成功抢到此积分',
+        tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
+        tipsWaite: '好友未领取',
+        tipsPastDue: 'Not opened within 24 hrs, gifts had been returned',
       },
       cardShare: {
         title: '分享给好友',
