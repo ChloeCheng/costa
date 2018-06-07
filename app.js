@@ -388,7 +388,7 @@ App({
         requireType: 'Required',
         selectType: 'Optional',
         selectsType: 'can select more then one',
-        sex: ['male', 'femal'],
+        sex: ['male', 'female'],
         company: 'My Company',
         position: 'My Position',
         subTitle: 'My Favorite',

@@ -162,8 +162,11 @@ exports.update = function (option) {
       //   code: 200
       // }
       if (json.code == 200) {
+        let lan = getApp().global.currentLanguage;
         wx.showModal({
+          title:(lan === 'zh' ? '提示' : 'Notice'),
           content: json.message,
+          confirmText:(lan === 'zh' ? '确认' : 'Confirm'),
           showCancel: false,
           success: function (res) {
             if (res.confirm) {
