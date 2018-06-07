@@ -174,9 +174,9 @@ Page({
         // 转发成功之后的回调
         wx.showModal({
           title: (lau === 'zh' ? '提示' : 'Notice'),
-          content: lau === 'zh'?'分享成功':'Success to share',
+          content:'分享成功',
           showCancel: false,
-          confirmText:(lau === 'zh' ? '确认' : 'Confirm'),
+          confirmText:'返回',
           success:()=>{
             wx.navigateTo({
               url: '/pages/point/index',
