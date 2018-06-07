@@ -25,7 +25,7 @@
          <text>{{item.phone}}</text>
       </view> 
       <view class="store-item-distance">
-        <text>距离{{item.distance}}km</text>
+        <text>{{currentData.distance}}{{item.distance}}km</text>
       </view>
     </view>
 </view>

@@ -12,7 +12,7 @@ Page({
   data: {
     currentData: app.global[app.global['currentLanguage']].cardShare,
     currentDataTotal: app.global[app.global['currentLanguage']],
-    shareType: 1, //1,分享， 2，领积分， 3，领成， 4，领完了, 5自己的 6不能分享
+    shareType: 1, //1,分享， 2，领积分， 3，领成， 4，领完了, 5自己的 6不能分享 7过期没领取
     detail: {},
     shareCode: '',
     noShareExplain: false,
@@ -71,7 +71,11 @@ Page({
             _this.setData({
               'shareType': 2
             });
-          } else {
+          } else if (tmp.is_back){
+            _this.setData({
+              'shareType': 7
+            });
+          }else {
             _this.setData({
               'shareType': 4
             });

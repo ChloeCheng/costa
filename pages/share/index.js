@@ -7,7 +7,7 @@ Page({
 
   data: {
     currentData: app.global[app.global['currentLanguage']],
-    shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了, 5 好友未领取
+    shareType: 1,//1,分享， 2，领积分， 3，领成， 4，领完了, 5 好友未领取 7退回的积分
   },
   goback() {
     if (this.data.shareType == 1) {
@@ -31,14 +31,21 @@ Page({
       ajax.getPoint(option.pointHash, (data) => {
         if (data.myself) {
           if (option.isShared == 1 && data.status == true){
-            this.setData({
-              shareType: 5
-            })
+            if(data.is_back){
+              this.setData({
+                shareType: 7
+              })
+            } else {
+              this.setData({
+                shareType: 5
+              })
+            }
+           
           } else if (option.isShared == 1 && data.status == false) {
             this.setData({
               shareType: 4
             })
-          }else{
+          }else {
             this.setData({
               shareType: 1
             })
@@ -48,9 +55,15 @@ Page({
             shareType: 4
           })
         } else if (data.status == true) {
-          this.setData({
-            shareType: 2
-          })
+          if(data.is_back){
+            this.setData({
+              shareType: 7
+            })
+          } else {
+            this.setData({
+              shareType: 2
+            })
+          }
         }
       })
     })

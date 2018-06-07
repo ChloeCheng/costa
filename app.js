@@ -95,7 +95,8 @@ App({
       store: {
         title: '门店查询',
         nearby: '附近',
-        search: '搜索COSTA门店'
+        search: '搜索COSTA门店',
+        distance: '距离'
       },
       points: {
         flag: '积分',
@@ -127,6 +128,7 @@ App({
         tips: '你已成功抢到此积分',
         tipsNone: '手慢啦，积分已被其他小伙伴领走啦',
         tipsWaite:'好友未领取',
+        tipsPastDue: '超过24小时未领取，已退回'
       },
       cardShare: {
         title: '分享给好友',
@@ -140,6 +142,7 @@ App({
         btnTxtApt: '确认领取优惠券',
         tips: '你已成功抢到此优惠券',
         tipsNone: '手慢啦，礼券已被其他小伙伴领走啦',
+        tipsPastDue: '超过24小时未领取，已退回'
       },
       userInfo: {
         title: '个人信息修改',
@@ -284,7 +287,8 @@ App({
       store: {
         title: 'Store Location',
         nearby: 'Nearby',
-        search: 'Search'
+        search: 'Search',
+        distance: 'Distance '
       },
       member: {
         title: 'Member Level Introduction',
@@ -363,6 +367,7 @@ App({
         btnTxt: 'Share with friends',
         btnTxtBack: 'back',
         btnTxtApt: 'Confirm',
+        tipsPastDue: 'Not opened within 24 hrs, gifts had been returned'
       },
       cardShare: {
         title: '分享给好友',
@@ -376,6 +381,7 @@ App({
         btnTxtApt: '确认领取优惠券',
         tips: '你已成功抢到此优惠券',
         tipsNone: '手慢啦，礼券已被其他小伙伴领走啦',
+        tipsPastDue: 'Not opened within 24 hrs, gifts had been returned'
       },
       userInfo: {
         title: 'Profile Updates',
