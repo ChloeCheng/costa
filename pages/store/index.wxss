@@ -104,9 +104,10 @@
   display: block;
 }
 .store-item-ad text.store-item-ad-title{
-  color:#A30F32;
+  color:#9e0028;
   font-size: 32rpx;
   margin-bottom: 6rpx;
+  font-weight: bold;
 }
 .store-item-distance text{
   color:#5B5B5B;
